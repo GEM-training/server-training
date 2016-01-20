@@ -9,6 +9,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "inventorys")
 public class Inventory {
+
     private int inventoryId;
     private String name;
     private String address;
@@ -28,6 +29,7 @@ public class Inventory {
         this.address = address;
         this.dealer = dealer;
     }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "inventory_id")

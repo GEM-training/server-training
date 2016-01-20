@@ -1,12 +1,14 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by vanhop on 1/18/16.
  */
 @Entity
-@Table(name = "st")
+@Table(name = "staff")
 public class Staff {
 
     @Id
@@ -24,13 +26,37 @@ public class Staff {
     private String address;
 
     @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "dealer_id")
     private Dealer dealer;
+
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "staff")
+    private Set<Bill> bills = new HashSet<Bill>(0);
+
+    public Staff() {
+    }
 
     public Staff(String name, String phone, String address, Dealer dealer) {
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.dealer = dealer;
+    }
+
+    public Staff(String name, String phone, String address, Dealer dealer, Set<Bill> bills) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.dealer = dealer;
+        this.bills = bills;
+    }
+
+    public Set<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(Set<Bill> bills) {
+
+        this.bills = bills;
     }
 
     public Integer getStaffId() {
