@@ -50,6 +50,14 @@ public class Unit {
         this.unitDealers = unitDealers;
     }
 
+    public Unit(String type, Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers) {
+        this.type = type;
+        this.isPart = isPart;
+        this.partOf = partOf;
+        this.units = units;
+        this.unitDealers = unitDealers;
+    }
+
     public Integer getUnitId() {
         return unitId;
     }
