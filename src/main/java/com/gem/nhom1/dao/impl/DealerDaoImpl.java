@@ -23,6 +23,7 @@ public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements Deal
     public Dealer getDealerById(int id) {
         Dealer d = getByKey(id);
         Hibernate.initialize(d.getInventorys());
+        Hibernate.initialize(d.getBills());
         return d;
     }
 }
