@@ -103,7 +103,12 @@
       <version>1.2</version>
     </dependency>
 
-
+    <!-- Joda-Time -->
+    <dependency>
+      <groupId>joda-time</groupId>
+      <artifactId>joda-time</artifactId>
+      <version>${joda-time.version}</version>
+    </dependency>
   </dependencies>
   <build>
     <finalName>SpringNhom1</finalName>
