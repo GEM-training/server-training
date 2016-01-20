@@ -22,14 +22,11 @@ public class Dealer {
     @Column(name = "address")
     private String address;
 
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
-    private Set<Bill> bills = new HashSet<Bill>(0);
-
     @OneToMany(cascade = CascadeType.ALL  , mappedBy = "dealer")
     private Set<Inventory> inventorys = new HashSet<Inventory>(0) ;
 
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
-    private Set<Staff> staffs = new HashSet<Staff>(0);
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer" , fetch = FetchType.LAZY)
+    private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     public Dealer() {
     }
@@ -45,30 +42,12 @@ public class Dealer {
         this.inventorys = inventorys;
     }
 
-    public Dealer(String name, String address, Set<Bill> bills, Set<Inventory> inventorys) {
+    public Dealer(String name, String address, Set<Inventory> inventorys, Set<UnitDealer> unitDealers) {
         this.name = name;
         this.address = address;
-        this.bills = bills;
         this.inventorys = inventorys;
+        this.unitDealers = unitDealers;
     }
-
-    public Dealer(int dealerId, String name, String address, Set<Bill> bills, Set<Inventory> inventorys, Set<Staff> staffs) {
-        this.dealerId = dealerId;
-        this.name = name;
-        this.address = address;
-        this.bills = bills;
-        this.inventorys = inventorys;
-        this.staffs = staffs;
-    }
-
-    public Set<Staff> getStaffs() {
-        return staffs;
-    }
-
-    public void setStaffs(Set<Staff> staffs) {
-        this.staffs = staffs;
-    }
-
 
     public int getDealerId() {
         return dealerId;
@@ -90,12 +69,12 @@ public class Dealer {
     }
 
 
-    public Set<Bill> getBills() {
-        return bills;
+    public Set<UnitDealer> getUnitDealers() {
+        return unitDealers;
     }
 
-    public void setBills(Set<Bill> bills) {
-        this.bills = bills;
+    public void setUnitDealers(Set<UnitDealer> unitDealers) {
+        this.unitDealers = unitDealers;
     }
 
     public void setDealerId(int dealerId) {
@@ -113,4 +92,8 @@ public class Dealer {
     public void setInventorys(Set<Inventory> inventorys) {
         this.inventorys = inventorys;
     }
+
+
+
+
 }

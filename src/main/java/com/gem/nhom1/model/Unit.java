@@ -3,6 +3,7 @@ package com.gem.nhom1.model;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -30,6 +31,9 @@ public class Unit {
     @OneToMany(mappedBy = "partOf")
     private Set<Unit> units;
 
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "unit")
+    private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
+
 
     public Unit() {
     }
@@ -39,26 +43,27 @@ public class Unit {
         this.isPart = isPart;
     }
 
-
-
-    public void setType(String type) {
-        this.type = type;
+    public Unit(Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers) {
+        this.isPart = isPart;
+        this.partOf = partOf;
+        this.units = units;
+        this.unitDealers = unitDealers;
     }
 
-    public void setIsPart(Integer isPart) {
-        this.isPart = isPart;
+    public Integer getUnitId() {
+        return unitId;
+    }
+
+    public Set<UnitDealer> getUnitDealers() {
+        return unitDealers;
+    }
+
+    public Set<Unit> getUnits() {
+        return units;
     }
 
     public Unit getPartOf() {
         return partOf;
-    }
-
-    public void setPartOf(Unit partOf) {
-        this.partOf = partOf;
-    }
-
-    public void setUnits(Set<Unit> units) {
-        this.units = units;
     }
 
     public String getType() {
@@ -70,7 +75,29 @@ public class Unit {
     }
 
 
-    public Set<Unit> getUnits() {
-        return units;
+    public void setUnitId(Integer unitId) {
+        this.unitId = unitId;
     }
+
+    public void setUnits(Set<Unit> units) {
+        this.units = units;
+    }
+
+    public void setUnitDealers(Set<UnitDealer> unitDealers) {
+        this.unitDealers = unitDealers;
+    }
+
+    public void setPartOf(Unit partOf) {
+        this.partOf = partOf;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public void setIsPart(Integer isPart) {
+        this.isPart = isPart;
+    }
+
+
 }
