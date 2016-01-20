@@ -1,6 +1,8 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by vanhop on 1/18/16.
@@ -23,6 +25,9 @@ public class Customer {
     @Column(name = "ADDRESS")
     private String address;
 
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")
+    private Set<Bill> bills = new HashSet<Bill>();
+
     public Customer() {
     }
 
@@ -30,6 +35,13 @@ public class Customer {
         this.name = name;
         this.phone = phone;
         this.address = address;
+    }
+
+    public Customer(String name, String phone, String address, Set<Bill> bills) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+        this.bills = bills;
     }
 
     public Integer getId() {
@@ -62,5 +74,13 @@ public class Customer {
 
     public void setAddress(String address) {
         this.address = address;
+    }
+
+    public Set<Bill> getBills() {
+        return bills;
+    }
+
+    public void setBills(Set<Bill> bills) {
+        this.bills = bills;
     }
 }
