@@ -16,6 +16,15 @@ public class InventoryUnitId implements Serializable{
     @ManyToOne
     private Unit unit;
 
+    public InventoryUnitId(Inventory inventory, Unit unit) {
+        this.inventory = inventory;
+        this.unit = unit;
+    }
+
+    public InventoryUnitId(){
+
+    }
+
     public Inventory getInventory() {
         return inventory;
     }
