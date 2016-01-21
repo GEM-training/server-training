@@ -19,4 +19,10 @@ public class UnitServiceImpl implements UnitService {
     public void save(Unit unit) {
         unitDao.save(unit);
     }
+
+    public Unit getUnitById(int id) {
+        return unitDao.getUnitById(id);
+    }
+
+
 }

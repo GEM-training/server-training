@@ -5,28 +5,28 @@ import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 /**
- * Created by vanhop on 1/20/16.
+ * Created by nghicv on 21/01/2016.
  */
 
 @Embeddable
-public class BillDetailId implements Serializable{
+public class InventoryUnitId implements Serializable{
 
     @ManyToOne
-    private Bill bill;
+    private Inventory inventory;
 
     @ManyToOne
     private Unit unit;
 
-    public Bill getBill() {
-        return bill;
-    }
-
-    public void setBill(Bill bill) {
-        this.bill = bill;
+    public Inventory getInventory() {
+        return inventory;
     }
 
     public Unit getUnit() {
         return unit;
+    }
+
+    public void setInventory(Inventory inventory) {
+        this.inventory = inventory;
     }
 
     public void setUnit(Unit unit) {

@@ -1,7 +1,5 @@
 package com.gem.nhom1.model;
 
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +32,14 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "unit")
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
+    private Set<BillDetail> billDetail = new HashSet<BillDetail>();
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
+    private Set<Promotion> promotions;
+
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
+    private Set<InventoryUnit> inventoryUnits ;
 
     public Unit() {
     }
@@ -56,6 +62,22 @@ public class Unit {
         this.partOf = partOf;
         this.units = units;
         this.unitDealers = unitDealers;
+    }
+
+    public Set<BillDetail> getBillDetail() {
+        return billDetail;
+    }
+
+    public void setBillDetail(Set<BillDetail> billDetail) {
+        this.billDetail = billDetail;
+    }
+    public Unit(String type, Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers, Set<Promotion> promotions) {
+        this.type = type;
+        this.isPart = isPart;
+        this.partOf = partOf;
+        this.units = units;
+        this.unitDealers = unitDealers;
+        this.promotions = promotions;
     }
 
     public Integer getUnitId() {
@@ -82,6 +104,9 @@ public class Unit {
         return isPart;
     }
 
+    public Set<Promotion> getPromotions() {
+        return promotions;
+    }
 
     public void setUnitId(Integer unitId) {
         this.unitId = unitId;
@@ -107,5 +132,15 @@ public class Unit {
         this.isPart = isPart;
     }
 
+    public void setPromotions(Set<Promotion> promotions) {
+        this.promotions = promotions;
+    }
 
+    public Set<InventoryUnit> getInventoryUnits() {
+        return inventoryUnits;
+    }
+
+    public void setInventoryUnits(Set<InventoryUnit> inventoryUnits) {
+        this.inventoryUnits = inventoryUnits;
+    }
 }
