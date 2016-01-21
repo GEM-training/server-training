@@ -1,6 +1,7 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
@@ -11,10 +12,10 @@ import java.io.Serializable;
 @Embeddable
 public class BillDetailId implements Serializable{
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Bill bill;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Unit unit;
 
     public Bill getBill() {

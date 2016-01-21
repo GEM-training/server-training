@@ -36,7 +36,7 @@ public abstract class AbstractDao<PK extends Serializable, T> {
         getSession().persist(entity);
     }
 
-    public void delete(T entity) {
+    public void deleteObject(T entity) {
         getSession().delete(entity);
     }
 
@@ -44,11 +44,11 @@ public abstract class AbstractDao<PK extends Serializable, T> {
         return getSession().createCriteria(persistentClass);
     }
 
-    public PK insert(T entity){
+    public PK insertObject(T entity){
         return (PK) getSession().save(entity);
     }
 
-    public void update(T entity){
+    public void updateObject(T entity){
          getSession().update(entity);
     }
 

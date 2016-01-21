@@ -30,6 +30,10 @@ public class BillServiceImpl implements BillService {
         return billDao.getListBill();
     }
 
+    public void update(Bill bill) {
+        billDao.update(bill);
+    }
+
     public int insertBill(Bill bill) {
         return billDao.insertBill(bill);
     }

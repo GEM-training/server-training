@@ -13,6 +13,6 @@ public interface BillDao {
     public List<Bill> getListBill();
 
     public void deleteBill(int billId);
-
+    public void update(Bill bill);
     public int insertBill(Bill bill);
 }
