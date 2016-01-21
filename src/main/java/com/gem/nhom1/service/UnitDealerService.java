@@ -11,7 +11,7 @@ import java.util.List;
  */
 public interface UnitDealerService {
 
-    public UnitDealerId getById(UnitDealerId id);
+    public UnitDealer getById(UnitDealerId id);
     public List<UnitDealer> getList();
     public int insert(UnitDealer unitDealer);
     public boolean delete(UnitDealerId id);

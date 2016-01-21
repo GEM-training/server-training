@@ -1,8 +1,6 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.BillDetailId;
-import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -24,6 +22,9 @@ public class HomeController {
     @Autowired
     private BillDetailService billDetailService;
 
+    @Autowired
+    private UnitDealerService unitDealerService;
+
    // @Autowired
    // private UnitService unitService;
 
@@ -33,7 +34,11 @@ public class HomeController {
     @RequestMapping("/demo")
     public @ResponseBody String  home(ModelMap mm){
 
-        //return billDetailService.;
+        UnitDealerId id = new UnitDealerId(1,1);
+
+        UnitDealer unitDealer = unitDealerService.getById(id);
+
+        return "Ok";
 
         return "";
 
