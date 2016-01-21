@@ -6,6 +6,7 @@ import com.gem.nhom1.model.BillDetailId;
 import com.gem.nhom1.service.BillDetailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * Created by vanhop on 1/20/16.
  */
 @Service
+@Transactional
 public class BillDetailServiceImpl implements BillDetailService {
 
     @Autowired
