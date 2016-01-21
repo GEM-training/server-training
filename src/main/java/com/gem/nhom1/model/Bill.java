@@ -16,11 +16,11 @@ public class Bill {
     @Column(name = "bill_id")
     private int billId;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
@@ -28,7 +28,7 @@ public class Bill {
     private String state;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "staff_id")
     private Staff staff;
 

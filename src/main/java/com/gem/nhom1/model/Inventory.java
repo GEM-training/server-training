@@ -1,6 +1,7 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.Set;
 
 /**
@@ -16,8 +17,8 @@ public class Inventory {
 
     private Dealer dealer;
 
-   // @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.inventory", cascade = CascadeType.ALL)
-   // private Set<InventoryUnit> inventoryUnits;
+
+    private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
     public Inventory() {
     }
@@ -33,12 +34,12 @@ public class Inventory {
         this.dealer = dealer;
     }
 
-    public Inventory(int inventoryId, String name, String address, Dealer dealer, Set<InventoryUnit> inventoryUni) {
+    public Inventory(int inventoryId, String name, String address, Dealer dealer, Set<InventoryUnit> inventoryUnits) {
         this.inventoryId = inventoryId;
         this.name = name;
         this.address = address;
         this.dealer = dealer;
-       // this.inventoryUnits = inventoryUni;
+        this.inventoryUnits = inventoryUnits;
     }
 
     @Id
@@ -64,13 +65,14 @@ public class Inventory {
         return dealer;
     }
 
-   /* public Set<InventoryUnit> getInventoryUni() {
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.inventory", cascade = CascadeType.ALL)
+    public Set<InventoryUnit> getInventoryUnits() {
         return inventoryUnits;
     }
 
-    public void setInventoryUni(Set<InventoryUnit> inventoryUni) {
-        this.inventoryUnits = inventoryUni;
-    }*/
+    public void setInventoryUnits(Set<InventoryUnit> inventoryUnits) {
+        this.inventoryUnits = inventoryUnits;
+    }
 
     public void setInventoryId(int inventoryId) {
         this.inventoryId = inventoryId;

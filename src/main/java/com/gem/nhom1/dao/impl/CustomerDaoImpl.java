@@ -1,10 +1,7 @@
 package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.dao.CustomerDao;
-import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.Customer;
-import com.gem.nhom1.model.Unit;
-import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,6 +14,10 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
 
     public void save(Customer customer){
         persist(customer);
+    }
+
+    public List<Customer> getListCustomer() {
+        return null;
     }
 
     public Customer getCustomerById(int id) {
