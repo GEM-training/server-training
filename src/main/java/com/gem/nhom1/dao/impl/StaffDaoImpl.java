@@ -14,15 +14,23 @@ public class StaffDaoImpl extends AbstractDao<Integer,Staff> implements StaffDao
     }
 
     public List<Staff> getList() {
-        return null;
+        return getSession().createQuery("from " + Staff.class).list();
+    }
+
+    public int insert(Staff staff) {
+        return insertObject(staff);
     }
 
     public boolean delete(int id) {
         try {
-            delete(getByKey(id));
+            deleteObject(getByKey(id));
         } catch (Exception e){
             return false;
         }
         return true;
+    }
+
+    public void update(Staff staff) {
+        updateObject(staff);
     }
 }

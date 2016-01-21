@@ -18,22 +18,22 @@ public class StaffServiceImpl implements StaffService {
     private StaffDao staffDao;
 
     public Staff getById(int id) {
-        return null;
+        return staffDao.getById(id);
     }
 
     public List<Staff> getList() {
-        return null;
+        return staffDao.getList();
     }
 
     public int insert(Staff staff) {
-        return 0;
+        return staffDao.insert(staff);
     }
 
     public boolean delete(int id) {
-        return false;
+        return staffDao.delete(id);
     }
 
     public void update(Staff staff) {
-
+        staffDao.update(staff);
     }
 }

@@ -27,11 +27,11 @@ public class UnitDealer  implements java.io.Serializable {
     public UnitDealer() {
     }
 
-    public UnitDealer(UnitDealerId id, Dealer dealer, Unit unit, double price) {
-        this.id = id;
+    public UnitDealer(Dealer dealer, Unit unit, double price) {
         this.dealer = dealer;
         this.unit = unit;
         this.price = price;
+        id = new UnitDealerId(unit.getUnitId(), dealer.getDealerId());
     }
 
     @EmbeddedId
