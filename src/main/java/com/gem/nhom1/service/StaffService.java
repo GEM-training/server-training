@@ -2,12 +2,18 @@ package com.gem.nhom1.service;
 
 import com.gem.nhom1.model.Staff;
 
+import java.util.List;
+
 /**
  * Created by vanhop on 1/20/16.
  */
 public interface StaffService {
 
-    public void save(Staff staff);
-    public Staff getStaffById(int id);
+    public Staff getById(int id);
+    public List<Staff> getList();
+    public int insert(Staff staff);
+    public boolean delete(int id);
+    public void update(Staff staff);
+
 
 }

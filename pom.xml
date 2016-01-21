@@ -110,7 +110,6 @@
       <version>${joda-time.version}</version>
     </dependency>
 
-    <!--Json-->
     <dependency>
       <groupId>net.arnx</groupId>
       <artifactId>jsonic</artifactId>

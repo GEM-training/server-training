@@ -7,6 +7,8 @@ import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * Created by vanhop on 1/20/16.
  */
@@ -14,11 +16,24 @@ import org.springframework.stereotype.Service;
 public class StaffServiceImpl implements StaffService {
     @Autowired
     private StaffDao staffDao;
-    public void save(Staff staff) {
-        staffDao.save(staff);
+
+    public Staff getById(int id) {
+        return null;
     }
 
-    public Staff getStaffById(int id) {
-        return staffDao.getStaffById(id);
+    public List<Staff> getList() {
+        return null;
+    }
+
+    public int insert(Staff staff) {
+        return 0;
+    }
+
+    public boolean delete(int id) {
+        return false;
+    }
+
+    public void update(Staff staff) {
+
     }
 }
