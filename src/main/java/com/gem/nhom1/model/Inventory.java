@@ -17,6 +17,7 @@ public class Inventory {
 
     private Dealer dealer;
 
+
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
     public Inventory() {
