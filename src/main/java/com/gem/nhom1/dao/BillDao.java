@@ -11,4 +11,8 @@ public interface BillDao {
     public Bill getBillById(int id);
     public void save(Bill bill);
     public List<Bill> getListBill();
+
+    public void deleteBill(int billId);
+
+    public int insertBill(Bill bill);
 }

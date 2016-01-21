@@ -22,4 +22,13 @@ public class BillDaoImpl extends AbstractDao<Integer , Bill> implements BillDao 
     public List<Bill> getListBill() {
         return getSession().createQuery("FROM Bill").list();
     }
+
+    public void deleteBill(int billId) {
+        Bill bill = getByKey(billId);
+        delete(bill);
+    }
+
+    public int insertBill(Bill bill) {
+        return insert(bill);
+    }
 }
