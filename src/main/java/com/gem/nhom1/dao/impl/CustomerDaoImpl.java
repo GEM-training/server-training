@@ -16,10 +16,6 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
         persist(customer);
     }
 
-    public List<Customer> getListCustomer() {
-        return null;
-    }
-
     public Customer getCustomerById(int id) {
 
         Customer customer = getByKey(id);
