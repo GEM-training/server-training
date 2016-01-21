@@ -15,7 +15,7 @@ import javax.persistence.*;
 public class BillDetail {
 
     @EmbeddedId
-    private BillDetailId pk;
+    private BillDetailId pk = new BillDetailId();
 
     @Column(name = "quantity")
     private Integer quantity;

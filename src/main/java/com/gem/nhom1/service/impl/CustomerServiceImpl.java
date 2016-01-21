@@ -19,4 +19,8 @@ public class CustomerServiceImpl implements CustomerService {
     public void save(Customer customer) {
         customerDao.save(customer);
     }
+
+    public Customer getCustomerById(int id) {
+        return customerDao.getCustomerById(id);
+    }
 }

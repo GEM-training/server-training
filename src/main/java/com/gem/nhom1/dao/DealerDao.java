@@ -11,4 +11,5 @@ public interface DealerDao {
     public void save(Dealer dealer);
     public List<Dealer> getListDealer();
     public Dealer getDealerById(int id);
+
 }

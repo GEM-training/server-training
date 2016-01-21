@@ -14,4 +14,8 @@ public class UnitDaoImpl extends AbstractDao<Integer,Unit> implements UnitDao {
         persist(unit);
     }
 
+    public Unit getUnitById(int id) {
+        return getByKey(id);
+    }
+
 }
