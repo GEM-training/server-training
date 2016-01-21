@@ -40,7 +40,8 @@ public class Promotion {
     public Promotion(double saleOff, LocalDate startTime, LocalDate endTime, Unit unit, Dealer dealer) {
         this.saleOff = saleOff;
         this.startTime = startTime;
-        this.endTime = endTime;        this.unit = unit;
+        this.endTime = endTime;
+        this.unit = unit;
         this.dealer = dealer;
     }
 

@@ -1,5 +1,6 @@
 package com.gem.nhom1.model;
 import javax.persistence.Embeddable;
+import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
@@ -10,10 +11,10 @@ import java.io.Serializable;
 @Embeddable
 public class InventoryUnitId implements Serializable{
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Inventory inventory;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     private Unit unit;
 
     public InventoryUnitId(Inventory inventory, Unit unit) {
