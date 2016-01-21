@@ -14,6 +14,4 @@ public interface InventoryDao {
     public boolean delete(int id);
     public void update(Inventory inventory);
 
-
-
 }

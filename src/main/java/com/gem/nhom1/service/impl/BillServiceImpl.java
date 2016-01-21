@@ -18,23 +18,23 @@ public class BillServiceImpl implements BillService {
     @Autowired
     private BillDao billDao;
 
-    public Bill getBillById(int id) {
-        return billDao.getBillById(id);
+    public Bill getById(int id) {
+        return billDao.getById(id);
     }
 
-    public void save(Bill bill) {
-        billDao.save(bill);
+    public List<Bill> getList() {
+        return billDao.getList();
     }
 
-    public List<Bill> getListBill() {
-        return billDao.getListBill();
+    public int insert(Bill bill) {
+        return billDao.insert(bill);
+    }
+
+    public boolean delete(int billId) {
+        return billDao.delete(billId);
     }
 
     public void update(Bill bill) {
         billDao.update(bill);
-    }
-
-    public int insertBill(Bill bill) {
-        return billDao.insertBill(bill);
     }
 }

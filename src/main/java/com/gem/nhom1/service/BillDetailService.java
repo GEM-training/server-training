@@ -1,13 +1,19 @@
 package com.gem.nhom1.service;
 
 import com.gem.nhom1.model.BillDetail;
+import com.gem.nhom1.model.BillDetailId;
+
+import java.util.List;
 
 /**
  * Created by vanhop on 1/20/16.
  */
 public interface BillDetailService {
 
-    public void save(BillDetail billDetail);
-    public BillDetail getBillDetailById(int id);
+    public BillDetail getById(BillDetailId id);
+    public List<BillDetail> getList();
+    public BillDetailId insert(BillDetail billDetail);
+    public boolean delete(BillDetailId id);
+    public void update(BillDetail billDetail);
 
 }

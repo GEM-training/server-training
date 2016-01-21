@@ -8,10 +8,10 @@ import java.util.List;
  * Created by phuongtd on 20/01/2016.
  */
 public interface BillService {
-    public Bill getBillById(int id);
-    public void save(Bill bill);
-    public List<Bill> getListBill();
+    public Bill getById(int id);
+    public List<Bill> getList();
+    public int insert(Bill bill);
+    public boolean delete(int billId);
     public void update(Bill bill);
-    public int  insertBill(Bill bill);
 
 }

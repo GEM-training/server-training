@@ -6,34 +6,38 @@ import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 /**
  * Created by vanhop on 1/20/16.
  */
+
 @Service
+@Transactional
 public class StaffServiceImpl implements StaffService {
     @Autowired
     private StaffDao staffDao;
 
     public Staff getById(int id) {
-        return null;
+        return staffDao.getById(id);
     }
 
     public List<Staff> getList() {
-        return null;
+        return staffDao.getList();
     }
 
     public int insert(Staff staff) {
-        return 0;
+        return staffDao.insert(staff);
     }
 
     public boolean delete(int id) {
-        return false;
+        return staffDao.delete(id);
     }
 
     public void update(Staff staff) {
-
+        staffDao.update(staff);
     }
 }
+

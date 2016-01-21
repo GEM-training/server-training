@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by vanhop on 1/18/16.
  */
@@ -16,13 +18,25 @@ public class UnitServiceImpl implements UnitService {
 
     @Autowired
     UnitDao unitDao;
-    public void save(Unit unit) {
-        unitDao.save(unit);
+
+
+    public Unit getById(int id) {
+        return unitDao.getById(id);
     }
 
-    public Unit getUnitById(int id) {
-        return unitDao.getUnitById(id);
+    public List<Unit> getList() {
+        return unitDao.getList();
     }
 
+    public int insert(Unit unit) {
+        return unitDao.insert(unit);
+    }
 
+    public boolean delete(int id) {
+        return unitDao.delete(id);
+    }
+
+    public void update(Unit unit) {
+        unitDao.update(unit);
+    }
 }
