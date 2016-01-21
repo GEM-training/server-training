@@ -55,12 +55,12 @@ public class Dealer {
         this.unitDealers = unitDealers;
     }
 
-    public Dealer(String name, String address, Set<Inventory> inventorys, Set<Promotion> promotions, Set<UnitDealer> unitDealers, Set<Bill> bills) {
+    public Dealer(String name, String address, Set<UnitDealer> unitDealers, Set<Inventory> inventorys, Set<Promotion> promotions, Set<Bill> bills) {
         this.name = name;
         this.address = address;
+        this.unitDealers = unitDealers;
         this.inventorys = inventorys;
         this.promotions = promotions;
-        this.unitDealers = unitDealers;
         this.bills = bills;
     }
 
@@ -95,9 +95,7 @@ public class Dealer {
 
     public Set<Bill> getBills() {
         return bills;
-
     }
-
     public void setUnitDealers(Set<UnitDealer> unitDealers) {
         this.unitDealers = unitDealers;
     }
@@ -125,6 +123,5 @@ public class Dealer {
 
     public void setBills(Set<Bill> bills) {
         this.bills = bills;
-
     }
 }
