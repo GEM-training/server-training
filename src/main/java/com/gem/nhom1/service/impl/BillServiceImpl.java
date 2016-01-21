@@ -29,4 +29,8 @@ public class BillServiceImpl implements BillService {
     public List<Bill> getListBill() {
         return billDao.getListBill();
     }
+
+    public int insertBill(Bill bill) {
+        return billDao.insertBill(bill);
+    }
 }

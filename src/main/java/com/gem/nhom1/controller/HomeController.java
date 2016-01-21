@@ -1,14 +1,26 @@
 package com.gem.nhom1.controller;
 
+<<<<<<< HEAD
 import com.gem.nhom1.dao.BillDetailDao;
 import com.gem.nhom1.dao.DealerDao;
 import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
+=======
+import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.service.DealerService;
+import com.gem.nhom1.service.PromotionService;
+>>>>>>> pull
 import net.arnx.jsonic.JSON;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+<<<<<<< HEAD
 import org.springframework.transaction.annotation.Transactional;
+=======
+import org.springframework.stereotype.Repository;
+>>>>>>> pull
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -44,6 +56,7 @@ public class HomeController {
     private BillDetailService billDetailService;
 
     @RequestMapping("/demo")
+<<<<<<< HEAD
     public @ResponseBody String  home(ModelMap mm){
 
         /*Dealer dealer = dealerService.getDealerById(1);
@@ -74,13 +87,28 @@ public class HomeController {
         billDetailService.save(billDetail);
         billDetailService.save(billDetail1);*/
 
+=======
+    public @ResponseBody  String  home(ModelMap mm){
+       // dealerService.save(new Dealer("Yamaha VietNam" , "Ha Noi"));
+        List<Dealer> list =  dealerService.getListDealer();
+        mm.addAttribute("dealers"  ,  list);
+>>>>>>> pull
 
 
+<<<<<<< HEAD
         //BillDetail billDetail = billDetailService.getBillDetailById(1);
         Bill bill = billService.getBillById(1);
 
 
         return JSON.encode(bill.getBillDetail().iterator().next());
+=======
+
+        mm.addAttribute("bills"  ,  d.getBills());
+
+        mm.addAttribute("uds"  ,  d.getUnitDealers());
+
+        return JSON.encode(d.getBills().iterator());
+>>>>>>> pull
     }
 
 

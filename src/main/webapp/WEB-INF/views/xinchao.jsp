@@ -22,8 +22,16 @@
         Username: ${in.name}  <br>
     </c:forEach>
     <hr/>
-    <h1>Promotions</h1>
-    <p>${size}</p>
+    <h3>Danh sach bill dealer 1</h3>
+    <c:forEach var="b" items="${bills}">
+        Username: ${b.state}  <br>
+    </c:forEach>
+
+    <hr/>
+    <h3>Danh sach UnitDealer cua dealer 1</h3>
+    <c:forEach var="ud" items="${uds}">
+        Username: ${ud.price}  <br>
+    </c:forEach>
 
 
 </body>

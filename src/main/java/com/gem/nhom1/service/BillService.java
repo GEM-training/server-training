@@ -11,4 +11,7 @@ public interface BillService {
     public Bill getBillById(int id);
     public void save(Bill bill);
     public List<Bill> getListBill();
+
+    public int  insertBill(Bill bill);
+
 }

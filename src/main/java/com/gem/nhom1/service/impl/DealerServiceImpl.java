@@ -29,5 +29,11 @@ public class DealerServiceImpl implements DealerService {
        return dealerDao.getDealerById(id);
     }
 
+    public void deleteDealer(int dealerId) {
+        dealerDao.deleteDealer(dealerId);
+    }
 
+    public int insertDealer(Dealer dealer) {
+        return dealerDao.insertDealer(dealer);
+    }
 }
