@@ -18,6 +18,14 @@ public class BillDetailId implements Serializable{
     @ManyToOne(fetch = FetchType.LAZY)
     private Unit unit;
 
+    public BillDetailId() {
+    }
+
+    public BillDetailId(Bill bill, Unit unit) {
+        this.bill = bill;
+        this.unit = unit;
+    }
+
     public Bill getBill() {
         return bill;
     }

@@ -16,8 +16,6 @@ import java.util.List;
 @Controller
 @RequestMapping("/home")
 public class HomeController {
-    @Autowired
-    private DealerService dealerService;
 
     @Autowired
     private BillDetailService billDetailService;
@@ -25,8 +23,11 @@ public class HomeController {
     @Autowired
     private UnitDealerService unitDealerService;
 
-   // @Autowired
-   // private UnitService unitService;
+    @Autowired
+    private UnitService unitService;
+
+    @Autowired
+    private DealerService dealerService;
 
     @Autowired
     private BillService billService;
@@ -34,10 +35,14 @@ public class HomeController {
     @RequestMapping("/demo")
     public @ResponseBody String  home(ModelMap mm){
 
-        UnitDealerId id = new UnitDealerId(1,1);
+        //UnitDealerId id = new UnitDealerId(1,1);
 
-        UnitDealer unitDealer = unitDealerService.getById(id);
+       // UnitDealer unitDealer = unitDealerService.getById(id);
+        Unit unit = unitService.getById(3);
+        Bill bill = billService.getById(2);
 
+        BillDetailId id = new BillDetailId(bill,unit);
+        BillDetail billDetail = billDetailService.getById(id);
         return "Ok";
 
     }
