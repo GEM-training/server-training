@@ -12,19 +12,28 @@ import java.util.List;
 @Repository
 public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements CustomerDao {
 
-    public void save(Customer customer){
-        persist(customer);
+    public Customer getById(int id) {
+        return getByKey(id);
     }
 
-    public Customer getCustomerById(int id) {
-
-        Customer customer = getByKey(id);
-
-        return customer;
-
-    }
-
-    public List<Customer> getListCustomer() {
+    public List<Customer> getList() {
         return getSession().createQuery("from Customer").list();
+    }
+
+    public int insert(Customer customer) {
+        return insert(customer);
+    }
+
+    public boolean delete(int customerId) {
+        try {
+            deleteObject(getByKey(customerId));
+        } catch (Exception e) {
+            return false;
+        }
+        return  true;
+    }
+
+    public void update(Customer customer) {
+        updateObject(customer);
     }
 }

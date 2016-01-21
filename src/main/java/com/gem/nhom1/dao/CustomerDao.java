@@ -1,6 +1,7 @@
 package com.gem.nhom1.dao;
 
 import com.gem.nhom1.model.Customer;
+import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Unit;
 
 import java.util.List;
@@ -10,10 +11,10 @@ import java.util.List;
  */
 public interface CustomerDao {
 
-    public void save(Customer customer);
+    public Customer getById(int id);
+    public List<Customer> getList();
+    public int insert(Customer customer);
+    public boolean delete(int customerId);
+    public void update(Customer customer);
 
-
-    public List<Customer> getListCustomer();
-
-    public Customer getCustomerById(int id);
 }

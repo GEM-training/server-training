@@ -35,18 +35,30 @@ public class DealerController {
     @RequestMapping("/insert")
     public @ResponseBody String  home(ModelMap mm){
 
+        Dealer dealer = new Dealer("Test Dealer" , "HN");
 
-        //UnitDealerId id = new UnitDealerId(1,1);
+        return dealerService.insert(dealer)+"";
 
-       // UnitDealer unitDealer = unitDealerService.getById(id);
-        Unit unit = unitService.getById(3);
-        Bill bill = billService.getById(2);
+    }
+    @RequestMapping("/update")
+    public @ResponseBody String update(){
+        Dealer dealer = dealerService.getById(5);
+        dealer.setName("Demo update");
+        dealerService.update(dealer);
+        return "OK";
+    }
 
-        BillDetailId id = new BillDetailId(bill,unit);
-        BillDetail billDetail = billDetailService.getById(id);
+    @RequestMapping("/list")
+    public @ResponseBody String list(){
+        List<Dealer> list = dealerService.getList();
 
-        return "Ok";
+        return "Size dealer: "+ list.size();
+    }
 
+    @RequestMapping("/delete")
+    public @ResponseBody String delete(){
+
+        return "Delete: "+ dealerService.delete(5);
     }
 
 

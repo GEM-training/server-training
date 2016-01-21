@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 /**
  * Created by vanhop on 1/18/16.
  */
@@ -16,11 +18,24 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerDao customerDao;
-    public void save(Customer customer) {
-        customerDao.save(customer);
+
+    public Customer getById(int id) {
+        return customerDao.getById(id);
     }
 
-    public Customer getCustomerById(int id) {
-        return customerDao.getCustomerById(id);
+    public List<Customer> getList() {
+        return customerDao.getList();
+    }
+
+    public int insert(Customer customer) {
+        return customerDao.insert(customer);
+    }
+
+    public boolean delete(int customerId) {
+        return customerDao.delete(customerId);
+    }
+
+    public void update(Customer customer) {
+        customerDao.update(customer);
     }
 }
