@@ -14,19 +14,5 @@ import java.util.List;
 
 @Repository
 public class PromotionDaoImpl extends AbstractDao<Integer, Promotion> implements PromotionDao{
-
-   /* public void save(Promotion promotion) {
-        persist(promotion);
-    }
-
-    public List<Promotion> getListPromotion() {
-        return getSession().createQuery("from Promotion").list();
-    }
-
-    public Promotion getPromotionById(int id) {
-        Promotion promotion = getByKey(id);
-        return promotion;
-    }*/
-
-
+    
 }
