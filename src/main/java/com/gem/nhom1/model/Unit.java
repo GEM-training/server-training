@@ -38,6 +38,9 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Promotion> promotions;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
+    private Set<InventoryUnit> inventoryUnits ;
+
     public Unit() {
     }
 
@@ -131,5 +134,13 @@ public class Unit {
 
     public void setPromotions(Set<Promotion> promotions) {
         this.promotions = promotions;
+    }
+
+    public Set<InventoryUnit> getInventoryUnits() {
+        return inventoryUnits;
+    }
+
+    public void setInventoryUnits(Set<InventoryUnit> inventoryUnits) {
+        this.inventoryUnits = inventoryUnits;
     }
 }
