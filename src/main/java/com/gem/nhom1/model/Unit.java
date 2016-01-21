@@ -1,7 +1,5 @@
 package com.gem.nhom1.model;
 
-import org.hibernate.annotations.Fetch;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -37,6 +35,9 @@ public class Unit {
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
+    private Set<Promotion> promotions;
+
     public Unit() {
     }
 
@@ -67,6 +68,14 @@ public class Unit {
     public void setBillDetail(Set<BillDetail> billDetail) {
         this.billDetail = billDetail;
     }
+    public Unit(String type, Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers, Set<Promotion> promotions) {
+        this.type = type;
+        this.isPart = isPart;
+        this.partOf = partOf;
+        this.units = units;
+        this.unitDealers = unitDealers;
+        this.promotions = promotions;
+    }
 
     public Integer getUnitId() {
         return unitId;
@@ -92,6 +101,9 @@ public class Unit {
         return isPart;
     }
 
+    public Set<Promotion> getPromotions() {
+        return promotions;
+    }
 
     public void setUnitId(Integer unitId) {
         this.unitId = unitId;
@@ -117,5 +129,7 @@ public class Unit {
         this.isPart = isPart;
     }
 
-
+    public void setPromotions(Set<Promotion> promotions) {
+        this.promotions = promotions;
+    }
 }
