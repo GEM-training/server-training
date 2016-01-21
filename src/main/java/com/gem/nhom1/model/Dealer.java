@@ -29,7 +29,10 @@ public class Dealer {
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dealer")
-    private Set<Promotion> promotions;
+    private Set<Promotion> promotions = new HashSet<Promotion>(0);
+
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
+    private Set<Bill> bills = new HashSet<Bill>(0);
 
     public Dealer() {
     }
@@ -52,12 +55,13 @@ public class Dealer {
         this.unitDealers = unitDealers;
     }
 
-    public Dealer(String name, String address, Set<Inventory> inventorys, Set<UnitDealer> unitDealers, Set<Promotion> promotions) {
+    public Dealer(String name, String address, Set<Inventory> inventorys, Set<Promotion> promotions, Set<UnitDealer> unitDealers, Set<Bill> bills) {
         this.name = name;
         this.address = address;
         this.inventorys = inventorys;
-        this.unitDealers = unitDealers;
         this.promotions = promotions;
+        this.unitDealers = unitDealers;
+        this.bills = bills;
     }
 
     public int getDealerId() {
@@ -84,8 +88,14 @@ public class Dealer {
         return unitDealers;
     }
 
+
     public Set<Promotion> getPromotions() {
         return promotions;
+    }
+
+    public Set<Bill> getBills() {
+        return bills;
+
     }
 
     public void setUnitDealers(Set<UnitDealer> unitDealers) {
@@ -108,7 +118,13 @@ public class Dealer {
         this.inventorys = inventorys;
     }
 
+
     public void setPromotions(Set<Promotion> promotions) {
         this.promotions = promotions;
+    }
+
+    public void setBills(Set<Bill> bills) {
+        this.bills = bills;
+
     }
 }
