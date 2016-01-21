@@ -12,30 +12,28 @@ import java.util.List;
  */
 @Repository
 public class BillDaoImpl extends AbstractDao<Integer , Bill> implements BillDao {
-    public Bill getBillById(int id) {
-        Bill bill = getByKey(id);
-        Hibernate.initialize(bill.getBillDetail());
-        return bill;
+    public Bill getById(int id) {
+        return getByKey(id);
     }
 
-    public void save(Bill bill) {
-        persist(bill);
+    public List<Bill> getList() {
+        return getSession().createQuery("from Bill").list();
     }
 
-    public List<Bill> getListBill() {
-        return getSession().createQuery("FROM Bill").list();
+    public int insert(Bill bill) {
+        return insertObject(bill);
     }
 
-    public void deleteBill(int billId) {
-        Bill bill = getByKey(billId);
-        delete(bill);
+    public boolean delete(int billId) {
+        try {
+            deleteObject(getByKey(billId));
+        } catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
     public void update(Bill bill) {
-        getSession().saveOrUpdate(bill);
-    }
-
-    public int insertBill(Bill bill) {
-        return insert(bill);
+        updateObject(bill);
     }
 }

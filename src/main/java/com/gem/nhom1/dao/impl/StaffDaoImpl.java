@@ -8,6 +8,7 @@ import java.util.List;
 /**
  * Created by vanhop on 1/21/16.
  */
+
 public class StaffDaoImpl extends AbstractDao<Integer,Staff> implements StaffDao {
     public Staff getById(int id) {
         return getByKey(id);
@@ -26,3 +27,4 @@ public class StaffDaoImpl extends AbstractDao<Integer,Staff> implements StaffDao
         return true;
     }
 }
+

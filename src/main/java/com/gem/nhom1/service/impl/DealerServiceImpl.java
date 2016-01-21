@@ -17,23 +17,24 @@ import java.util.List;
 public class DealerServiceImpl implements DealerService {
     @Autowired
     private DealerDao dealerDao;
-    public void save(Dealer dealer) {
-        dealerDao.save(dealer);
+
+    public Dealer getById(int id) {
+        return dealerDao.getById(id);
     }
 
-    public List<Dealer> getListDealer() {
-        return dealerDao.getListDealer();
+    public List<Dealer> getList() {
+        return dealerDao.getList();
     }
 
-    public Dealer getDealerById(int id){
-       return dealerDao.getDealerById(id);
+    public int insert(Dealer dealer) {
+        return dealerDao.insert(dealer);
     }
 
-    public void deleteDealer(int dealerId) {
-        dealerDao.deleteDealer(dealerId);
+    public boolean delete(int dealerId) {
+        return dealerDao.delete(dealerId);
     }
 
-    public int insertDealer(Dealer dealer) {
-        return dealerDao.insertDealer(dealer);
+    public void update(Dealer dealer) {
+        dealerDao.update(dealer);
     }
 }

@@ -12,15 +12,29 @@ import java.util.List;
  */
 @Repository
 public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements DealerDao {
+
     public Dealer getById(int id) {
-        return null;
+        return getByKey(id);
     }
 
     public List<Dealer> getList() {
-        return null;
+        return getSession().createQuery("from Dealer").list();
+    }
+
+    public int insert(Dealer dealer) {
+        return insertObject(dealer);
     }
 
     public boolean delete(int dealerId) {
-        return false;
+        try{
+            deleteObject(getByKey(dealerId));
+        } catch (Exception e){
+            return false;
+        }
+        return true;
+    }
+
+    public void update(Dealer dealer) {
+        updateObject(dealer);
     }
 }

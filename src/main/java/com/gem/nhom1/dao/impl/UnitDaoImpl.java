@@ -7,6 +7,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by vanhop on 1/18/16.
  */
+
 @Repository
 public class UnitDaoImpl extends AbstractDao<Integer,Unit> implements UnitDao {
 
@@ -19,3 +20,4 @@ public class UnitDaoImpl extends AbstractDao<Integer,Unit> implements UnitDao {
     }
 
 }
+
