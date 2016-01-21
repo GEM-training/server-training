@@ -16,8 +16,8 @@ public class Inventory {
 
     private Dealer dealer;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.inventory", cascade = CascadeType.ALL)
-    private Set<InventoryUnit> inventoryUnits;
+   // @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.inventory", cascade = CascadeType.ALL)
+   // private Set<InventoryUnit> inventoryUnits;
 
     public Inventory() {
     }
@@ -38,7 +38,7 @@ public class Inventory {
         this.name = name;
         this.address = address;
         this.dealer = dealer;
-        this.inventoryUnits = inventoryUni;
+       // this.inventoryUnits = inventoryUni;
     }
 
     @Id
@@ -64,13 +64,13 @@ public class Inventory {
         return dealer;
     }
 
-    public Set<InventoryUnit> getInventoryUni() {
+   /* public Set<InventoryUnit> getInventoryUni() {
         return inventoryUnits;
     }
 
     public void setInventoryUni(Set<InventoryUnit> inventoryUni) {
         this.inventoryUnits = inventoryUni;
-    }
+    }*/
 
     public void setInventoryId(int inventoryId) {
         this.inventoryId = inventoryId;

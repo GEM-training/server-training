@@ -7,6 +7,8 @@ import com.gem.nhom1.model.Unit;
 import org.hibernate.Criteria;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 /**
  * Created by vanhop on 1/18/16.
  */
@@ -25,4 +27,7 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
 
     }
 
+    public List<Customer> getListCustomer() {
+        return getSession().createQuery("from Customer").list();
+    }
 }

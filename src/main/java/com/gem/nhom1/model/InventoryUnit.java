@@ -6,12 +6,12 @@ import javax.persistence.*;
  * Created by nghicv on 21/01/2016.
  */
 
-@Entity
-@Table(name = "inventory_unit")
-@AssociationOverrides({
-        @AssociationOverride(name = "pk.inventory", joinColumns = @JoinColumn(name = "inventory_id")),
-        @AssociationOverride(name = "pk.unit", joinColumns = @JoinColumn(name ="unit_id"))
-})
+//@Entity
+//@Table(name = "inventory_unit")
+//@AssociationOverrides({
+//        @AssociationOverride(name = "pk.inventory", joinColumns = @JoinColumn(name = "inventory_id")),
+ //       @AssociationOverride(name = "pk.unit", joinColumns = @JoinColumn(name ="unit_id"))
+//})
 public class InventoryUnit {
 
     @EmbeddedId
