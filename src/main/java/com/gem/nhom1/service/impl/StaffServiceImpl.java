@@ -12,6 +12,7 @@ import java.util.List;
 /**
  * Created by vanhop on 1/20/16.
  */
+
 @Service
 public class StaffServiceImpl implements StaffService {
     @Autowired
@@ -37,3 +38,4 @@ public class StaffServiceImpl implements StaffService {
         staffDao.update(staff);
     }
 }
+

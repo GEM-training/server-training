@@ -1,6 +1,7 @@
 package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.Bill;
+import com.gem.nhom1.model.BillDetailId;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,30 +22,19 @@ public class HomeController {
     private DealerService dealerService;
 
     @Autowired
-    private BillService billService;
-
-    @Autowired
-    private CustomerService customerService;
-
-    @Autowired
-    private PromotionService promotionService;
-
-    @Autowired
-    private StaffService staffService;
-
-    @Autowired
-    private UnitService unitService;
-
-    @Autowired
     private BillDetailService billDetailService;
+
+   // @Autowired
+   // private UnitService unitService;
+
+    @Autowired
+    private BillService billService;
 
     @RequestMapping("/demo")
     public @ResponseBody String  home(ModelMap mm){
 
-        Bill bill = billService.getBillById(2);
-        bill.setState("Van hop 3");
-        billService.update(bill);
-        return "OK";
+        //return billDetailService.;
+
     }
 
 
