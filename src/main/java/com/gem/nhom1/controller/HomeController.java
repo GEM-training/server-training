@@ -5,6 +5,7 @@ import com.gem.nhom1.dao.DealerDao;
 import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
 import net.arnx.jsonic.JSON;
+import org.hibernate.Hibernate;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -13,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -20,7 +22,6 @@ import java.util.List;
  */
 @Controller
 @RequestMapping("/home")
-@Transactional
 public class HomeController {
     @Autowired
     private DealerService dealerService;
@@ -77,10 +78,11 @@ public class HomeController {
 
 
         //BillDetail billDetail = billDetailService.getBillDetailById(1);
-        Bill bill = billService.getBillById(1);
-
-
-        return JSON.encode(bill.getBillDetail().iterator().next());
+        Bill bill = billService.getBillById(2);
+        bill.setState("Van hop 2");
+        billService.save(bill);
+        //Hibernate.initialize(bill.getBillDetail());
+        return "OK";
     }
 
 

@@ -1,5 +1,7 @@
 package com.gem.nhom1.model;
 
+import org.hibernate.annotations.Fetch;
+
 import javax.persistence.*;
 
 /**
