@@ -9,8 +9,10 @@ import java.util.List;
  */
 public interface PromotionDao {
 
-    public void save(Promotion promotion);
-    public List<Promotion> getListPromotion();
-    public Promotion getPromotionById(int id);
+    public int insert(Promotion promotion);
+    public List<Promotion> getList();
+    public Promotion getById(int id);
+    public boolean delete(int id);
+    public void update(Promotion promotion);
 }
 
