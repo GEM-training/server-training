@@ -18,17 +18,25 @@ import java.util.List;
 public class PromotionServiceImpl implements PromotionService{
 
     @Autowired
-    PromotionDao dao;
+    private PromotionDao dao;
 
-    public void save(Promotion promotion) {
-        dao.save(promotion);
+    public int insert(Promotion promotion) {
+        return dao.insert(promotion);
     }
 
-    public List<Promotion> getListPromotion() {
-        return dao.getListPromotion();
+    public List<Promotion> getList() {
+        return dao.getList();
     }
 
-    public Promotion getPromotionById(int id) {
-        return dao.getPromotionById(id);
+    public Promotion getById(int id) {
+        return dao.getById(id);
+    }
+
+    public boolean delete(int id) {
+        return dao.delete(id);
+    }
+
+    public void update(Promotion promotion) {
+        dao.update(promotion);
     }
 }
