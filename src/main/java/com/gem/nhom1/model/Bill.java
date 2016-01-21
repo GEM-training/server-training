@@ -1,6 +1,8 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * Created by phuongtd on 20/01/2016.
@@ -30,6 +32,9 @@ public class Bill {
     @JoinColumn(name = "staff_id")
     private Staff staff;
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.bill", cascade = CascadeType.ALL)
+    private Set<BillDetail> billDetail = new HashSet<BillDetail>();
+
     public Bill() {
     }
 
@@ -40,6 +45,13 @@ public class Bill {
         this.staff = staff;
     }
 
+    public Set<BillDetail> getBillDetail() {
+        return billDetail;
+    }
+
+    public void setBillDetail(Set<BillDetail> billDetail) {
+        this.billDetail = billDetail;
+    }
 
     public int getBillId() {
         return billId;

@@ -34,6 +34,8 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "unit")
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
+    private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     public Unit() {
     }
@@ -56,6 +58,14 @@ public class Unit {
         this.partOf = partOf;
         this.units = units;
         this.unitDealers = unitDealers;
+    }
+
+    public Set<BillDetail> getBillDetail() {
+        return billDetail;
+    }
+
+    public void setBillDetail(Set<BillDetail> billDetail) {
+        this.billDetail = billDetail;
     }
 
     public Integer getUnitId() {
