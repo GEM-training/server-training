@@ -1,5 +1,4 @@
 package com.gem.nhom1.model;
-
 import javax.persistence.Embeddable;
 import javax.persistence.ManyToOne;
 import java.io.Serializable;

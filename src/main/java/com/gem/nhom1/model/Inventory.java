@@ -34,6 +34,7 @@ public class Inventory {
         this.dealer = dealer;
     }
 
+
     public Inventory(int inventoryId, String name, String address, Dealer dealer, Set<InventoryUnit> inventoryUnits) {
         this.inventoryId = inventoryId;
         this.name = name;
