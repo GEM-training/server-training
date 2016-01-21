@@ -6,6 +6,7 @@ import javax.persistence.*;
  * Created by nghicv on 21/01/2016.
  */
 
+
 @Entity
 @Table(name = "inventory_unit")
 @AssociationOverrides({

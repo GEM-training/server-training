@@ -28,4 +28,7 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
 
     }
 
+    public List<Customer> getListCustomer() {
+        return getSession().createQuery("from Customer").list();
+    }
 }

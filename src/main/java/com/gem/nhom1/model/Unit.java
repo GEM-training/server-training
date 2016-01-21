@@ -136,7 +136,7 @@ public class Unit {
         this.promotions = promotions;
     }
 
-    public Set<InventoryUnit> getInventoryUnits() {
+   public Set<InventoryUnit> getInventoryUnits() {
         return inventoryUnits;
     }
 

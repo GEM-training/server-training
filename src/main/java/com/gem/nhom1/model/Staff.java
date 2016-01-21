@@ -25,7 +25,7 @@ public class Staff {
     @Column(name = "address")
     private String address;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 

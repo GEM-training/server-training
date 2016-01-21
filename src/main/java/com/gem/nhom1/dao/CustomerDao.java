@@ -12,6 +12,7 @@ public interface CustomerDao {
 
     public void save(Customer customer);
 
+
     public List<Customer> getListCustomer();
 
     public Customer getCustomerById(int id);
