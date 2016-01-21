@@ -11,11 +11,8 @@ import java.util.List;
 public interface CustomerDao {
 
     public void save(Customer customer);
-<<<<<<< HEAD
-=======
 
     public List<Customer> getListCustomer();
 
->>>>>>> pull
     public Customer getCustomerById(int id);
 }
