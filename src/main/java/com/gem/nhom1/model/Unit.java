@@ -1,5 +1,7 @@
 package com.gem.nhom1.model;
 
+import javax.persistence.Column;
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -32,7 +34,6 @@ public class Unit {
     private Set<Unit> units;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
-
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
@@ -42,8 +43,9 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
 
     private Set<Promotion> promotions;
-
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit", cascade = CascadeType.ALL)
+
+
 
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
