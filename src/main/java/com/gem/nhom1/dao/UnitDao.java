@@ -8,4 +8,5 @@ import com.gem.nhom1.model.Unit;
 public interface UnitDao {
 
     public void save(Unit unit);
+    public Unit getUnitById(int id);
 }

@@ -7,4 +7,5 @@ import com.gem.nhom1.model.Unit;
  */
 public interface UnitService {
     public void save(Unit unit);
+    public Unit getUnitById(int id);
 }
