@@ -1,7 +1,5 @@
 package com.gem.nhom1.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -28,12 +26,10 @@ public class Staff {
     private String address;
 
     @ManyToOne
-    @JsonIgnore
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "staff")
-    @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>(0);
 
     public Staff() {

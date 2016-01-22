@@ -2,8 +2,8 @@ package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Inventory;
+import com.gem.nhom1.model.InventoryUnit;
 import com.gem.nhom1.service.InventoryService;
-import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -35,6 +36,7 @@ public class InventoryController {
     public @ResponseBody String getList(ModelMap modelMap){
         List<Inventory> inventories = inventoryService.getList();
         int size = inventories.size();
+
         return "Success";
     }
 
@@ -53,10 +55,13 @@ public class InventoryController {
         return "Success";
     }
 
-    @RequestMapping("/item/{id}")
+    @RequestMapping("/{id}")
     public @ResponseBody String getitem(ModelMap modelMap, @PathVariable int id){
         Inventory inventory = inventoryService.getById(id);
         Dealer dealer = inventory.getDealer();
+
+        List<InventoryUnit> inventoryUnit = new ArrayList<InventoryUnit>(inventory.getInventoryUnits());
+
         return "Success";
     }
 

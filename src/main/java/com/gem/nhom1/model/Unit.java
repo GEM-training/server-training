@@ -1,6 +1,7 @@
 package com.gem.nhom1.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import javax.persistence.Column;
+
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -25,28 +26,24 @@ public class Unit {
     private Integer isPart;
 
     @ManyToOne(cascade = CascadeType.ALL)
-    @JsonIgnore
+
     @JoinColumn(name = "PART_OF")
     private Unit partOf;
 
     @OneToMany(mappedBy = "partOf")
-    @JsonIgnore
     private Set<Unit> units;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
-    @JsonIgnore
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
-    @JsonIgnore
+
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
-    @JsonIgnore
     private Set<Promotion> promotions;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit", cascade = CascadeType.ALL)
-    @JsonIgnore
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit")
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
     public Unit() {

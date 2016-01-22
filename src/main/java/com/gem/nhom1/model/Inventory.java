@@ -66,7 +66,7 @@ public class Inventory {
         return dealer;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.inventory", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.inventory")
     public Set<InventoryUnit> getInventoryUnits() {
         return inventoryUnits;
     }

@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
@@ -32,9 +33,10 @@ public class InventoryUnitController {
     private InventoryService inventoryService;
 
     @RequestMapping("/item")
-    public @ResponseBody String getInventoryUnit(ModelMap model){
-        Unit unit = unitService.getById(1);
-        Inventory inventory = inventoryService.getById(1);
+    public @ResponseBody String getInventoryUnit(ModelMap model,  @RequestParam("unit_id") int unit_id,
+                                                 @RequestParam("inventory_id") int inventory_id){
+        Unit unit = unitService.getById(unit_id);
+        Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
         InventoryUnit inventoryUnit = inventoryUnitService.getById(inventoryUnitId);
 
@@ -49,17 +51,23 @@ public class InventoryUnitController {
     }
 
     @RequestMapping("/insert")
-    public @ResponseBody String inSert(ModelMap model){
-        Unit unit = unitService.getById(1);
-        Inventory inventory = inventoryService.getById(1);
+    public @ResponseBody String inSert(ModelMap model, @RequestParam("unit_id") int unit_id,
+                                       @RequestParam("inventory_id") int inventory_id){
+        Unit unit = unitService.getById(unit_id);
+        Inventory inventory = inventoryService.getById(inventory_id);
+
+        InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
+        InventoryUnit inventoryUnit = new InventoryUnit(inventoryUnitId, 200);
+        inventoryUnitService.insert(inventoryUnit);
 
         return "success";
     }
 
     @RequestMapping("/delete")
-    public @ResponseBody String delete(ModelMap model){
-        Unit unit = unitService.getById(1);
-        Inventory inventory = inventoryService.getById(1);
+    public @ResponseBody String delete(ModelMap model, @RequestParam("unit_id") int unit_id,
+                                       @RequestParam("inventory_id") int inventory_id){
+        Unit unit = unitService.getById(unit_id);
+        Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
         boolean deleted = inventoryUnitService.delete(inventoryUnitId);
 
@@ -67,9 +75,10 @@ public class InventoryUnitController {
     }
 
     @RequestMapping("update")
-    public @ResponseBody String update(ModelMap model){
-        Unit unit = unitService.getById(1);
-        Inventory inventory = inventoryService.getById(1);
+    public @ResponseBody String update(ModelMap model, @RequestParam("unit_id") int unit_id,
+                                       @RequestParam("inventory_id") int inventory_id){
+        Unit unit = unitService.getById(unit_id);
+        Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
         InventoryUnit inventoryUnit = inventoryUnitService.getById(inventoryUnitId);
         inventoryUnit.setQuantityInStock(89);
