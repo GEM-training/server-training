@@ -21,7 +21,7 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
     }
 
     public int insert(Customer customer) {
-        return insert(customer);
+        return insertObject(customer);
     }
 
     public boolean delete(int customerId) {

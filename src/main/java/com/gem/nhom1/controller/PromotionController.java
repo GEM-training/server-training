@@ -24,7 +24,8 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/promotion")
-public class PromotionController {
+public class
+PromotionController {
     @Autowired
     private PromotionService promotionService;
     @Autowired
