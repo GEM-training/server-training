@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://172.16.10.202/nhom1</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">postgres"</property>
+
+        <mapping  class="com.gem.nhom1.model.Dealer"></mapping>
+        <mapping class="com.gem.nhom1.model.Bill"></mapping>
+        <mapping class="com.gem.nhom1.model.BillDetail"></mapping>
+        <mapping class="com.gem.nhom1.model.Customer"></mapping>
+        <mapping class="com.gem.nhom1.model.Inventory"></mapping>
+        <mapping class="com.gem.nhom1.model.InventoryUnit"></mapping>
+
+        <mapping class="com.gem.nhom1.model.Staff"></mapping>
+        <mapping class="com.gem.nhom1.model.Promotion"></mapping>
+        <mapping class="com.gem.nhom1.model.Unit"></mapping>
+        <mapping class="com.gem.nhom1.model.UnitDealer"></mapping>
+
+
+
+
+    </session-factory>
+</hibernate-configuration>
