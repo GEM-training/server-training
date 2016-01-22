@@ -1,6 +1,6 @@
 package com.gem.nhom1.service;
 
-import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.*;
 
 import java.util.List;
 
@@ -13,4 +13,13 @@ public interface DealerService {
     public int insert(Dealer dealer);
     public boolean delete(int dealerId);
     public void update(Dealer dealer);
+
+    public List<UnitDealer> getListUnitDealer(int dealerId);
+    public List<Inventory> getListInventory(int dealerId);
+    public List<Staff> getListStaff(int deaerId);
+
+    public List<Bill> getListBill(int dealerId);
+
+    public double getPrice(int dealerId , int unitId);
+
 }

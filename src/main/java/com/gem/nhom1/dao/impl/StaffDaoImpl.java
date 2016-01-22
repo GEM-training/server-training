@@ -12,11 +12,12 @@ import java.util.List;
 @Repository
 public class StaffDaoImpl extends AbstractDao<Integer,Staff> implements StaffDao {
     public Staff getById(int id) {
+        //Staff staff =
         return getByKey(id);
     }
 
     public List<Staff> getList() {
-        return getSession().createQuery("from " + Staff.class).list();
+        return getSession().createQuery("from " + Staff.class.getName()).list();
     }
 
     public int insert(Staff staff) {

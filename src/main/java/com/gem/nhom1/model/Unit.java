@@ -1,5 +1,8 @@
 package com.gem.nhom1.model;
 
+import javax.persistence.Column;
+
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -22,17 +25,19 @@ public class Unit {
     @Column(name = "IS_PART")
     private Integer isPart;
 
-    @ManyToOne(cascade=CascadeType.ALL)
-    @JoinColumn(name="PART_OF")
+    @ManyToOne(cascade = CascadeType.ALL)
+
+    @JoinColumn(name = "PART_OF")
     private Unit partOf;
 
     @OneToMany(mappedBy = "partOf")
     private Set<Unit> units;
 
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "unit")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
+
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
@@ -49,11 +54,10 @@ public class Unit {
         this.isPart = isPart;
     }
 
-    public Unit(Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers) {
+    public Unit(String type, Integer isPart, Unit partOf) {
+        this.type = type;
         this.isPart = isPart;
         this.partOf = partOf;
-        this.units = units;
-        this.unitDealers = unitDealers;
     }
 
     public Unit(String type, Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers) {
@@ -71,6 +75,7 @@ public class Unit {
     public void setBillDetail(Set<BillDetail> billDetail) {
         this.billDetail = billDetail;
     }
+
     public Unit(String type, Integer isPart, Unit partOf, Set<Unit> units, Set<UnitDealer> unitDealers, Set<Promotion> promotions) {
         this.type = type;
         this.isPart = isPart;
@@ -136,7 +141,7 @@ public class Unit {
         this.promotions = promotions;
     }
 
-   public Set<InventoryUnit> getInventoryUnits() {
+    public Set<InventoryUnit> getInventoryUnits() {
         return inventoryUnits;
     }
 

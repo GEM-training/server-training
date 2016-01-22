@@ -34,6 +34,9 @@ public class Dealer {
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
     private Set<Bill> bills = new HashSet<Bill>(0);
 
+    @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
+    private Set<Staff> staffs = new HashSet<Staff>(0);
+
     public Dealer() {
     }
 
@@ -62,6 +65,16 @@ public class Dealer {
         this.inventorys = inventorys;
         this.promotions = promotions;
         this.bills = bills;
+    }
+
+    public Dealer(String name, String address, Set<Inventory> inventorys, Set<UnitDealer> unitDealers, Set<Promotion> promotions, Set<Bill> bills, Set<Staff> staffs) {
+        this.name = name;
+        this.address = address;
+        this.inventorys = inventorys;
+        this.unitDealers = unitDealers;
+        this.promotions = promotions;
+        this.bills = bills;
+        this.staffs = staffs;
     }
 
     public int getDealerId() {
@@ -123,5 +136,13 @@ public class Dealer {
 
     public void setBills(Set<Bill> bills) {
         this.bills = bills;
+    }
+
+    public Set<Staff> getStaffs() {
+        return staffs;
+    }
+
+    public void setStaffs(Set<Staff> staffs) {
+        this.staffs = staffs;
     }
 }

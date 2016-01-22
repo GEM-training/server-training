@@ -2,6 +2,9 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.dao.DealerDao;
 import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.Inventory;
+import com.gem.nhom1.model.Staff;
+import com.gem.nhom1.model.Unit;
 import org.hibernate.Hibernate;
 import org.springframework.stereotype.Repository;
 
@@ -37,4 +40,5 @@ public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements Deal
     public void update(Dealer dealer) {
         updateObject(dealer);
     }
+
 }
