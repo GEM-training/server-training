@@ -1,10 +1,7 @@
 package com.gem.nhom1.controller;
 
 import com.gem.nhom1.dao.BillDao;
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.Customer;
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Staff;
+import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.CustomerService;
 import com.gem.nhom1.service.DealerService;
@@ -83,7 +80,26 @@ public class BillController {
 
         return  billService.delete(billId) + "";
 
+    }
 
+    @RequestMapping("detail/{billId}")
+    public @ResponseBody  String detail(@PathVariable("billId") int billId){
+        String result = "";
+
+        Bill b =billService.getById(billId);
+        Customer customer = b.getCustomer();
+        Dealer dealer = b.getDealer();
+
+        result += "Customer: "+ customer.getName() +"  Dealer: "+ dealer.getName()+" <br>";
+
+        List<BillDetail> billDetails= billService.getListBillDetail( billId);
+
+        for(int i = 0 ; i < billDetails.size() ; i++){
+            BillDetail billDetail  = billDetails.get(i);
+            Unit unit = billDetail.getUnit();
+            result += "Unit type: " + unit.getType() + "  So luong: "+ billDetail.getQuantity()+ "<br>" ;
+        }
+        return result;
     }
 
 }

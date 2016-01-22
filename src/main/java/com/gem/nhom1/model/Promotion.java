@@ -18,7 +18,7 @@ public class Promotion {
     @Column(name = "promotion_id")
     private int id;
 
-    @Column(name = "saleoff")
+    @Column(name = "saleoff" , nullable = false)
     private double saleOff;
 
     @Column(name = "starttime", nullable = false)
@@ -30,11 +30,11 @@ public class Promotion {
     private LocalDate endTime;
 
     @ManyToOne
-    @JoinColumn(name = "unit_id")
+    @JoinColumn(name = "unit_id" ,nullable = false)
     private Unit unit;
 
     @ManyToOne
-    @JoinColumn(name = "dealer_id")
+    @JoinColumn(name = "dealer_id" ,nullable = false)
     private Dealer dealer;
 
     public Promotion(double saleOff, LocalDate startTime, LocalDate endTime, Unit unit, Dealer dealer) {

@@ -50,12 +50,12 @@ public class Inventory {
         return inventoryId;
     }
 
-    @Column(name = "name")
+    @Column(name = "name" , length = 100 , nullable = false)
     public String getName() {
         return name;
     }
 
-    @Column(name = "address")
+    @Column(name = "address" , length = 100 , nullable = true)
     public String getAddress() {
         return address;
     }

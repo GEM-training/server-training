@@ -16,13 +16,13 @@ public class Staff {
     @Column(name = "staff_id")
     private Integer staffId;
 
-    @Column(name = "name")
+    @Column(name = "name" , nullable = false ,length = 50)
     private String name;
 
-    @Column(name = "phone")
+    @Column(name = "phone" ,length = 50)
     private String phone;
 
-    @Column(name = "address")
+    @Column(name = "address" , length = 100)
     private String address;
 
     @ManyToOne
