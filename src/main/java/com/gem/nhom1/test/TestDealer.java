@@ -25,7 +25,7 @@ public class TestDealer {
         factory = new Configuration().configure().buildSessionFactory();
     }
 
-    @Test
+   // @Test
     public void insert() {
         session = factory.openSession();
 
@@ -50,7 +50,7 @@ public class TestDealer {
 
         tx = session.beginTransaction();
 
-        Dealer dealer = (Dealer) session.get(Dealer.class, 14);
+        Dealer dealer = (Dealer) session.get(Dealer.class, 9);
 
         dealer.setName("New Name");
 
@@ -58,7 +58,7 @@ public class TestDealer {
 
         tx.commit();
 
-        Dealer dealer_ = (Dealer) session.get(Dealer.class, 14);
+        Dealer dealer_ = (Dealer) session.get(Dealer.class, 9);
 
         Assert.assertEquals("New Name", dealer_.getName());
 
