@@ -3,6 +3,7 @@ package com.gem.nhom1.service.impl;
 import com.gem.nhom1.dao.InventoryDao;
 import com.gem.nhom1.model.Inventory;
 import com.gem.nhom1.service.InventoryService;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,7 +28,10 @@ public class InventoryServiceImpl implements InventoryService {
     }
 
     public Inventory getById(int id) {
-        return dao.getById(id);
+
+        Inventory inventory = dao.getById(id);
+        Hibernate.initialize(inventory.getInventoryUnits());
+        return inventory;
     }
 
     public boolean delete(int id) {

@@ -38,7 +38,7 @@ public class Unit {
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
     private Set<Promotion> promotions;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit")
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
     public Unit() {

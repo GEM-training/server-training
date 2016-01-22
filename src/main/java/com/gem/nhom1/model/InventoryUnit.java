@@ -21,6 +21,15 @@ public class InventoryUnit {
     @Column(name = "quantity_in_stock")
     private int quantityInStock;
 
+    public InventoryUnit(){
+
+    }
+
+    public InventoryUnit(InventoryUnitId inventoryUnitId, int quantityInStock) {
+        this.inventoryUnitId = inventoryUnitId;
+        this.quantityInStock = quantityInStock;
+    }
+
     @Transient
     public Unit getUnit(){
         return inventoryUnitId.getUnit();
