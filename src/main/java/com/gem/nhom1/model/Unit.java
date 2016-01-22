@@ -19,15 +19,14 @@ public class Unit {
     @Column(name = "UNIT_ID")
     private Integer unitId;
 
-    @Column(name = "TYPE")
+    @Column(name = "TYPE" , length = 50 ,nullable = false)
     private String type;
 
-    @Column(name = "IS_PART")
+    @Column(name = "IS_PART" , nullable = false)
     private Integer isPart;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-
-    @JoinColumn(name = "PART_OF")
+    @ManyToOne
+    @JoinColumn(name = "PART_OF" , nullable = true)
     private Unit partOf;
 
     @OneToMany(mappedBy = "partOf")

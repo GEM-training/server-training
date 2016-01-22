@@ -24,7 +24,7 @@ public class Bill {
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
-    @Column(name = "state")
+    @Column(name = "state" , length = 50)
     private String state;
 
 

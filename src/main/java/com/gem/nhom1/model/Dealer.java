@@ -16,10 +16,10 @@ public class Dealer {
     @Column(name = "dealer_id")
     private int dealerId;
 
-    @Column(name = "name")
+    @Column(name = "name" ,length = 50  , nullable = false)
     private String name;
 
-    @Column(name = "address")
+    @Column(name = "address" ,length = 50 , nullable = false)
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL  , mappedBy = "dealer")

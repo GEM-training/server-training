@@ -16,13 +16,13 @@ public class Customer {
     @Column(name = "CUSTOMER_ID")
     private Integer id;
 
-    @Column(name = "NAME")
+    @Column(name = "NAME" , length = 100 , nullable = false)
     private String name;
 
-    @Column(name = "PHONE")
+    @Column(name = "PHONE" , length =  50 , nullable = false)
     private String phone;
 
-    @Column(name = "ADDRESS")
+    @Column(name = "ADDRESS" ,length = 50 , nullable = false)
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")

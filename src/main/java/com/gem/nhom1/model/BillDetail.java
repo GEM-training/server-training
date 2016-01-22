@@ -19,7 +19,7 @@ public class BillDetail {
     @EmbeddedId
     private BillDetailId pk = new BillDetailId();
 
-    @Column(name = "quantity")
+    @Column(name = "quantity" , length = 32)
     private Integer quantity;
 
     public BillDetail(BillDetailId pk, Integer quantity) {
