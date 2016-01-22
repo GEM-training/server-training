@@ -99,7 +99,7 @@ public class DealerServiceImpl implements DealerService {
 
             List<BillDetail> billDetails = new ArrayList<BillDetail>(result.get(i).getBillDetail());
             for(int j = 0 ; j< billDetails.size() ; j++){
-                BillDetail billDetail = billDetails.get(i);
+                BillDetail billDetail = billDetails.get(j);
                 Hibernate.initialize(billDetail.getUnit());
             }
         }
