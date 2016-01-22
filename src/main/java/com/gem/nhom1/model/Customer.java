@@ -1,6 +1,11 @@
 package com.gem.nhom1.model;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,12 +21,24 @@ public class Customer {
     @Column(name = "CUSTOMER_ID")
     private Integer id;
 
-    @Column(name = "NAME" , length = 100 , nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 3, max = 100, message = "Độ dài tên từ 3 đến 100 kí tự")
+    @Column(name = "NAME")
     private String name;
 
-    @Column(name = "PHONE" , length =  50 , nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 3, max = 50, message = "Độ dài từ phone từ 3 đến 50")
+    @Column(name = "PHONE")
     private String phone;
 
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 1, max = 50, message = "Địa chỉ có độ dài từ 1 đến 50 kí tự")
     @Column(name = "ADDRESS" ,length = 50 , nullable = false)
     private String address;
 

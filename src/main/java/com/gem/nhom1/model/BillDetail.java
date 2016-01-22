@@ -1,8 +1,11 @@
 package com.gem.nhom1.model;
 
 import org.hibernate.annotations.Fetch;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 
 /**
  * Created by vanhop on 1/20/16.
@@ -19,7 +22,9 @@ public class BillDetail {
     @EmbeddedId
     private BillDetailId pk = new BillDetailId();
 
-    @Column(name = "quantity" , length = 32)
+    @Min(value = 0, message = "Không được nhập gía trị âm")
+    @Digits(integer = 10, fraction = 0, message = "Giá trị truyền vào quá lớn")
+    @Column(name = "quantity")
     private Integer quantity;
 
     public BillDetail(BillDetailId pk, Integer quantity) {

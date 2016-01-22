@@ -13,6 +13,8 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import javax.validation.Validation;
+import javax.validation.ValidatorFactory;
 import java.util.Properties;
 
 @Configuration
@@ -56,6 +58,13 @@ public class HibernateConfiguration {
        HibernateTransactionManager txManager = new HibernateTransactionManager();
        txManager.setSessionFactory(s);
        return txManager;
+    }
+
+    @Bean
+    public javax.validation.Validator validator(){
+        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
+        javax.validation.Validator validator = factory.getValidator();
+        return validator;
     }
 
 }

@@ -1,6 +1,11 @@
 package com.gem.nhom1.model;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,10 +21,18 @@ public class Dealer {
     @Column(name = "dealer_id")
     private int dealerId;
 
-    @Column(name = "name" ,length = 50  , nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 3, max = 50, message = "Độ dài tên từ 3 đến 50 kí tự")
+    @Column(name = "name")
     private String name;
 
-    @Column(name = "address" ,length = 50 , nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 2, max = 50, message = "Địa chỉ có độ dài từ 2 đến 50")
+    @Column(name = "address")
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL  , mappedBy = "dealer")

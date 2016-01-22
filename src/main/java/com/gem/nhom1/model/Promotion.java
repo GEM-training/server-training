@@ -1,9 +1,15 @@
 package com.gem.nhom1.model;
 
 import org.hibernate.annotations.Type;
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
 import org.joda.time.LocalDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 /**
  * Created by nghicv on 20/01/2016.
@@ -18,14 +24,18 @@ public class Promotion {
     @Column(name = "promotion_id")
     private int id;
 
-    @Column(name = "saleoff" , nullable = false)
+    @Min(value = 0, message = "Không được nhập số âm")
+    @Digits(integer = 10,fraction = 2, message = "Số quá lớn")
+    @Column(name = "saleoff")
     private double saleOff;
 
-    @Column(name = "starttime", nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @Column(name = "starttime")
     @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     private LocalDate startTime;
 
-    @Column(name = "endtime", nullable = false)
+    @NotNull(message = "Trường không được để rỗng")
+    @Column(name = "endtime")
     @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
     private LocalDate endTime;
 

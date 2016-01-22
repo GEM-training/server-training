@@ -42,9 +42,12 @@ public class BillServiceImpl implements BillService {
     }
 
     public List<BillDetail> getListBillDetail(int billId){
+
         Bill bill = getById(billId);
         Hibernate.initialize(bill.getBillDetail());
         List<BillDetail> billDetails = new ArrayList<BillDetail>(bill.getBillDetail());
+
+
 
         return billDetails;
     }

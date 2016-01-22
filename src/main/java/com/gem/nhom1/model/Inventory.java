@@ -1,6 +1,11 @@
 package com.gem.nhom1.model;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -50,12 +55,17 @@ public class Inventory {
         return inventoryId;
     }
 
+    @NotNull(message = "Trường không được để rỗng")
+    @NotBlank(message = "Trường không được để rỗng")
+    @NotEmpty(message = "Trường không được để rỗng")
+    @Length(min = 3, max = 100, message = "Tên kho có độ dài từ 3 đến 100 kí tự")
     @Column(name = "name" , length = 100 , nullable = false)
     public String getName() {
         return name;
     }
 
-    @Column(name = "address" , length = 100 , nullable = true)
+    @Length(max = 100, message = "Độ dài địa chỉ không vượt quá 100")
+    @Column(name = "address")
     public String getAddress() {
         return address;
     }

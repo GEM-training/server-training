@@ -1,6 +1,8 @@
 package com.gem.nhom1.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Min;
 
 /**
  * Created by nghicv on 21/01/2016.
@@ -18,6 +20,8 @@ public class InventoryUnit {
     @EmbeddedId
     private InventoryUnitId inventoryUnitId;
 
+    @Min(value = 0, message = "Không được nhập giá trị âm")
+    @Digits(integer = 10,fraction = 0, message = "Số quá lớn")
     @Column(name = "quantity_in_stock")
     private int quantityInStock;
 

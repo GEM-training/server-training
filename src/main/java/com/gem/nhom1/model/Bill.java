@@ -1,6 +1,11 @@
 package com.gem.nhom1.model;
 
+import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -24,6 +29,10 @@ public class Bill {
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
+    @NotNull(message = "Trường này không được rỗng")
+    @NotEmpty(message = "Trường này không được rỗng")
+    @NotBlank(message = "Trường này không được rỗng")
+    @Length(min = 1, max = 1, message = "Trạng thái không hợp lệ")
     @Column(name = "state" , length = 50)
     private String state;
 
