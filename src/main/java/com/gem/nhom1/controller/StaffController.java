@@ -35,17 +35,17 @@ public class StaffController {
 
     @RequestMapping("/query/{id}")
     public @ResponseBody String query(@PathVariable("id") Integer id){
-        return staffService.getById(id).getName();
+        Staff staff = staffService.getById(id);
+        Dealer dealer = staff.getDealer();
+
+        return "Success";
     }
 
     @RequestMapping("/query/all")
-    public @ResponseBody List<Staff> queryAll(){
-        String str = "";
+    public @ResponseBody String queryAll(){
         List<Staff> staffList = staffService.getList();
-        /*int i = 0;
-        for(Staff staff : staffList)
-            str += (++i) + "\t" + staff.getName() + ",";*/
-        return staffList;
+
+        return "Success";
     }
 
     @RequestMapping("/update/{id}")

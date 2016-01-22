@@ -13,7 +13,7 @@ public interface UnitDealerService {
 
     public UnitDealer getById(UnitDealerId id);
     public List<UnitDealer> getList();
-    public int insert(UnitDealer unitDealer);
+    public UnitDealerId insert(UnitDealer unitDealer);
     public boolean delete(UnitDealerId id);
     public void update(UnitDealer unitDealer);
 

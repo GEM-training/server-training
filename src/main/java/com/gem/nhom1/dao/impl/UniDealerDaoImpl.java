@@ -14,9 +14,6 @@ import java.util.List;
 @Repository
 public class UniDealerDaoImpl extends AbstractDao<UnitDealerId,UnitDealer> implements UnitDealerDao {
     public UnitDealer getById(UnitDealerId id) {
-       // String SQL = "select * from dealer_unit ud where ud.unit_id = :unitId and ud.delaer_id = :dealerId";
-
-       // return getSession().createSQLQuery(SQL);
         return getByKey(id);
     }
 
@@ -29,7 +26,13 @@ public class UniDealerDaoImpl extends AbstractDao<UnitDealerId,UnitDealer> imple
     }
 
     public boolean delete(UnitDealerId id) {
-        return false;
+        try{
+            UnitDealer unitDealer = getByKey(id);
+            deleteObject(unitDealer);
+        } catch (Exception e){
+            return false;
+        }
+        return true;
     }
 
     public void update(UnitDealer unitDealer) {

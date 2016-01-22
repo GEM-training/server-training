@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public class StaffDaoImpl extends AbstractDao<Integer,Staff> implements StaffDao {
     public Staff getById(int id) {
-        //Staff staff =
         return getByKey(id);
     }
 

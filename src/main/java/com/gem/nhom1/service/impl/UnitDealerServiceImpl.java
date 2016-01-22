@@ -24,18 +24,20 @@ public class UnitDealerServiceImpl implements UnitDealerService{
     }
 
     public List<UnitDealer> getList() {
-        return null;
+
+        return unitDealerDao.getList();
     }
 
-    public int insert(UnitDealer unitDealer) {
-        return 0;
+    public UnitDealerId insert(UnitDealer unitDealer) {
+        return unitDealerDao.insert(unitDealer);
     }
 
     public boolean delete(UnitDealerId id) {
-        return false;
+
+        return unitDealerDao.delete(id);
     }
 
     public void update(UnitDealer unitDealer) {
-
+        unitDealerDao.update(unitDealer);
     }
 }

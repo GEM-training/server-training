@@ -56,7 +56,7 @@ public class UnitDealer  implements java.io.Serializable {
         this.dealer = dealer;
     }
 
-    @ManyToOne(fetch=FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name="unit_id", nullable=false, insertable=false, updatable=false)
     public Unit getUnit() {
         return this.unit;

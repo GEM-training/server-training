@@ -15,8 +15,7 @@ import java.util.List;
 public class UnitDaoImpl extends AbstractDao<Integer,Unit> implements UnitDao {
 
     public Unit getById(int id) {
-        Unit unit = getByKey(id);
-        return unit;
+        return getByKey(id);
     }
 
     public List<Unit> getList() {
