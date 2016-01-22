@@ -36,6 +36,6 @@ public class BillDetailDaoImpl extends AbstractDao<BillDetailId , BillDetail> im
     }
 
     public void update(BillDetail billDetail) {
-
+        updateObject(billDetail);
     }
 }

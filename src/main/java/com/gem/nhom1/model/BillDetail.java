@@ -22,6 +22,14 @@ public class BillDetail {
     @Column(name = "quantity")
     private Integer quantity;
 
+    public BillDetail(BillDetailId pk, Integer quantity) {
+        this.pk = pk;
+        this.quantity = quantity;
+    }
+
+    public BillDetail() {
+    }
+
     @Transient
     public Unit getUnit(){
         return pk.getUnit();
