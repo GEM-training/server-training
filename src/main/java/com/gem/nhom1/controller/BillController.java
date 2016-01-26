@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -40,20 +41,9 @@ public class BillController {
 
 
     @RequestMapping("/insert")
-    public
-    @ResponseBody
-    String insert() {
+    public @ResponseBody String insert(@RequestBody Bill bill) {
 
-        Dealer dealer = dealerService.getById(1);
-        Customer customer = customerService.getById(1);
-        Staff staff = staffService.getById(1);
-
-        Bill bill = new Bill();
-        bill.setDealer(dealer);
-        bill.setCustomer(customer);
-
-        bill.setState("Demo state");
-        return billService.insert(bill) + " ";
+        return billService.insert(bill) + "";
     }
 
     @RequestMapping("/update")
