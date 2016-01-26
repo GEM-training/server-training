@@ -68,61 +68,11 @@ public class DealerController {
     }
 
     @RequestMapping("/detail/{dealerId}")
-    public @ResponseBody String detail(@PathVariable("dealerId") int dealerId){
-        String result = "";
+    public @ResponseBody Dealer detail(@PathVariable("dealerId") int dealerId){
         Dealer d = dealerService.getById(dealerId);
-        result +=   "ID: " + d.getDealerId()+ " Name: "+ d.getName() + " Address: " +  d.getAddress() +" <br><hr>";
 
-        result += "<h3>Danh sach cac Unit</h3>";
-        List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
-        for(int i =0 ; i< unitDealers.size() ; i++){
-            UnitDealer unitDealer = unitDealers.get(i);
-            Unit unit = unitDealer.getUnit();
-            result += "Unit ID: "+unit.getUnitId() + " Type: " + unit.getType() + " Price: " +unitDealer.getPrice() + "<br>";
-        }
 
-        result += "<hr><h3>Danh sach cac Inventory</h3>";
-        List<Inventory> inventories = dealerService.getListInventory(dealerId);
-        for(int i = 0 ; i< inventories.size(); i++){
-            Inventory inventory = inventories.get(i);
-            result += "Inventory ID: " + inventory.getInventoryId() + " Name: " + inventory.getName() + " Address: " + inventory.getAddress() + "<br>";
-        }
-
-        result += "<hr><h3>Danh sach cac Staff</h3>";
-
-        List<Staff> staffs = dealerService.getListStaff(dealerId);
-        for(int i = 0 ; i < staffs.size() ; i++){
-            Staff staff = staffs.get(i);
-            result += "Staff ID: " + staff.getStaffId() + " Name: " + staff.getName() + " Address: " + staff.getAddress() + " Phone: "+ staff.getPhone();
-        }
-
-        result += "<hr><h3>Danh sach cac Bill v BillDetail</h3>";
-
-        List<Bill> bills = dealerService.getListBill(dealerId);
-
-        double Total = 0;
-
-        for(int i = 0 ; i < bills.size() ; i++){
-            double total = 0;
-            Bill bill = bills.get(i);
-            result += "<br>Bill ID: " + bill.getBillId() + " Customer: " + bill.getCustomer().getName() + " State: "+ bill.getState() + "<br>Detail:<br>" ;
-
-            List<BillDetail> billDetails = new ArrayList<BillDetail>( bill.getBillDetail() );
-
-            for(int j = 0 ; j < billDetails.size() ; j++){
-
-                BillDetail billDetail1 = billDetails.get(j);
-                total = total + billDetail1.getQuantity() * dealerService.getPrice(dealerId , billDetail1.getUnit().getUnitId());
-                result += "Unit: " + billDetail1.getUnit().getType() + " So luong: " + billDetail1.getQuantity() + "<br>";
-            }
-            result += "Sum = "+ total+ "<br>";
-            Total += total;
-            result += "<br>-----<br>";
-
-        }
-        result += "=> Total: " +Total;
-
-        return result;
+        return d;
 
     }
 

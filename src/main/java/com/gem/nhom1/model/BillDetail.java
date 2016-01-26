@@ -1,5 +1,6 @@
 package com.gem.nhom1.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.annotations.Fetch;
 import org.hibernate.validator.constraints.Length;
 
@@ -20,6 +21,7 @@ import javax.validation.constraints.Min;
 public class BillDetail {
 
     @EmbeddedId
+    @JsonIgnore
     private BillDetailId pk = new BillDetailId();
 
     @Min(value = 0, message = "Không được nhập gía trị âm")

@@ -38,7 +38,9 @@ public class BillController {
 
 
     @RequestMapping("/insert")
-    public @ResponseBody String insert(){
+    public
+    @ResponseBody
+    String insert() {
 
         Dealer dealer = dealerService.getById(1);
         Customer customer = customerService.getById(1);
@@ -50,11 +52,13 @@ public class BillController {
         bill.setStaff(staff);
 
         bill.setState("Demo state");
-        return billService.insert(bill)+" ";
+        return billService.insert(bill) + " ";
     }
 
     @RequestMapping("/update")
-    public @ResponseBody String update(){
+    public
+    @ResponseBody
+    String update() {
 
         Bill bill = billService.getById(3);
         bill.setState("Update state");
@@ -63,43 +67,35 @@ public class BillController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody String list(){
+    public
+    @ResponseBody
+    String list() {
 
         List<Bill> bills = billService.getList();
         String kq = "";
 
-        for(int i = 0; i<bills.size() ; i++)
-        {
-            kq = kq + "Bill id: " + bills.get(i).getBillId() + " State: " +  bills.get(i).getState() + "<br>";
+        for (int i = 0; i < bills.size(); i++) {
+            kq = kq + "Bill id: " + bills.get(i).getBillId() + " State: " + bills.get(i).getState() + "<br>";
         }
         return kq;
     }
 
     @RequestMapping("delete/{billId}")
-    public  @ResponseBody String delete(@PathVariable("billId") int billId){
+    public
+    @ResponseBody
+    String delete(@PathVariable("billId") int billId) {
 
-        return  billService.delete(billId) + "";
+        return billService.delete(billId) + "";
 
     }
 
     @RequestMapping("detail/{billId}")
-    public @ResponseBody  String detail(@PathVariable("billId") int billId){
-        String result = "";
+    public
+    @ResponseBody
+    Bill detail(@PathVariable("billId") int billId) {
 
-        Bill b =billService.getById(billId);
-        Customer customer = b.getCustomer();
-        Dealer dealer = b.getDealer();
-
-        result += "Customer: "+ customer.getName() +"  Dealer: "+ dealer.getName()+" <br>";
-
-        List<BillDetail> billDetails= billService.getListBillDetail( billId);
-
-        for(int i = 0 ; i < billDetails.size() ; i++){
-            BillDetail billDetail  = billDetails.get(i);
-            Unit unit = billDetail.getUnit();
-            result += "Unit type: " + unit.getType() + "  So luong: "+ billDetail.getQuantity()+ "<br>" ;
-        }
-        return result;
+        Bill b = billService.getById(billId);
+        return b;
     }
 
 }

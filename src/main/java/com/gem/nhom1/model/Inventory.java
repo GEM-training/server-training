@@ -1,5 +1,7 @@
 package com.gem.nhom1.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -72,11 +74,13 @@ public class Inventory {
 
     @ManyToOne
     @JoinColumn(name = "dealer_id" , nullable = false)
+    @JsonIgnore
     public Dealer getDealer() {
         return dealer;
     }
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.inventory")
+    @JsonIgnore
     public Set<InventoryUnit> getInventoryUnits() {
         return inventoryUnits;
     }

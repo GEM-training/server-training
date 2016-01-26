@@ -1,5 +1,6 @@
 package com.gem.nhom1.model;
 
+import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -40,19 +41,23 @@ public class Unit {
     private Unit partOf;
 
     @OneToMany(mappedBy = "partOf")
+    @JsonIgnore
     private Set<Unit> units;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
+    @JsonIgnore
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.unit", cascade = CascadeType.ALL)
-
+    @JsonIgnore
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "unit")
+    @JsonIgnore
     private Set<Promotion> promotions;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "inventoryUnitId.unit")
+    @JsonIgnore
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();
 
     public Unit() {

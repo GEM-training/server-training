@@ -1,5 +1,8 @@
 package com.gem.nhom1.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
@@ -13,9 +16,11 @@ import java.io.Serializable;
 public class BillDetailId implements Serializable{
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonManagedReference
     private Bill bill;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonManagedReference
     private Unit unit;
 
     public BillDetailId() {

@@ -1,5 +1,8 @@
 package com.gem.nhom1.model;
 
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -23,10 +26,12 @@ public class Bill {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
+    @JsonManagedReference
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "dealer_id")
+    @JsonManagedReference
     private Dealer dealer;
 
     @NotNull(message = "Trường này không được rỗng")
@@ -36,12 +41,13 @@ public class Bill {
     @Column(name = "state" , length = 50)
     private String state;
 
-
     @ManyToOne
     @JoinColumn(name = "staff_id")
+    @JsonManagedReference
     private Staff staff;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.bill", cascade = CascadeType.ALL)
+    @JsonIgnore
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     public Bill() {
