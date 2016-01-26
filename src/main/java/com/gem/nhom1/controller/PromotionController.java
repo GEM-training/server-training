@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -39,8 +40,8 @@ PromotionController {
     String insert(ModelMap modelMap){
         Dealer dealer = dealerService.getById(1);
         Unit unit = unitService.getById(1);
-        LocalDate start = new LocalDate("2016-12-20");
-        LocalDate end = new LocalDate("2016-11-20");
+        Date start = new Date("2016-12-20");
+        Date end = new Date("2016-11-20");
         Promotion promotion = new Promotion(0.5, start, end, unit, dealer);
         int id = promotionService.insert(promotion);
         return "Success";

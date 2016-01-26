@@ -7,6 +7,8 @@ import com.gem.nhom1.service.CustomerService;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -90,12 +92,22 @@ public class BillController {
     }
 
     @RequestMapping("detail/{billId}")
-    public
-    @ResponseBody
-    Bill detail(@PathVariable("billId") int billId) {
+    public  @ResponseBody Bill detail(@PathVariable("billId") int billId) {
+        Bill bill;
 
-        Bill b = billService.getById(billId);
-        return b;
+        bill = billService.getById(billId);
+        return bill;
     }
+
+    @RequestMapping("/listDetail/{billId}")
+    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
+        List<BillDetail> billDetails= billService.getListBillDetail(billId);
+
+        return billDetails;
+
+    }
+
+
+
 
 }

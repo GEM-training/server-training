@@ -3,6 +3,7 @@ package com.gem.nhom1.controller;
 import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -66,6 +67,7 @@ public class DealerController {
 
         return "Delete: "+ dealerService.delete(dealerId);
     }
+
 
     @RequestMapping("/detail/{dealerId}")
     public @ResponseBody Dealer detail(@PathVariable("dealerId") int dealerId){

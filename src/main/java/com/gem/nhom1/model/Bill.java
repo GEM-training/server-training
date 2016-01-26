@@ -8,6 +8,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -44,6 +45,14 @@ public class Bill {
     @JoinColumn(name = "staff_id")
     @JsonManagedReference
     private Staff staff;
+
+    @Column(name = "create_date")
+   // @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDate")
+    private Date ceateDate;
+
+    @Column(name = "update_date")
+   // @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDate")
+    private Date updateDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.bill", cascade = CascadeType.ALL)
     @JsonIgnore
@@ -109,5 +118,31 @@ public class Bill {
 
     public void setStaff(Staff staff) {
         this.staff = staff;
+    }
+
+    public Date getCeateDate() {
+        return ceateDate;
+    }
+
+    public void setCeateDate(Date ceateDate) {
+        this.ceateDate = ceateDate;
+    }
+
+    public Date getUpdateDate() {
+        return updateDate;
+    }
+
+    public void setUpdateDate(Date updateDate) {
+        this.updateDate = updateDate;
+    }
+
+    public Bill(Customer customer, Dealer dealer, String state, Staff staff, Date ceateDate, Date updateDate, Set<BillDetail> billDetail) {
+        this.customer = customer;
+        this.dealer = dealer;
+        this.state = state;
+        this.staff = staff;
+        this.ceateDate = ceateDate;
+        this.updateDate = updateDate;
+        this.billDetail = billDetail;
     }
 }

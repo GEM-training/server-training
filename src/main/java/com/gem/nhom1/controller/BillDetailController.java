@@ -55,15 +55,7 @@ public class BillDetailController {
 
         return "Size: " + billDetailService.getList().size();
     }
-
-    @RequestMapping("/query")
-    public @ResponseBody BillDetail query(){
-        Unit unit = unitService.getById(3);
-        Bill bill = billService.getById(2);
-        BillDetail billDetail = billDetailService.getById(new BillDetailId(bill,unit));
-        return billDetail;
-    }
-
+    
     @RequestMapping("/update/{unitId}/{billId}/{quantity}")
     public @ResponseBody String update( @PathVariable("unitId") int unitId ,@PathVariable("billId") int billId , @PathVariable("quantity") int quantity){
 
@@ -95,6 +87,7 @@ public class BillDetailController {
 
         return billDetailService.delete(billDetailId)+" ";
     }
+
 
 
 }

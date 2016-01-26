@@ -1,6 +1,7 @@
 package com.gem.nhom1.model;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import org.hibernate.annotations.Fetch;
 import org.hibernate.validator.constraints.Length;
 
@@ -47,6 +48,7 @@ public class BillDetail {
     }
 
     @Transient
+    @JsonIgnore
     public Bill getBill(){
         return pk.getBill();
     }

@@ -1,6 +1,7 @@
 package com.gem.nhom1.test;
 
 import com.gem.nhom1.model.*;
+import com.gem.nhom1.service.DealerService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,6 +9,8 @@ import org.hibernate.cfg.Configuration;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +20,14 @@ import static org.junit.Assert.assertEquals;
 /**
  * Created by phuongtd on 22/01/2016.
  */
+@ComponentScan("con.grm.nhom1")
 public class TestDealer {
 
     private SessionFactory factory;
     private Session session;
     private Transaction tx;
 
-    private int IdTestUpdate = 9;
+    private int IdTestUpdate = 15;
 
     private int IdTestDeleteExit = 10;
 
@@ -31,22 +35,27 @@ public class TestDealer {
 
     private int IdTestDetail = 1;
 
+    @Autowired
+    private DealerService dealerService;
+
     @Before
     public void setUp() {
         factory = new Configuration().configure().buildSessionFactory();
     }
 
-    //@Test
+    @Test
     public void insert() {
-        session = factory.openSession();
+       // session = factory.openSession();
 
-        tx = session.beginTransaction();
+      //  tx = session.beginTransaction();
 
 
         Dealer dealer = new Dealer("Insert Normal", "Insert Normal");
 
-        int id = (Integer) session.save(dealer);
-        tx.commit();
+       // int id = (Integer) session.save(dealer);
+       // tx.commit();
+
+        int id = dealerService.insert(dealer);
 
         Dealer kq = (Dealer) session.get(Dealer.class, id);
 
@@ -174,7 +183,7 @@ public class TestDealer {
 
         List<Dealer> dealers = session.createQuery("from Dealer").list();
 
-        Assert.assertEquals(6  , dealers.size());
+        Assert.assertEquals(10  , dealers.size());
         tx.commit();
 
     }
@@ -204,7 +213,7 @@ public class TestDealer {
 
         List<Inventory> inventories = new ArrayList<Inventory>(dealer.getInventorys());
 
-        Assert.assertEquals(2 , inventories.size());
+        Assert.assertEquals(1 , inventories.size());
 
         tx.commit();
 
