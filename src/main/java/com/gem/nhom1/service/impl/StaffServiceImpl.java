@@ -23,7 +23,6 @@ public class StaffServiceImpl implements StaffService {
 
     public Staff getById(int id) {
         Staff staff = staffDao.getById(id);
-        Hibernate.initialize(staff.getDealer());
         return staff;
     }
 
