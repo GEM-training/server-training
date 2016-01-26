@@ -34,11 +34,11 @@ public class StaffController {
     }
 
     @RequestMapping("/query/{id}")
-    public @ResponseBody String query(@PathVariable("id") Integer id){
+    public @ResponseBody Staff query(@PathVariable("id") Integer id){
         Staff staff = staffService.getById(id);
-        Dealer dealer = staff.getDealer();
+        //Dealer dealer = staff.getDealer();
 
-        return "Success";
+        return staff;
     }
 
     @RequestMapping("/query/all")

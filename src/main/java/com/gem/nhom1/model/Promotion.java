@@ -4,7 +4,7 @@ import org.hibernate.annotations.Type;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
-import org.joda.time.LocalDate;
+import java.util.Date;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
@@ -31,13 +31,11 @@ public class Promotion {
 
     @NotNull(message = "Trường không được để rỗng")
     @Column(name = "starttime")
-    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-    private LocalDate startTime;
+    private Date startTime;
 
     @NotNull(message = "Trường không được để rỗng")
     @Column(name = "endtime")
-    @Type(type="org.jadira.usertype.dateandtime.joda.PersistentLocalDate")
-    private LocalDate endTime;
+    private Date endTime;
 
     @ManyToOne
     @JoinColumn(name = "unit_id" ,nullable = false)
@@ -47,7 +45,7 @@ public class Promotion {
     @JoinColumn(name = "dealer_id" ,nullable = false)
     private Dealer dealer;
 
-    public Promotion(double saleOff, LocalDate startTime, LocalDate endTime, Unit unit, Dealer dealer) {
+    public Promotion(double saleOff, Date startTime, Date endTime, Unit unit, Dealer dealer) {
         this.saleOff = saleOff;
         this.startTime = startTime;
         this.endTime = endTime;
@@ -67,11 +65,11 @@ public class Promotion {
         this.saleOff = saleOff;
     }
 
-    public void setStartTime(LocalDate startTime) {
+    public void setStartTime(Date startTime) {
         this.startTime = startTime;
     }
 
-    public void setEndTime(LocalDate endTime) {
+    public void setEndTime(Date endTime) {
         this.endTime = endTime;
     }
 
@@ -95,11 +93,11 @@ public class Promotion {
         return saleOff;
     }
 
-    public LocalDate getStartTime() {
+    public Date getStartTime() {
         return startTime;
     }
 
-    public LocalDate getEndTime() {
+    public Date getEndTime() {
         return endTime;
     }
 

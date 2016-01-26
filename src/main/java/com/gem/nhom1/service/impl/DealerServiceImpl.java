@@ -32,7 +32,11 @@ public class DealerServiceImpl implements DealerService {
 
 
     public Dealer getById(int id) {
-        return dealerDao.getById(id);
+
+        Dealer dealer = dealerDao.getById(id);
+        Hibernate.initialize(dealer.getStaffs());
+        Hibernate.initialize(dealer.getInventorys());
+        return dealer;
     }
 
     public List<Dealer> getList() {

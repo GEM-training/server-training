@@ -25,8 +25,7 @@ public class CustomerController {
     private CustomerService customerService;
     @Autowired
     private javax.validation.Validator validator;
-
-    @RequestMapping(value = "/insert", produces = "text/html; charset=utf-8")
+    @RequestMapping(value = "/insert")
     public @ResponseBody String insert() {
 
         Customer customer = new Customer("Nguyen Van A", null, "Ha Noi");
@@ -42,13 +41,11 @@ public class CustomerController {
     }
 
     @RequestMapping("/query/{id}")
-    public
-    @ResponseBody
-    String query(@PathVariable("id") Integer id) {
+    public @ResponseBody Customer query(@PathVariable("id") Integer id) {
 
         Customer customer = customerService.getById(id);
 
-        return "Success";
+        return customer;
 
     }
 

@@ -1,5 +1,9 @@
 package com.gem.nhom1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonBackReference;
+
+import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -36,18 +40,23 @@ public class Dealer {
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL  , mappedBy = "dealer")
+    @JsonIgnore
     private Set<Inventory> inventorys = new HashSet<Inventory>(0) ;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer" , fetch = FetchType.LAZY)
+    @JsonIgnore
     private Set<UnitDealer> unitDealers = new HashSet<UnitDealer>(0);
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "dealer")
+    @JsonIgnore
     private Set<Promotion> promotions = new HashSet<Promotion>(0);
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
+    @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>(0);
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer")
+    @JsonIgnore
     private Set<Staff> staffs = new HashSet<Staff>(0);
 
     public Dealer() {

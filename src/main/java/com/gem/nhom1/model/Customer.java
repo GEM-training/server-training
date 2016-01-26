@@ -1,5 +1,6 @@
 package com.gem.nhom1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -43,6 +44,7 @@ public class Customer {
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")
+    @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>();
 
     public Customer() {
