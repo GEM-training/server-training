@@ -2,6 +2,8 @@ package com.gem.nhom1.model;
 // Generated Jan 20, 2016 8:31:28 PM by Hibernate Tools 4.3.1
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.AttributeOverride;
 import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
@@ -40,6 +42,7 @@ public class UnitDealer implements java.io.Serializable {
     @AttributeOverrides({
             @AttributeOverride(name = "unitId", column = @Column(name = "unit_id", nullable = false)),
             @AttributeOverride(name = "dealerId", column = @Column(name = "dealer_id", nullable = false))})
+    @JsonIgnore
     public UnitDealerId getId() {
         return this.id;
     }
@@ -50,6 +53,7 @@ public class UnitDealer implements java.io.Serializable {
 
     @ManyToOne
     @JoinColumn(name = "dealer_id", nullable = false, insertable = false, updatable = false)
+    @JsonIgnore
     public Dealer getDealer() {
         return this.dealer;
     }

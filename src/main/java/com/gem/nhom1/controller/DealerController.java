@@ -52,14 +52,10 @@ public class DealerController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody String list(){
+    public @ResponseBody List<Dealer> list(){
         List<Dealer> list = dealerService.getList();
-        String result = "";
-        for(int i = 0 ; i < list.size() ; i++){
-            Dealer d = list.get(i);
-            result = result + "ID: " + d.getDealerId()+ " Name: "+ d.getName() + " Address: " +  d.getAddress() +" <br><hr>";
-        }
-        return result;
+
+        return list;
     }
 
     @RequestMapping("/delete/{dealerId}")
@@ -75,6 +71,50 @@ public class DealerController {
 
 
         return d;
+
+    }
+
+    @RequestMapping("/getListInventory/{dealerId}")
+    public @ResponseBody List<Inventory> getListInventory(@PathVariable("dealerId") int dealerId){
+        List<Inventory> inventories = dealerService.getListInventory(dealerId);
+
+        return  inventories;
+    }
+
+    @RequestMapping("/getListStaff/{dealerId}")
+    public @ResponseBody List<Staff> getListStaff(@PathVariable("dealerId") int dealerId){
+        List<Staff> staffs = dealerService.getListStaff(dealerId);
+
+        return  staffs;
+    }
+
+    @RequestMapping("getListUnit/{dealerId}")
+    public @ResponseBody List<UnitDealer> getListUnitDealers(@PathVariable("dealerId") int dealerId){
+        List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
+
+        return  unitDealers;
+    }
+
+    @RequestMapping("getListBill/{dealerId}")
+    public @ResponseBody List<Bill> getListBill(@PathVariable("dealerId") int dealerId){
+        List<Bill> bills = dealerService.getListBill(dealerId);
+
+        return bills;
+    }
+
+    @RequestMapping("billDetail/{billId}")
+    public  @ResponseBody Bill billDetail(@PathVariable("billId") int billId) {
+        Bill bill;
+
+        bill = billService.getById(billId);
+        return bill;
+    }
+
+    @RequestMapping("/listBillDetail/{billId}")
+    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
+        List<BillDetail> billDetails= billService.getListBillDetail(billId);
+
+        return billDetails;
 
     }
 

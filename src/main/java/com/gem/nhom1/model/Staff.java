@@ -44,14 +44,12 @@ public class Staff {
 
     @ManyToOne
     @JoinColumn(name = "dealer_id")
-    private Dealer dealer;
-
-    @OneToMany(cascade = CascadeType.ALL , mappedBy = "staff")
     @JsonIgnore
-    private Set<Bill> bills = new HashSet<Bill>(0);
+    private Dealer dealer;
 
     public Staff() {
     }
+
 
     public Staff(String name, String phone, String address, Dealer dealer) {
         this.name = name;
@@ -60,22 +58,6 @@ public class Staff {
         this.dealer = dealer;
     }
 
-    public Staff(String name, String phone, String address, Dealer dealer, Set<Bill> bills) {
-        this.name = name;
-        this.phone = phone;
-        this.address = address;
-        this.dealer = dealer;
-        this.bills = bills;
-    }
-
-    public Set<Bill> getBills() {
-        return bills;
-    }
-
-    public void setBills(Set<Bill> bills) {
-
-        this.bills = bills;
-    }
 
     public Integer getStaffId() {
         return staffId;

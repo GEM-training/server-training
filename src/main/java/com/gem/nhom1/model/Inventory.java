@@ -1,7 +1,7 @@
 package com.gem.nhom1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonBackReference;
-import org.codehaus.jackson.annotate.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -23,6 +23,7 @@ public class Inventory {
     private String address;
 
     private Dealer dealer;
+
 
 
     private Set<InventoryUnit> inventoryUnits = new HashSet<InventoryUnit>();

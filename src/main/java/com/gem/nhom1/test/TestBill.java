@@ -49,7 +49,6 @@ public class TestBill {
         bill.setDealer(dealer);
         bill.setState("Demo State");
         bill.setCustomer(customer);
-        bill.setStaff(staff);
 
         session.persist(bill);
 
@@ -71,7 +70,6 @@ public class TestBill {
        // bill.setDealer(dealer);
         bill.setState("Demo State");
         bill.setCustomer(customer);
-        bill.setStaff(staff);
 
         session.persist(bill);
 
@@ -93,7 +91,6 @@ public class TestBill {
         bill.setDealer(dealer);
         bill.setState("Demo State");
         //bill.setCustomer(customer);
-        bill.setStaff(staff);
 
         session.persist(bill);
 
@@ -137,7 +134,6 @@ public class TestBill {
         bill.setDealer(dealer);
       //  bill.setState("Demo State");
         bill.setCustomer(customer);
-        bill.setStaff(staff);
 
         session.persist(bill);
 
@@ -152,12 +148,10 @@ public class TestBill {
         Bill bill = (Bill) session.get(Bill.class , idBillDetail);
 
         Dealer dealer = bill.getDealer();
-        Staff staff = bill.getStaff();
         Customer customer = bill.getCustomer();
 
         Assert.assertEquals(bill.getState() , "Van hop 3");
         Assert.assertEquals(bill.getDealer().getName() , "Duy Phuong");
-        Assert.assertEquals(bill.getStaff().getName() , "Phuong Nghi");
         Assert.assertEquals(bill.getCustomer().getName() , "hop");
 
         List<BillDetail> billDetails = new ArrayList<BillDetail>(bill.getBillDetail());

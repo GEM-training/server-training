@@ -1,8 +1,8 @@
 package com.gem.nhom1.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonBackReference;
-import org.codehaus.jackson.annotate.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.annotations.Type;
 
 import org.hibernate.validator.constraints.Length;
@@ -45,31 +45,25 @@ public class Bill {
     @Column(name = "state" , length = 50)
     private String state;
 
-    @ManyToOne
-    @JoinColumn(name = "staff_id")
-    @JsonManagedReference
-    private Staff staff;
 
     @Column(name = "create_date")
-   // @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDate")
     private Date ceateDate;
 
     @Column(name = "update_date")
-   // @Type(type="org.jadira.usertype.dateandtime.joda.PersistentDate")
     private Date updateDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.bill", cascade = CascadeType.ALL)
     @JsonIgnore
+    @JsonBackReference
     private Set<BillDetail> billDetail = new HashSet<BillDetail>();
 
     public Bill() {
     }
 
-    public Bill(Customer customer, Dealer dealer, String state, Staff staff) {
+    public Bill(Customer customer, Dealer dealer, String state) {
         this.customer = customer;
         this.dealer = dealer;
         this.state = state;
-        this.staff = staff;
     }
 
     public Set<BillDetail> getBillDetail() {
@@ -100,9 +94,6 @@ public class Bill {
     }
 
 
-    public Staff getStaff() {
-        return staff;
-    }
 
     public void setBillId(int billId) {
         this.billId = billId;
@@ -120,9 +111,6 @@ public class Bill {
         this.state = state;
     }
 
-    public void setStaff(Staff staff) {
-        this.staff = staff;
-    }
 
     public Date getCeateDate() {
         return ceateDate;
@@ -140,11 +128,10 @@ public class Bill {
         this.updateDate = updateDate;
     }
 
-    public Bill(Customer customer, Dealer dealer, String state, Staff staff, Date ceateDate, Date updateDate, Set<BillDetail> billDetail) {
+    public Bill(Customer customer, Dealer dealer, String state, Date ceateDate, Date updateDate, Set<BillDetail> billDetail) {
         this.customer = customer;
         this.dealer = dealer;
         this.state = state;
-        this.staff = staff;
         this.ceateDate = ceateDate;
         this.updateDate = updateDate;
         this.billDetail = billDetail;

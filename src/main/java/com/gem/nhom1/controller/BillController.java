@@ -51,7 +51,6 @@ public class BillController {
         Bill bill = new Bill();
         bill.setDealer(dealer);
         bill.setCustomer(customer);
-        bill.setStaff(staff);
 
         bill.setState("Demo state");
         return billService.insert(bill) + " ";
@@ -90,23 +89,6 @@ public class BillController {
         return billService.delete(billId) + "";
 
     }
-
-    @RequestMapping("detail/{billId}")
-    public  @ResponseBody Bill detail(@PathVariable("billId") int billId) {
-        Bill bill;
-
-        bill = billService.getById(billId);
-        return bill;
-    }
-
-    @RequestMapping("/listDetail/{billId}")
-    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
-        List<BillDetail> billDetails= billService.getListBillDetail(billId);
-
-        return billDetails;
-
-    }
-
 
 
 
