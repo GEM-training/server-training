@@ -40,6 +40,7 @@ public class Staff {
     @JsonIgnore
     private Dealer dealer;
 
+
     public Staff() {
     }
 
@@ -49,12 +50,16 @@ public class Staff {
         this.address = address;
     }
 
+
+
+
     public Staff(String name, String phone, String address, Dealer dealer) {
         this.name = name;
         this.phone = phone;
         this.address = address;
         this.dealer = dealer;
     }
+
 
     public Integer getStaffId() {
         return staffId;

@@ -1,5 +1,6 @@
 package com.gem.nhom1.service;
 
+import com.gem.nhom1.model.Bill;
 import com.gem.nhom1.model.Customer;
 import com.gem.nhom1.model.Unit;
 
@@ -14,4 +15,6 @@ public interface CustomerService {
     public int insert(Customer customer);
     public boolean delete(int customerId);
     public void update(Customer customer);
+
+    public List<Bill> getListBill(int customerId);
 }

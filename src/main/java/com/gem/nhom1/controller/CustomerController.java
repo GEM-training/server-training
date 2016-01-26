@@ -1,6 +1,9 @@
 package com.gem.nhom1.controller;
 
+import com.gem.nhom1.model.Bill;
+import com.gem.nhom1.model.BillDetail;
 import com.gem.nhom1.model.Customer;
+import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validation;
 import javax.validation.ValidatorFactory;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -25,6 +29,10 @@ public class CustomerController {
     private CustomerService customerService;
     @Autowired
     private javax.validation.Validator validator;
+
+    @Autowired
+    private BillService billService;
+
     @RequestMapping(value = "/insert")
     public @ResponseBody String insert() {
 
@@ -40,14 +48,6 @@ public class CustomerController {
         return "Success";
     }
 
-    @RequestMapping("/query/{id}")
-    public @ResponseBody Customer query(@PathVariable("id") Integer id) {
-
-        Customer customer = customerService.getById(id);
-
-        return customer;
-
-    }
 
     @RequestMapping("/update/{id}")
     public @ResponseBody String update(@PathVariable("id") Integer id) {
@@ -66,6 +66,45 @@ public class CustomerController {
 
         return "Success";
     }
+
+    @RequestMapping("/list")
+    public @ResponseBody List<Customer> detail(){
+        List<Customer> customers= customerService.getList();
+
+        return customers;
+    }
+
+    @RequestMapping("/detail/{customerId}")
+    public @ResponseBody Customer detail(@PathVariable("customerId") int customerId){
+        Customer customer = customerService.getById(customerId);
+
+        return customer;
+    }
+
+    @RequestMapping("/getListBill/{customerId}")
+    public @ResponseBody List<Bill> getListBill(@PathVariable("customerId") int customerId){
+        Customer customer = customerService.getById(customerId);
+
+        return customerService.getListBill(customerId);
+    }
+
+    @RequestMapping("billDetail/{billId}")
+    public  @ResponseBody Bill billDetail(@PathVariable("billId") int billId) {
+        Bill bill;
+
+        bill = billService.getById(billId);
+        return bill;
+    }
+
+    @RequestMapping("/listBillDetail/{billId}")
+    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
+        List<BillDetail> billDetails= billService.getListBillDetail(billId);
+
+        return billDetails;
+
+    }
+
+
 
 
 }
