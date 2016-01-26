@@ -5,9 +5,11 @@ import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.rest.core.util.Methods;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -23,45 +25,32 @@ public class StaffController {
     @Autowired
     private DealerService dealerService;
 
-    @RequestMapping("/insert")
-    public @ResponseBody String insert(){
-
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public @ResponseBody void insert(@RequestBody Staff staff){
         Dealer dealer = dealerService.getById(1);
-        Staff staff = new Staff("Nguyen Van Hop","199","Ha Noi",dealer);
+        staff.setDealer(dealer);
         staffService.insert(staff);
-
-        return "Sucess";
     }
 
-    @RequestMapping("/query/{id}")
+    @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
     public @ResponseBody Staff query(@PathVariable("id") Integer id){
         Staff staff = staffService.getById(id);
-        //Dealer dealer = staff.getDealer();
-
         return staff;
     }
 
     @RequestMapping("/query/all")
-    public @ResponseBody String queryAll(){
+    public @ResponseBody List<Staff> queryAll(){
         List<Staff> staffList = staffService.getList();
-
-        return "Success";
+        return staffList;
     }
 
-    @RequestMapping("/update/{id}")
-    public @ResponseBody String update(@PathVariable("id") Integer id){
-        Staff staff = staffService.getById(id);
-        staff.setName("Phuong Nghi");
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public @ResponseBody void update(@RequestBody Staff staff){
         staffService.update(staff);
-
-        return "Success";
     }
 
     @RequestMapping("/delete/{id}")
-    public @ResponseBody String delete(@PathVariable("id") Integer id){
-
-        if(staffService.delete(id))
-            return "Id + " + id + " have deleted";
-        return "there are some error";
+    public @ResponseBody Boolean delete(@PathVariable("id") Integer id){
+        return staffService.delete(id);
     }
 }

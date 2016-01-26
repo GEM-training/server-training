@@ -2,6 +2,9 @@ package com.gem.nhom1.model;
 // Generated Jan 20, 2016 8:31:28 PM by Hibernate Tools 4.3.1
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonBackReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotNull;
@@ -42,6 +45,7 @@ public class UnitDealer implements java.io.Serializable {
 
     @ManyToOne
     @JoinColumn(name = "dealer_id", nullable = false, insertable = false, updatable = false)
+    @JsonIgnore
     public Dealer getDealer() {
         return this.dealer;
     }
@@ -52,6 +56,7 @@ public class UnitDealer implements java.io.Serializable {
 
     @ManyToOne
     @JoinColumn(name = "unit_id", nullable = false, insertable = false, updatable = false)
+    @JsonBackReference
     public Unit getUnit() {
         return this.unit;
     }

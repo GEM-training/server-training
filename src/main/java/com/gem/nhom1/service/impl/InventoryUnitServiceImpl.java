@@ -24,7 +24,7 @@ public class InventoryUnitServiceImpl implements InventoryUnitService{
         return dao.insert(inventoryUnit);
     }
 
-    public List<InventoryUnit> getList() {
+    public List<InventoryUnit> getList(Integer inventoryId) {
         return dao.getList();
     }
 

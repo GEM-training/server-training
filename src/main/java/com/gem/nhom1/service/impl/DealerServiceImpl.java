@@ -115,4 +115,10 @@ public class DealerServiceImpl implements DealerService {
         UnitDealer unitDealer = unitDealerDao.getById(unitDealerId);
         return unitDealer.getPrice();
     }
+
+    public List<Promotion> getListPromotions(int dealerId) {
+        Dealer dealer = getById(dealerId);
+        Hibernate.initialize(dealer.getPromotions());
+        return new ArrayList<Promotion>(dealer.getPromotions());
+    }
 }

@@ -22,4 +22,6 @@ public interface DealerService {
 
     public double getPrice(int dealerId , int unitId);
 
+    public List<Promotion> getListPromotions(int dealerId);
+
 }

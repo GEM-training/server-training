@@ -1,5 +1,8 @@
 package com.gem.nhom1.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Min;
@@ -18,6 +21,7 @@ import javax.validation.constraints.Min;
 public class InventoryUnit {
 
     @EmbeddedId
+    @JsonIgnore
     private InventoryUnitId inventoryUnitId;
 
     @Min(value = 0, message = "Không được nhập giá trị âm")

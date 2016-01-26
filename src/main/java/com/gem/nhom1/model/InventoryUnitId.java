@@ -1,4 +1,8 @@
 package com.gem.nhom1.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonBackReference;
+
 import javax.persistence.Embeddable;
 import javax.persistence.FetchType;
 import javax.persistence.ManyToOne;
@@ -12,9 +16,11 @@ import java.io.Serializable;
 public class InventoryUnitId implements Serializable{
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Inventory inventory;
 
     @ManyToOne(fetch = FetchType.LAZY)
+    @JsonBackReference
     private Unit unit;
 
     public InventoryUnitId(Inventory inventory, Unit unit) {
