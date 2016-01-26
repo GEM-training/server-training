@@ -1,8 +1,6 @@
 package com.gem.nhom1.model;
 
 import org.codehaus.jackson.annotate.JsonBackReference;
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -47,7 +45,6 @@ public class Customer {
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")
     @JsonBackReference
-    @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>();
 
     public Customer() {

@@ -34,8 +34,6 @@ public class DealerServiceImpl implements DealerService {
     public Dealer getById(int id) {
 
         Dealer dealer = dealerDao.getById(id);
-        Hibernate.initialize(dealer.getStaffs());
-        Hibernate.initialize(dealer.getInventorys());
         return dealer;
     }
 
