@@ -1,5 +1,6 @@
 package com.gem.nhom1.model;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonBackReference;
 

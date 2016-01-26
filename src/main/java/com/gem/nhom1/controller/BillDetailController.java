@@ -55,9 +55,7 @@ public class BillDetailController {
 
         return "Size: " + billDetailService.getList().size();
     }
-
-
-
+    
     @RequestMapping("/update/{unitId}/{billId}/{quantity}")
     public @ResponseBody String update( @PathVariable("unitId") int unitId ,@PathVariable("billId") int billId , @PathVariable("quantity") int quantity){
 

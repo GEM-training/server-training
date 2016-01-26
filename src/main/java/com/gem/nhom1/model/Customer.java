@@ -1,6 +1,12 @@
 package com.gem.nhom1.model;
 
+<<<<<<< HEAD
 import com.fasterxml.jackson.annotation.JsonIgnore;
+=======
+import org.codehaus.jackson.annotate.JsonBackReference;
+import org.codehaus.jackson.annotate.JsonIgnore;
+import org.codehaus.jackson.annotate.JsonManagedReference;
+>>>>>>> 9372d19ce35cc9b7362a228ce557f05bfe57b853
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotBlank;
 import org.hibernate.validator.constraints.NotEmpty;
@@ -44,6 +50,10 @@ public class Customer {
     private String address;
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")
+<<<<<<< HEAD
+=======
+    @JsonBackReference
+>>>>>>> 9372d19ce35cc9b7362a228ce557f05bfe57b853
     @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>();
 
