@@ -12,7 +12,7 @@ import java.util.List;
  * Created by vanhop on 1/21/16.
  */
 @Repository
-public class UniDealerDaoImpl extends AbstractDao<UnitDealerId,UnitDealer> implements UnitDealerDao {
+public class UniDealerDaoImpl extends AbstractDao<UnitDealerId, UnitDealer> implements UnitDealerDao {
     public UnitDealer getById(UnitDealerId id) {
         return getByKey(id);
     }
@@ -21,21 +21,16 @@ public class UniDealerDaoImpl extends AbstractDao<UnitDealerId,UnitDealer> imple
         return getSession().createQuery("from " + UnitDealer.class).list();
     }
 
-    public UnitDealerId insert(UnitDealer unitDealer) {
+    public UnitDealerId insert(UnitDealer unitDealer){
         return insertObject(unitDealer);
     }
 
-    public boolean delete(UnitDealerId id) {
-        try{
-            UnitDealer unitDealer = getByKey(id);
-            deleteObject(unitDealer);
-        } catch (Exception e){
-            return false;
-        }
-        return true;
+    public void delete(UnitDealerId id) throws Exception {
+        UnitDealer unitDealer = getByKey(id);
+        deleteObject(unitDealer);
     }
 
-    public void update(UnitDealer unitDealer) {
+    public void update(UnitDealer unitDealer){
         updateObject(unitDealer);
     }
 }

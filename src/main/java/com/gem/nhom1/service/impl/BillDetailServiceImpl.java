@@ -28,15 +28,15 @@ public class BillDetailServiceImpl implements BillDetailService {
         return billDetailDao.getList();
     }
 
-    public BillDetailId insert(BillDetail billDetail) {
+    public BillDetailId insert(BillDetail billDetail){
         return billDetailDao.insert(billDetail);
     }
 
-    public boolean delete(BillDetailId id) {
-        return billDetailDao.delete(id);
+    public void delete(BillDetailId id) throws Exception {
+        billDetailDao.delete(id);
     }
 
-    public void update(BillDetail billDetail) {
+    public void update(BillDetail billDetail){
         billDetailDao.update(billDetail);
     }
 }

@@ -13,7 +13,7 @@ import java.util.List;
  */
 @Repository
 @Transactional
-public class BillDetailDaoImpl extends AbstractDao<BillDetailId , BillDetail> implements BillDetailDao {
+public class BillDetailDaoImpl extends AbstractDao<BillDetailId, BillDetail> implements BillDetailDao {
     public BillDetail getById(BillDetailId id) {
         return getByKey(id);
     }
@@ -22,20 +22,15 @@ public class BillDetailDaoImpl extends AbstractDao<BillDetailId , BillDetail> im
         return getSession().createQuery("from BillDetail").list();
     }
 
-    public BillDetailId insert(BillDetail billDetail) {
+    public BillDetailId insert(BillDetail billDetail){
         return insertObject(billDetail);
     }
 
-    public boolean delete(BillDetailId id) {
-        try {
-            deleteObject(getByKey(id));
-        } catch (Exception e){
-            return false;
-        }
-        return true;
+    public void delete(BillDetailId id) throws Exception {
+        deleteObject(getByKey(id));
     }
 
-    public void update(BillDetail billDetail) {
+    public void update(BillDetail billDetail){
         updateObject(billDetail);
     }
 }

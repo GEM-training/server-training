@@ -13,7 +13,7 @@ public interface CustomerService {
     public Customer getById(int id);
     public List<Customer> getList();
     public int insert(Customer customer);
-    public boolean delete(int customerId);
+    public void delete(int customerId) throws Exception;
     public void update(Customer customer);
 
     public List<Bill> getListBill(int customerId);

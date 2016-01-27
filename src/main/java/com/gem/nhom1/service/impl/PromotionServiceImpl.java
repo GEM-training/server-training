@@ -28,15 +28,15 @@ public class PromotionServiceImpl implements PromotionService{
         return dao.getList();
     }
 
-    public Promotion getById(int id) {
+    public Promotion getById(int id){
         return dao.getById(id);
     }
 
-    public boolean delete(int id) {
-        return dao.delete(id);
+    public void delete(int id) throws Exception {
+        dao.delete(id);
     }
 
-    public void update(Promotion promotion) {
+    public void update(Promotion promotion){
         dao.update(promotion);
     }
 }

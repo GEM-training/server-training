@@ -14,7 +14,7 @@ import java.util.List;
  * Created by phuong on 1/19/2016.
  */
 @Repository
-public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements DealerDao {
+public class DealerDaoImpl extends AbstractDao<Integer, Dealer> implements DealerDao {
 
     public Dealer getById(int id) {
         return getByKey(id);
@@ -24,20 +24,15 @@ public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements Deal
         return getSession().createQuery("from Dealer").list();
     }
 
-    public int insert(Dealer dealer) {
+    public int insert(Dealer dealer){
         return insertObject(dealer);
     }
 
-    public boolean delete(int dealerId) {
-        try{
-            deleteObject(getByKey(dealerId));
-        } catch (Exception e){
-            return false;
-        }
-        return true;
+    public void delete(int dealerId) throws Exception {
+        deleteObject(getByKey(dealerId));
     }
 
-    public void update(Dealer dealer) {
+    public void update(Dealer dealer){
         updateObject(dealer);
     }
 

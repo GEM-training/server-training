@@ -13,7 +13,7 @@ public interface BillDetailService {
     public BillDetail getById(BillDetailId id);
     public List<BillDetail> getList();
     public BillDetailId insert(BillDetail billDetail);
-    public boolean delete(BillDetailId id);
+    public void delete(BillDetailId id) throws Exception;
     public void update(BillDetail billDetail);
 
 }

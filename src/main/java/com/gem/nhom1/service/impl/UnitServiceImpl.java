@@ -37,12 +37,12 @@ public class UnitServiceImpl implements UnitService {
         return unitList;
     }
 
-    public int insert(Unit unit) {
+    public int insert(Unit unit){
         return unitDao.insert(unit);
     }
 
-    public boolean delete(int id) {
-        return unitDao.delete(id);
+    public void delete(int id) throws Exception {
+        unitDao.delete(id);
     }
 
     public void update(Unit unit) {

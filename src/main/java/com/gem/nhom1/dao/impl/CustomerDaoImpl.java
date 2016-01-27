@@ -10,7 +10,7 @@ import java.util.List;
  * Created by vanhop on 1/18/16.
  */
 @Repository
-public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements CustomerDao {
+public class CustomerDaoImpl extends AbstractDao<Integer, Customer> implements CustomerDao {
 
     public Customer getById(int id) {
         return getByKey(id);
@@ -20,20 +20,15 @@ public class CustomerDaoImpl extends AbstractDao<Integer,Customer> implements Cu
         return getSession().createQuery("from Customer").list();
     }
 
-    public int insert(Customer customer) {
+    public int insert(Customer customer){
         return insertObject(customer);
     }
 
-    public boolean delete(int customerId) {
-        try {
-            deleteObject(getByKey(customerId));
-        } catch (Exception e) {
-            return false;
-        }
-        return  true;
+    public void delete(int customerId) throws Exception {
+        deleteObject(getByKey(customerId));
     }
 
-    public void update(Customer customer) {
+    public void update(Customer customer){
         updateObject(customer);
     }
 }

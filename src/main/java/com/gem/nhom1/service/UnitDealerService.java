@@ -14,7 +14,7 @@ public interface UnitDealerService {
     public UnitDealer getById(UnitDealerId id);
     public List<UnitDealer> getList();
     public UnitDealerId insert(UnitDealer unitDealer);
-    public boolean delete(UnitDealerId id);
+    public void delete(UnitDealerId id) throws Exception;
     public void update(UnitDealer unitDealer);
 
 }

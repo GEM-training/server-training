@@ -12,6 +12,6 @@ public interface BillDao {
     public Bill getById(int id);
     public List<Bill> getList();
     public int insert(Bill bill);
-    public boolean delete(int billId);
+    public void delete(int billId) throws Exception;
     public void update(Bill bill);
 }

@@ -30,15 +30,15 @@ public class CustomerServiceImpl implements CustomerService {
         return customerDao.getList();
     }
 
-    public int insert(Customer customer) {
+    public int insert(Customer customer){
         return customerDao.insert(customer);
     }
 
-    public boolean delete(int customerId) {
-        return customerDao.delete(customerId);
+    public void delete(int customerId) throws Exception {
+        customerDao.delete(customerId);
     }
 
-    public void update(Customer customer) {
+    public void update(Customer customer){
         customerDao.update(customer);
     }
 

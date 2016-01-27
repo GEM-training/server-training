@@ -12,7 +12,7 @@ public interface InventoryUnitService {
     public InventoryUnitId insert(InventoryUnit inventoryUnit);
     public List<InventoryUnit> getList(Integer inventoryId);
     public InventoryUnit getById(InventoryUnitId inventoryUnitId);
-    public boolean delete(InventoryUnitId inventoryUnitId);
+    public void delete(InventoryUnitId inventoryUnitId) throws Exception;
     public void update(InventoryUnit inventoryUnit);
 
 }

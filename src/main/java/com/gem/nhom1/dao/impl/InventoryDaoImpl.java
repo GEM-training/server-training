@@ -12,8 +12,8 @@ import java.util.List;
  */
 
 @Repository
-public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements InventoryDao{
-    public int insert(Inventory inventory) {
+public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements InventoryDao {
+    public int insert(Inventory inventory){
         return insertObject(inventory);
     }
 
@@ -25,17 +25,11 @@ public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements
         return getByKey(id);
     }
 
-    public boolean delete(int id) {
-
-        try {
-            deleteObject(getById(id));
-            return true;
-        }catch (Exception e){
-            return false;
-        }
+    public void delete(int id) throws Exception {
+        deleteObject(getById(id));
     }
 
-    public void update(Inventory inventory) {
+    public void update(Inventory inventory){
         updateObject(inventory);
     }
 }

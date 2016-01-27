@@ -37,7 +37,6 @@ public class Staff {
 
     @ManyToOne
     @JoinColumn(name = "dealer_id")
-    @JsonIgnore
     private Dealer dealer;
 
 

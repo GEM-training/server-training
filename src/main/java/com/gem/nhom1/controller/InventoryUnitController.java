@@ -6,14 +6,16 @@ import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.service.InventoryUnitService;
 import com.gem.nhom1.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -36,6 +38,9 @@ public class InventoryUnitController {
     @Autowired
     private DealerService dealerService;
 
+    @Autowired
+    private Validator validator;
+
 /*    @RequestMapping("/query/unit/{unit_id}/inventory/{inventory_id}")
     public @ResponseBody InventoryUnit getInventoryUnit(@PathVariable("unit_id") int unit_id,
                                                  @PathVariable("inventory_id") int inventory_id){
@@ -48,7 +53,7 @@ public class InventoryUnitController {
     }*/
 
     @RequestMapping("/inventory/{inventory_id}/dealer/{dealer_id}")
-    public @ResponseBody Set<InventoryUnit> getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
+    public ResponseEntity<List<InventoryUnit>> getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
 
         Dealer dealer = dealerService.getById(dealerId);
 
@@ -58,43 +63,59 @@ public class InventoryUnitController {
             return null;
 
         Set<InventoryUnit> inventoryUnits = inventoryService.getById(inventoryId).getInventoryUnits();
-        return inventoryUnits;
+        return new ResponseEntity<List<InventoryUnit>>(new ArrayList<InventoryUnit>(inventoryUnits), HttpStatus.OK);
     }
 
-    @RequestMapping("/insert")
-    public @ResponseBody String insert(HttpSession session, @RequestParam("unit_id") int unit_id,
-                                       @RequestParam("inventory_id") int inventory_id){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public ResponseEntity<?> insert(@RequestBody InventoryUnit inventoryUnit){
 
-        Unit unit = unitService.getById(unit_id);
+       /* Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
 
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
-        InventoryUnit inventoryUnit = new InventoryUnit(inventoryUnitId, 200);
+        InventoryUnit inventoryUnit = new InventoryUnit(inventoryUnitId, 200);*/
+
+        Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
+
         inventoryUnitService.insert(inventoryUnit);
 
-        return "success";
+        return new ResponseEntity<InventoryUnit>(inventoryUnit,HttpStatus.OK);
     }
 
-    @RequestMapping("/delete")
-    public @ResponseBody String delete(ModelMap model, @RequestParam("unit_id") int unit_id,
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    public @ResponseBody String delete(@RequestParam("unit_id") int unit_id,
                                        @RequestParam("inventory_id") int inventory_id){
         Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
-        boolean deleted = inventoryUnitService.delete(inventoryUnitId);
+        try {
+            inventoryUnitService.delete(inventoryUnitId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "success";
     }
 
-    @RequestMapping("update")
-    public @ResponseBody String update(ModelMap model, @RequestParam("unit_id") int unit_id,
-                                       @RequestParam("inventory_id") int inventory_id){
-        Unit unit = unitService.getById(unit_id);
+    @RequestMapping(value = "update", method = RequestMethod.PUT)
+    public ResponseEntity<?> update(@RequestBody InventoryUnit inventoryUnit){
+        /*Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
         InventoryUnit inventoryUnit = inventoryUnitService.getById(inventoryUnitId);
-        inventoryUnit.setQuantityInStock(89);
+        inventoryUnit.setQuantityInStock(89);*/
+
+        Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
+
         inventoryUnitService.update(inventoryUnit);
-        return "success";
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }
