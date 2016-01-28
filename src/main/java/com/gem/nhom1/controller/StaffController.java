@@ -2,6 +2,7 @@ package com.gem.nhom1.controller;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
@@ -33,7 +34,7 @@ public class StaffController {
     private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody Staff staff) {
+    public @ResponseBody ResponseDTO insert(@RequestBody Staff staff) {
         //chi co dealer moi co the them staff, dealer dc luu trong session --spring security
         Dealer dealer = dealerService.getById(1);
         staff.setDealer(dealer);
@@ -41,21 +42,19 @@ public class StaffController {
         Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO("Error",constraintViolations.iterator().next().getMessage(),staff);
         }
+
         staffService.insert(staff);
 
-        return new ResponseEntity<Staff>(staff, HttpStatus.OK);
+        return new ResponseDTO("Success","",staff);
 
     }
 
     @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Staff> query(@PathVariable("id") Integer id) {
+    public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
-        int i = HibernateConfiguration.pageSize;
-        return new ResponseEntity<Staff>(staff, HttpStatus.OK);
+        return new ResponseDTO("Success","",staff);
     }
 
     @RequestMapping("/query/all")

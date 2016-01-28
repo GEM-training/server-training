@@ -38,48 +38,51 @@ public class DealerController {
 
     @Autowired
     private BillService billService;
-
     @Autowired
     private Validator validator;
 
-    @RequestMapping(value = "/insert" , method = RequestMethod.POST)
-    public ResponseEntity<?> insert (@RequestBody Dealer dealer){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public ResponseEntity<?> insert(@RequestBody Dealer dealer) {
         Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
 
-        if(constraintViolations.size() > 0){
+        if (constraintViolations.size() > 0) {
             HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+            httpHeaders.add("message", constraintViolations.iterator().next().getMessage());
+            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
         }
         dealerService.insert(dealer);
 
-        return new ResponseEntity<Dealer>(dealer , HttpStatus.OK);
-
+        return new ResponseEntity<Dealer>(dealer, HttpStatus.OK);
 
     }
-    @RequestMapping(value = "/update" ,method = RequestMethod.PUT)
-    public ResponseEntity<?>  update(@RequestBody Dealer dealer){
+
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public ResponseEntity<?> update(@RequestBody Dealer dealer) {
         Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
 
-        if(constraintViolations.size() > 0){
+        if (constraintViolations.size() > 0) {
             HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+            httpHeaders.add("message", constraintViolations.iterator().next().getMessage());
+            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
         }
         dealerService.update(dealer);
 
-        return new ResponseEntity<Dealer>(dealer , HttpStatus.OK);
+        return new ResponseEntity<Dealer>(dealer, HttpStatus.OK);
     }
 
     @RequestMapping("/list")
-    public @ResponseBody List<Dealer> list(@RequestParam(value = "page" , defaultValue = "1") int page){
+    public
+    @ResponseBody
+    List<Dealer> list(@RequestParam(value = "page", defaultValue = "1") int page) {
         List<Dealer> list = dealerService.getList(page);
 
         return list;
     }
 
     @RequestMapping("/delete/{dealerId}")
-    public @ResponseBody String delete(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    String delete(@PathVariable("dealerId") int dealerId) {
 
         try {
             dealerService.delete(dealerId);
@@ -91,7 +94,9 @@ public class DealerController {
 
 
     @RequestMapping("/detail/{dealerId}")
-    public @ResponseBody Dealer detail(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    Dealer detail(@PathVariable("dealerId") int dealerId) {
         Dealer d = dealerService.getById(dealerId);
 
 
@@ -100,35 +105,45 @@ public class DealerController {
     }
 
     @RequestMapping("/getListInventory/{dealerId}")
-    public @ResponseBody List<Inventory> getListInventory(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    List<Inventory> getListInventory(@PathVariable("dealerId") int dealerId) {
         List<Inventory> inventories = dealerService.getListInventory(dealerId);
 
-        return  inventories;
+        return inventories;
     }
 
     @RequestMapping("/getListStaff/{dealerId}")
-    public @ResponseBody List<Staff> getListStaff(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    List<Staff> getListStaff(@PathVariable("dealerId") int dealerId) {
         List<Staff> staffs = dealerService.getListStaff(dealerId);
 
-        return  staffs;
+        return staffs;
     }
 
     @RequestMapping("getListUnit/{dealerId}")
-    public @ResponseBody List<UnitDealer> getListUnitDealers(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    List<UnitDealer> getListUnitDealers(@PathVariable("dealerId") int dealerId) {
         List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
 
-        return  unitDealers;
+        return unitDealers;
     }
 
     @RequestMapping("getListBill/{dealerId}")
-    public @ResponseBody List<Bill> getListBill(@PathVariable("dealerId") int dealerId){
+    public
+    @ResponseBody
+    List<Bill> getListBill(@PathVariable("dealerId") int dealerId) {
         List<Bill> bills = dealerService.getListBill(dealerId);
 
         return bills;
     }
 
     @RequestMapping("billDetail/{billId}")
-    public  @ResponseBody Bill billDetail(@PathVariable("billId") int billId) {
+    public
+    @ResponseBody
+    Bill billDetail(@PathVariable("billId") int billId) {
         Bill bill;
 
         bill = billService.getById(billId);
@@ -136,13 +151,14 @@ public class DealerController {
     }
 
     @RequestMapping("/listBillDetail/{billId}")
-    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
-        List<BillDetail> billDetails= billService.getListBillDetail(billId);
+    public
+    @ResponseBody
+    List<BillDetail> query(@PathVariable("billId") int billId) {
+        List<BillDetail> billDetails = billService.getListBillDetail(billId);
 
         return billDetails;
 
     }
-
 
 
 }

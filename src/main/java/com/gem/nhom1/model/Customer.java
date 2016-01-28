@@ -50,7 +50,6 @@ public class Customer {
 
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "customer")
     @JsonIgnore
-    @JsonBackReference
     private Set<Bill> bills = new HashSet<Bill>();
 
     public Customer() {
