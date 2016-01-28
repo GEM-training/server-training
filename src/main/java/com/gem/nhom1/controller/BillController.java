@@ -75,17 +75,17 @@ public class BillController {
 
         billService.update(bill);
 
-        return new ResponseEntity<Object>(HttpStatus.OK);
+        return new ResponseEntity<Bill>(HttpStatus.OK);
 
     }
 
     @RequestMapping("/list")
     public
-    @ResponseBody
-    List<Bill> list(@RequestParam(value = "page") int page) {
+    ResponseEntity<List<Bill>>
+    list(@RequestParam(value = "page" , defaultValue = "1") int page) {
 
         List<Bill> bills = billService.getList(page);
-        return bills;
+        return new ResponseEntity<List<Bill>>(bills , HttpStatus.OK);
     }
 
     @RequestMapping("delete/{billId}")

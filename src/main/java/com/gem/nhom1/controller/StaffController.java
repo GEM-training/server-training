@@ -59,7 +59,7 @@ public class StaffController {
     }
 
     @RequestMapping("/query/all")
-    public ResponseEntity<List<Staff>> queryAll(@RequestParam(value = "page")  int page) {
+    public ResponseEntity<List<Staff>> queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
         List<Staff> staffList = staffService.getList(page);
         return new ResponseEntity<List<Staff>>(staffList, HttpStatus.OK);
     }

@@ -4,15 +4,18 @@ import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by phuong on 1/19/2016.
@@ -36,24 +39,40 @@ public class DealerController {
     @Autowired
     private BillService billService;
 
-    @RequestMapping("/insert")
-    public @ResponseBody String  home(ModelMap mm){
+    @Autowired
+    private Validator validator;
 
-        Dealer dealer = new Dealer("Test Dealer" , "HN");
+    @RequestMapping(value = "/insert" , method = RequestMethod.POST)
+    public ResponseEntity<?> insert (@RequestBody Dealer dealer){
+        Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
 
-        return dealerService.insert(dealer)+"";
+        if(constraintViolations.size() > 0){
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
+            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+        }
+        dealerService.insert(dealer);
+
+        return new ResponseEntity<Dealer>(dealer , HttpStatus.OK);
+
 
     }
-    @RequestMapping("/update")
-    public @ResponseBody String update(){
-        Dealer dealer = dealerService.getById(5);
-        dealer.setName("Demo update");
+    @RequestMapping(value = "/update" ,method = RequestMethod.PUT)
+    public ResponseEntity<?>  update(@RequestBody Dealer dealer){
+        Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
+
+        if(constraintViolations.size() > 0){
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
+            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+        }
         dealerService.update(dealer);
-        return "OK";
+
+        return new ResponseEntity<Dealer>(dealer , HttpStatus.OK);
     }
 
     @RequestMapping("/list")
-    public @ResponseBody List<Dealer> list(@RequestParam(value = "page") int page){
+    public @ResponseBody List<Dealer> list(@RequestParam(value = "page" , defaultValue = "1") int page){
         List<Dealer> list = dealerService.getList(page);
 
         return list;

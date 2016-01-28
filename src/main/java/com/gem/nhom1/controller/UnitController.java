@@ -49,7 +49,7 @@ public class UnitController {
     }
 
     @RequestMapping("/query/all")
-    public ResponseEntity<List<Unit>> queryAll(@RequestParam (value = "page") int page){
+    public ResponseEntity<List<Unit>> queryAll(@RequestParam (value = "page" , defaultValue = "1") int page){
 
 
         List<Unit> unitList = unitService.getList(page);

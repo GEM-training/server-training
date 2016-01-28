@@ -5,15 +5,16 @@ import com.gem.nhom1.service.BillDetailService;
 import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -31,56 +32,52 @@ public class BillDetailController {
     @Autowired
     private BillDetailService billDetailService;
 
+    @Autowired
+    private Validator validator;
 
-    @RequestMapping(value = "/insert")
+
+    @RequestMapping(value = "/insert" , method = RequestMethod.POST)
     public
-    @ResponseBody
-    String insert() {
+    ResponseEntity<?> insert(@RequestBody BillDetail billDetail) {
+        Set<ConstraintViolation<BillDetail>> constraintViolations = validator.validate(billDetail);
 
-        Bill bill = billService.getById(1);
+        if(constraintViolations.size() > 0){
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
 
-        Unit unit1 = unitService.getById(1);
+            return  new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+        }
+        billDetailService.insert(billDetail);
 
-        Unit unit3 = unitService.getById(3);
+        return  new ResponseEntity<BillDetail>(billDetail , HttpStatus.OK);
 
-        BillDetailId billDetailId1 = new BillDetailId(bill, unit1);
-
-        BillDetailId billDetailId2 = new BillDetailId(bill, unit3);
-
-        BillDetail billDetail1 = new BillDetail(billDetailId2, 3);
-
-        BillDetailId id = billDetailService.insert(billDetail1);
-
-        return "ok";
     }
 
     @RequestMapping(value = "/list")
-    public @ResponseBody
-    List<BillDetail> list(@RequestParam (value = "page") int page){
-        return billDetailService.getList(page);
+    public ResponseEntity<List<BillDetail>>
+    list(@RequestParam (value = "page",defaultValue = "1") int page){
+        return new ResponseEntity<List<BillDetail>>(billDetailService.getList(page) , HttpStatus.OK);
     }
 
 
 
 
-    @RequestMapping("/update/{unitId}/{billId}/{quantity}")
+    @RequestMapping(value = "/update" ,method = RequestMethod.PUT)
     public
-    @ResponseBody
-    String update(@PathVariable("unitId") int unitId, @PathVariable("billId") int billId, @PathVariable("quantity") int quantity) {
+    ResponseEntity<?>
+    update(@RequestBody BillDetail billDetail) {
+        Set<ConstraintViolation<BillDetail>> constraintViolations = validator.validate(billDetail);
 
-        Unit unit = unitService.getById(unitId);
+        if(constraintViolations.size() > 0){
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
 
-        Bill bill = billService.getById(billId);
-
-        BillDetailId billDetailId = new BillDetailId(bill, unit);
-
-        BillDetail billDetail = billDetailService.getById(billDetailId);
-
-        billDetail.setQuantity(quantity);
-
+            return  new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+        }
         billDetailService.update(billDetail);
 
-        return "OK";
+        return  new ResponseEntity<BillDetail>(billDetail , HttpStatus.OK);
+
     }
 
     @RequestMapping("delete/{unitId}/{billId}")

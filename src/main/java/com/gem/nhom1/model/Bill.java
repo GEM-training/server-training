@@ -29,12 +29,10 @@ public class Bill {
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
-    @JsonManagedReference
     private Customer customer;
 
     @ManyToOne
     @JoinColumn(name = "dealer_id")
-    @JsonManagedReference
     private Dealer dealer;
 
     @NotNull(message = "Trường này không được rỗng")
