@@ -6,6 +6,7 @@ import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.CustomerService;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -44,61 +45,62 @@ public class BillController {
     private Validator validator;
 
     @RequestMapping(value = "/insert" , method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody Bill bill) {
+    public @ResponseBody ResponseDTO insert(@RequestBody Bill bill) {
 
         Set<ConstraintViolation<Bill>> constraintViolations = validator.validate(bill);
 
         if (constraintViolations.size() > 0) {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-
-            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , constraintViolations.iterator().next().getMessage() , null );
         }
-        billService.insert(bill);
+        try {
+            billService.insert(bill);
+        } catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null );
+        }
 
-        return new ResponseEntity<Bill>(bill, HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
 
     }
 
 
     @RequestMapping(value = "/update" , method = RequestMethod.PUT)
     public
-    ResponseEntity<?>  update(@RequestBody Bill bill) {
+    @ResponseBody ResponseDTO update(@RequestBody Bill bill) {
+
         Set<ConstraintViolation<Bill>> constraintViolations = validator.validate(bill);
 
-        if(constraintViolations.size() > 0){
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-
-            return  new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+        if (constraintViolations.size() > 0) {
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , constraintViolations.iterator().next().getMessage() , null );
+        }
+        try {
+            billService.update(bill);
+        } catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null );
         }
 
-        billService.update(bill);
-
-        return new ResponseEntity<Bill>(HttpStatus.OK);
-
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
     }
 
     @RequestMapping("/list")
     public
-    ResponseEntity<List<Bill>>
+    @ResponseBody ResponseDTO
     list(@RequestParam(value = "page" , defaultValue = "1") int page) {
 
         List<Bill> bills = billService.getList(page);
-        return new ResponseEntity<List<Bill>>(bills , HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , bills);
     }
 
     @RequestMapping("delete/{billId}")
     public
-    ResponseEntity<?> delete(@PathVariable("billId") int billId) {
+    @ResponseBody ResponseDTO delete(@PathVariable("billId") int billId) {
 
         try {
             billService.delete(billId);
         } catch (Exception e) {
-            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
         }
 
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
     }
 
 
