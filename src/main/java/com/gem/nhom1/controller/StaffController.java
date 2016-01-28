@@ -34,7 +34,7 @@ public class StaffController {
         //chi co dealer moi co the them staff, dealer dc luu trong session --spring security
         Dealer dealer = dealerService.getById(1);
         staff.setDealer(dealer);
-
+ /*
         Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
@@ -46,26 +46,30 @@ public class StaffController {
         }catch (Exception e){
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);*/
+
+        return staffService.insert(staff);
 
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id) {
-        Staff staff = staffService.getById(id);
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staff);
+        /*Staff staff = staffService.getById(id);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staff);*/
+        return null;
     }
 
     @RequestMapping("/list")
     public @ResponseBody ResponseDTO queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
-        List<Staff> staffList = staffService.getList(page);
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staffList);
+        /*List<Staff> staffList = staffService.getList(page);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staffList);*/
+        return null;
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public @ResponseBody ResponseDTO update(@RequestBody Staff staff) {
 
-        Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
+        /*Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
@@ -77,18 +81,21 @@ public class StaffController {
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
 
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);*/
+
+        return null;
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
     public @ResponseBody ResponseDTO delete(@PathVariable("id") Integer id) {
 
-        try {
+        /*try {
             staffService.delete(id);
         } catch (Exception e){
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
 
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);*/
+        return null;
     }
 }

@@ -37,19 +37,7 @@ public class BillDetailController {
     @RequestMapping(value = "/insert" , method = RequestMethod.POST)
     public
     @ResponseBody ResponseDTO insert(@RequestBody BillDetail billDetail) {
-        Set<ConstraintViolation<BillDetail>> constraintViolations = validator.validate(billDetail);
-
-        if(constraintViolations.size() > 0){
-
-            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , constraintViolations.iterator().next().getMessage() , null);
-        }
-        try {
-            billDetailService.insert(billDetail);
-        } catch (Exception e){
-            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
-        }
-
-        return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
+        return billDetailService.insert(billDetail);
 
     }
 
@@ -57,7 +45,7 @@ public class BillDetailController {
     public @ResponseBody ResponseDTO
     list(@RequestParam (value = "page",defaultValue = "1") int page){
 
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , billDetailService.getList(page)) ;
+        return  billDetailService.getList(page);
     }
 
 
@@ -67,21 +55,7 @@ public class BillDetailController {
     public @ResponseBody
     ResponseDTO
     update(@RequestBody BillDetail billDetail) {
-        Set<ConstraintViolation<BillDetail>> constraintViolations = validator.validate(billDetail);
-
-        if(constraintViolations.size() > 0){
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-
-            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR ,constraintViolations.iterator().next().getMessage() , null );
-        }
-        try {
-            billDetailService.update(billDetail);
-        } catch (Exception e){
-            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR ,e.getMessage() , null );
-        }
-
-        return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
+        return billDetailService.update(billDetail);
 
     }
 
@@ -94,13 +68,7 @@ public class BillDetailController {
 
         BillDetailId billDetailId = new BillDetailId(bill, unit);
 
-        try {
-            billDetailService.delete(billDetailId);
-        } catch (Exception e) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
-        }
-
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
+        return billDetailService.delete(billDetailId);
     }
 
 
