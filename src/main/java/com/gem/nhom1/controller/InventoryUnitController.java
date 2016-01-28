@@ -5,14 +5,13 @@ import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.service.InventoryUnitService;
 import com.gem.nhom1.service.UnitService;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpSession;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.ArrayList;
@@ -43,7 +42,7 @@ public class InventoryUnitController {
 
 
     @RequestMapping("/inventory/{inventory_id}/dealer/{dealer_id}")
-    public ResponseEntity<List<InventoryUnit>> getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
+    public @ResponseBody ResponseDTO getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
 
         Dealer dealer = dealerService.getById(dealerId);
 
@@ -53,11 +52,11 @@ public class InventoryUnitController {
             return null;
 
         Set<InventoryUnit> inventoryUnits = inventoryService.getById(inventoryId).getInventoryUnits();
-        return new ResponseEntity<List<InventoryUnit>>(new ArrayList<InventoryUnit>(inventoryUnits), HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",new ArrayList<InventoryUnit>(inventoryUnits));
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody InventoryUnit inventoryUnit){
+    public @ResponseBody ResponseDTO insert(@RequestBody InventoryUnit inventoryUnit){
 
        /* Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
@@ -68,16 +67,20 @@ public class InventoryUnitController {
         Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
 
-        inventoryUnitService.insert(inventoryUnit);
+        try {
+            inventoryUnitService.insert(inventoryUnit);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
+        }
 
-        return new ResponseEntity<InventoryUnit>(inventoryUnit,HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
-    public @ResponseBody String delete(@RequestParam("unit_id") int unit_id,
+    public @ResponseBody ResponseDTO delete(@RequestParam("unit_id") int unit_id,
                                        @RequestParam("inventory_id") int inventory_id){
         Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
@@ -85,14 +88,14 @@ public class InventoryUnitController {
         try {
             inventoryUnitService.delete(inventoryUnitId);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
 
-        return "success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping(value = "update", method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody InventoryUnit inventoryUnit){
+    public @ResponseBody ResponseDTO update(@RequestBody InventoryUnit inventoryUnit){
         /*Unit unit = unitService.getById(unit_id);
         Inventory inventory = inventoryService.getById(inventory_id);
         InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
@@ -102,10 +105,14 @@ public class InventoryUnitController {
         Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
 
-        inventoryUnitService.update(inventoryUnit);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        try {
+            inventoryUnitService.update(inventoryUnit);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 }

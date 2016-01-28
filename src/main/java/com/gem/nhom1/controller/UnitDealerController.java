@@ -1,12 +1,10 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Unit;
-import com.gem.nhom1.model.UnitDealer;
-import com.gem.nhom1.model.UnitDealerId;
+import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.UnitDealerService;
 import com.gem.nhom1.service.UnitService;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -35,7 +33,8 @@ public class UnitDealerController {
     protected Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody UnitDealer unitDealer){
+    public @ResponseBody
+    ResponseDTO insert(@RequestBody UnitDealer unitDealer){
 
        /* Dealer dealer = dealerService.getById(1);
         Unit unit = unitService.getById(33);
@@ -45,49 +44,56 @@ public class UnitDealerController {
         Set<ConstraintViolation<UnitDealer>> constraintViolations = validator.validate(unitDealer);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
 
-        unitDealerService.insert(unitDealer);
-
-        return new ResponseEntity<UnitDealer>(unitDealer,HttpStatus.OK);
+        try {
+            unitDealerService.insert(unitDealer);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping("/query/unit-{unit_id}/dealer-{dealer_id}")
-    public @ResponseBody String query(@PathVariable("unit_id") Integer unitId, @PathVariable("dealer_id") Integer dealerId){
+    public @ResponseBody ResponseDTO query(@PathVariable("unit_id") Integer unitId, @PathVariable("dealer_id") Integer dealerId){
 
         Unit unit = unitService.getById(unitId);
         Dealer dealer = dealerService.getById(dealerId);
 
         UnitDealer unitDealer = unitDealerService.getById(new UnitDealerId(unitId,dealerId));
 
-        return "Success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",unitDealer);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody UnitDealer unitDealer){
+    public @ResponseBody ResponseDTO update(@RequestBody UnitDealer unitDealer){
 
        // UnitDealer unitDealer = unitDealerService.getById(new UnitDealerId(unitId,dealerId));
         //unitDealer.setPrice(4000);
         Set<ConstraintViolation<UnitDealer>> constraintViolations = validator.validate(unitDealer);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
 
-        unitDealerService.update(unitDealer);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        try {
+            unitDealerService.update(unitDealer);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping(value = "/delete/unit-{unit_id}/dealer-{dealer_id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> delete(@PathVariable("unit_id") Integer unitId, @PathVariable("dealer_id") Integer dealerId){
+    public @ResponseBody ResponseDTO delete(@PathVariable("unit_id") Integer unitId, @PathVariable("dealer_id") Integer dealerId){
 
         try {
             unitDealerService.delete(new UnitDealerId(unitId,dealerId));
         } catch (Exception e) {
-            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
 }

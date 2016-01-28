@@ -3,8 +3,11 @@ package com.gem.nhom1.controller;
 import com.gem.nhom1.model.Bill;
 import com.gem.nhom1.model.BillDetail;
 import com.gem.nhom1.model.Customer;
+import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.CustomerService;
+import com.gem.nhom1.util.Constant;
+import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.http.HttpHeaders;
@@ -37,86 +40,90 @@ public class CustomerController {
     private Validator validator;
 
     @RequestMapping(value = "/insert" ,method = RequestMethod.POST)
-    public ResponseEntity<?>  insert(@RequestBody Customer customer) {
+    public @ResponseBody
+    ResponseDTO insert(@RequestBody Customer customer) {
 
         Set<ConstraintViolation<Customer>> constraintViolations = validator.validate(customer);
 
         if(constraintViolations.size() > 0) {
-            HttpHeaders httpHeaders =new HttpHeaders();
-            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
-
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, constraintViolations.iterator().next().getMessage() , null  );
         }
 
-        customerService.insert(customer);
+        try {
+            customerService.insert(customer);
+        } catch (Exception e){
+            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
+        }
 
-        return new ResponseEntity<Customer>(customer , HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
     }
 
 
     @RequestMapping(value = "/update" ,   method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody Customer customer) {
+    public @ResponseBody ResponseDTO update(@RequestBody Customer customer) {
 
         Set<ConstraintViolation<Customer>> constraintViolations = validator.validate(customer);
 
         if(constraintViolations.size() > 0) {
             HttpHeaders httpHeaders =new HttpHeaders();
             httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders , HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR ,constraintViolations.iterator().next().getMessage() ,null);
 
         }
 
-        customerService.update(customer);
+        try {
+            customerService.update(customer);
+        } catch (Exception e){
+            return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
+        }
 
-        return new ResponseEntity<Customer>(customer , HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
     }
 
     @RequestMapping("/delete/{id}")
-    public @ResponseBody String delete(@PathVariable("id") Integer id){
+    public @ResponseBody ResponseDTO delete(@PathVariable("id") Integer id){
 
         try {
             customerService.delete(id);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
         }
 
-        return "Success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
     }
 
     @RequestMapping("/list")
-    public ResponseEntity<List<Customer>> list(@RequestParam(value = "page" , defaultValue = "1") int page){
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "page" , defaultValue = "1") int page){
         List<Customer> customers= customerService.getList(page);
 
-        return new ResponseEntity<List<Customer>>(customers , HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , customers);
     }
 
     @RequestMapping("/detail/{customerId}")
-    public ResponseEntity<Customer> detail(@PathVariable("customerId") int customerId){
+    public @ResponseBody ResponseDTO detailById(@PathVariable("customerId") int customerId){
         Customer customer = customerService.getById(customerId);
 
-        return new ResponseEntity<Customer>(customer , HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , customer);
     }
 
     @RequestMapping("/getListBill/{customerId}")
-    public ResponseEntity<List<Bill>> getListBill(@PathVariable("customerId") int customerId){
-        Customer customer = customerService.getById(customerId);
+    public @ResponseBody ResponseDTO getListBill(@PathVariable("customerId") int customerId){
 
-        return new ResponseEntity<List<Bill>>(customerService.getListBill(customerId) ,HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" ,  customerService.getListBill(customerId));
     }
 
     @RequestMapping("billDetail/{billId}")
-    public  @ResponseBody Bill billDetail(@PathVariable("billId") int billId) {
-        Bill bill;
+    public  @ResponseBody ResponseDTO billDetail(@PathVariable("billId") int billId) {
 
-        bill = billService.getById(billId);
-        return bill;
+        Bill bill = billService.getById(billId);
+        return new ResponseDTO( Constant.RESPONSE_STATUS_SUSSCESS , "" , bill);
     }
 
     @RequestMapping("/listBillDetail/{billId}")
-    public @ResponseBody List<BillDetail> query(@PathVariable("billId") int billId){
+    public @ResponseBody ResponseDTO query(@PathVariable("billId") int billId){
         List<BillDetail> billDetails= billService.getListBillDetail(billId);
 
-        return billDetails;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , billDetails);
 
     }
 
