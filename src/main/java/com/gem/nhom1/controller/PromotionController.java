@@ -91,10 +91,10 @@ PromotionController {
     }
 
     @RequestMapping("/query")
-    public @ResponseBody String getItem(@RequestParam(value = "page" ,  defaultValue = "1") int id){
+    public @ResponseBody ResponseDTO getItem(@RequestParam(value = "page" ,  defaultValue = "1") int id){
         Promotion promotion = promotionService.getById(id);
 
-        return "success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",promotion);
     }
 
 }

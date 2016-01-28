@@ -51,7 +51,7 @@ public class UnitController {
     public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id){
 
         Unit unit = unitService.getById(id);
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",unit);
     }
 
     @RequestMapping("/query/all")
