@@ -66,7 +66,6 @@ public class UnitDealer implements java.io.Serializable {
 
     @ManyToOne
     @JoinColumn(name = "unit_id", nullable = false, insertable = false, updatable = false)
-    @JsonBackReference
     public Unit getUnit() {
         return this.unit;
     }

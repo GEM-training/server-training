@@ -1,21 +1,18 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.PromotionService;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
-import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
-import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -58,7 +55,7 @@ PromotionController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
-    @RequestMapping("/all/dealer/{id}")
+    @RequestMapping("/list/{id}")
     public @ResponseBody ResponseDTO getList(@PathVariable("id") Integer id){
         List<Promotion> promotions = dealerService.getListPromotions(id);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",promotions);
@@ -90,8 +87,8 @@ PromotionController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
-    @RequestMapping("/query")
-    public @ResponseBody ResponseDTO getItem(@RequestParam(value = "page" ,  defaultValue = "1") int id){
+    @RequestMapping("/{id}")
+    public @ResponseBody ResponseDTO getItem(@PathVariable("id") int id){
         Promotion promotion = promotionService.getById(id);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",promotion);

@@ -7,21 +7,18 @@ import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
-import java.util.List;
 import java.util.Set;
 
 /**
  * Created by phuongtd on 21/01/2016.
  */
 @Controller
-@RequestMapping("/billDetail")
+@RequestMapping("/bill_detail")
 public class BillDetailController {
 
     @Autowired

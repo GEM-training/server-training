@@ -6,13 +6,10 @@ import com.gem.nhom1.service.UnitDealerService;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
 import javax.validation.Validator;
 import java.util.Set;
 
@@ -55,7 +52,7 @@ public class UnitDealerController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
-    @RequestMapping("/query/unit-{unit_id}/dealer-{dealer_id}")
+    @RequestMapping("/unit-{unit_id}/dealer-{dealer_id}")
     public @ResponseBody ResponseDTO query(@PathVariable("unit_id") Integer unitId, @PathVariable("dealer_id") Integer dealerId){
 
         Unit unit = unitService.getById(unitId);

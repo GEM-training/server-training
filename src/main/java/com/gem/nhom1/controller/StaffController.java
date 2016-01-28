@@ -1,6 +1,5 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.model.Staff;
@@ -8,9 +7,6 @@ import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -54,13 +50,13 @@ public class StaffController {
 
     }
 
-    @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staff);
     }
 
-    @RequestMapping("/query/all")
+    @RequestMapping("/list")
     public @ResponseBody ResponseDTO queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
         List<Staff> staffList = staffService.getList(page);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staffList);

@@ -1,14 +1,10 @@
 package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.ResponseDTO;
-import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.model.Unit;
-import com.gem.nhom1.model.UnitDealer;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -47,14 +43,14 @@ public class UnitController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
-    @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id){
 
         Unit unit = unitService.getById(id);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",unit);
     }
 
-    @RequestMapping("/query/all")
+    @RequestMapping("/list")
     public @ResponseBody ResponseDTO queryAll(@RequestParam (value = "page", defaultValue = "1") int page){
 
         List<Unit> unitList = unitService.getList(page);

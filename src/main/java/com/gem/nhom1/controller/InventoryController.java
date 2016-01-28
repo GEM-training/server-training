@@ -42,7 +42,7 @@ public class InventoryController {
         return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
-    @RequestMapping("/all")
+    @RequestMapping("/list")
     public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
 
@@ -60,8 +60,8 @@ public class InventoryController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
-    @RequestMapping("/update/{id}")
-    public @ResponseBody ResponseDTO update(Inventory inventory){
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public @ResponseBody ResponseDTO update(@RequestBody Inventory inventory){
         Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
 
         if (constraintViolations.size() > 0) {

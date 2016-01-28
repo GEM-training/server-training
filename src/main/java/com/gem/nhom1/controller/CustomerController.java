@@ -7,19 +7,13 @@ import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.BillService;
 import com.gem.nhom1.service.CustomerService;
 import com.gem.nhom1.util.Constant;
-import com.sun.xml.internal.bind.v2.runtime.reflect.opt.Const;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
-import javax.validation.Validation;
 import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.util.List;
 import java.util.Set;
 
@@ -40,8 +34,7 @@ public class CustomerController {
     private Validator validator;
 
     @RequestMapping(value = "/insert" ,method = RequestMethod.POST)
-    public @ResponseBody
-    ResponseDTO insert(@RequestBody Customer customer) {
+    public @ResponseBody ResponseDTO insert(@RequestBody Customer customer) {
 
         Set<ConstraintViolation<Customer>> constraintViolations = validator.validate(customer);
 
@@ -99,27 +92,27 @@ public class CustomerController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , customers);
     }
 
-    @RequestMapping("/detail/{customerId}")
+    @RequestMapping("/{customerId}")
     public @ResponseBody ResponseDTO detailById(@PathVariable("customerId") int customerId){
         Customer customer = customerService.getById(customerId);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , customer);
     }
 
-    @RequestMapping("/getListBill/{customerId}")
+    @RequestMapping("/bills/{customerId}")
     public @ResponseBody ResponseDTO getListBill(@PathVariable("customerId") int customerId){
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" ,  customerService.getListBill(customerId));
     }
 
-    @RequestMapping("billDetail/{billId}")
+    @RequestMapping("/bill/{billId}")
     public  @ResponseBody ResponseDTO billDetail(@PathVariable("billId") int billId) {
 
         Bill bill = billService.getById(billId);
         return new ResponseDTO( Constant.RESPONSE_STATUS_SUSSCESS , "" , bill);
     }
 
-    @RequestMapping("/listBillDetail/{billId}")
+    @RequestMapping("/bill_details/{billId}")
     public @ResponseBody ResponseDTO query(@PathVariable("billId") int billId){
         List<BillDetail> billDetails= billService.getListBillDetail(billId);
 

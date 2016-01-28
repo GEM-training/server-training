@@ -81,39 +81,39 @@ public class DealerController {
     }
 
 
-    @RequestMapping("/detail/{dealerId}")
+    @RequestMapping("/{dealerId}")
     public @ResponseBody ResponseDTO detail(@PathVariable("dealerId") int dealerId) {
         Dealer d = dealerService.getById(dealerId);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
-    @RequestMapping("/getListInventory/{dealerId}")
+    @RequestMapping("/inventorys/{dealerId}")
     public @ResponseBody ResponseDTO getListInventory(@PathVariable("dealerId") int dealerId) {
         List<Inventory> inventories = dealerService.getListInventory(dealerId);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
-    @RequestMapping("/getListStaff/{dealerId}")
+    @RequestMapping("/staffs/{dealerId}")
     public @ResponseBody ResponseDTO getListStaff(@PathVariable("dealerId") int dealerId) {
         List<Staff> staffs = dealerService.getListStaff(dealerId);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", staffs);
     }
 
-    @RequestMapping("getListUnit/{dealerId}")
+    @RequestMapping("/units/{dealerId}")
     public @ResponseBody ResponseDTO getListUnitDealers(@PathVariable("dealerId") int dealerId) {
         List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", unitDealers);
     }
 
-    @RequestMapping("getListBill/{dealerId}")
+    @RequestMapping("/bills/{dealerId}")
     public @ResponseBody ResponseDTO getListBill(@PathVariable("dealerId") int dealerId) {
         List<Bill> bills = dealerService.getListBill(dealerId);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", bills);
     }
 
-    @RequestMapping("billDetail/{billId}")
+    @RequestMapping("bill/{billId}")
     public @ResponseBody ResponseDTO billDetail(@PathVariable("billId") int billId) {
         Bill bill;
 
@@ -121,7 +121,7 @@ public class DealerController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", bill);
     }
 
-    @RequestMapping("/listBillDetail/{billId}")
+    @RequestMapping("/bill_details/{billId}")
     public @ResponseBody ResponseDTO query(@PathVariable("billId") int billId) {
         List<BillDetail> billDetails = billService.getListBillDetail(billId);
 
