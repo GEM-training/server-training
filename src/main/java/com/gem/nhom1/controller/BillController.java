@@ -83,11 +83,15 @@ public class BillController {
 
     @RequestMapping("delete/{billId}")
     public
-    @ResponseBody
-    String delete(@PathVariable("billId") int billId) {
+    ResponseEntity<?> delete(@PathVariable("billId") int billId) {
 
-        return billService.delete(billId) + "";
+        try {
+            billService.delete(billId);
+        } catch (Exception e) {
+            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+        }
 
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
 

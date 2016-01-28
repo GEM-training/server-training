@@ -42,7 +42,11 @@ public class InventoryController {
 
     @RequestMapping("/delete/{id}")
     public @ResponseBody String delete(ModelMap modelMap, @PathVariable int id){
-        boolean deleted = inventoryService.delete(id);
+        try {
+            inventoryService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "Success";
     }

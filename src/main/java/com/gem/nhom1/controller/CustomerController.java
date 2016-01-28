@@ -62,7 +62,11 @@ public class CustomerController {
     @RequestMapping("/delete/{id}")
     public @ResponseBody String delete(@PathVariable("id") Integer id){
 
-        customerService.delete(id);
+        try {
+            customerService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "Success";
     }

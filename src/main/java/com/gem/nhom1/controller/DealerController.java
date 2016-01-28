@@ -61,7 +61,12 @@ public class DealerController {
     @RequestMapping("/delete/{dealerId}")
     public @ResponseBody String delete(@PathVariable("dealerId") int dealerId){
 
-        return "Delete: "+ dealerService.delete(dealerId);
+        try {
+            dealerService.delete(dealerId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
 

@@ -2,6 +2,7 @@ package com.gem.nhom1.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -21,6 +22,9 @@ import java.util.Properties;
 @EnableTransactionManagement
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
+
+    @Value("${hibernate.page_size}")
+    public static int pageSize;
 
     @Autowired
     private Environment environment;

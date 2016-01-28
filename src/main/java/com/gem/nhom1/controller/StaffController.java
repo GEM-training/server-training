@@ -1,24 +1,23 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Customer;
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.core.util.Methods;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.validation.ConstraintViolation;
-import java.lang.reflect.Method;
+import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
-import javax.validation.Validation;
-import javax.validation.Validator;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -55,6 +54,7 @@ public class StaffController {
     @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
     public ResponseEntity<Staff> query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
+        int i = HibernateConfiguration.pageSize;
         return new ResponseEntity<Staff>(staff, HttpStatus.OK);
     }
 
