@@ -2,18 +2,13 @@ package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.*;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -42,123 +37,95 @@ public class DealerController {
     private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody Dealer dealer) {
+    public @ResponseBody  ResponseDTO insert(@RequestBody Dealer dealer) {
         Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
 
         if (constraintViolations.size() > 0) {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message", constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
         }
         dealerService.insert(dealer);
 
-        return new ResponseEntity<Dealer>(dealer, HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
 
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody Dealer dealer) {
+    public @ResponseBody ResponseDTO update(@RequestBody Dealer dealer) {
         Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
 
         if (constraintViolations.size() > 0) {
-            HttpHeaders httpHeaders = new HttpHeaders();
-            httpHeaders.add("message", constraintViolations.iterator().next().getMessage());
-            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
         dealerService.update(dealer);
 
-        return new ResponseEntity<Dealer>(dealer, HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/list")
-    public
-    @ResponseBody
-    List<Dealer> list(@RequestParam(value = "page", defaultValue = "1") int page) {
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "page", defaultValue = "1") int page) {
         List<Dealer> list = dealerService.getList(page);
 
-        return list;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", list);
     }
 
     @RequestMapping("/delete/{dealerId}")
-    public
-    @ResponseBody
-    String delete(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO delete(@PathVariable("dealerId") int dealerId) {
 
         try {
             dealerService.delete(dealerId);
         } catch (Exception e) {
             e.printStackTrace();
+            new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
         }
-        return "";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
 
     @RequestMapping("/detail/{dealerId}")
-    public
-    @ResponseBody
-    Dealer detail(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO detail(@PathVariable("dealerId") int dealerId) {
         Dealer d = dealerService.getById(dealerId);
-
-
-        return d;
-
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/getListInventory/{dealerId}")
-    public
-    @ResponseBody
-    List<Inventory> getListInventory(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO getListInventory(@PathVariable("dealerId") int dealerId) {
         List<Inventory> inventories = dealerService.getListInventory(dealerId);
-
-        return inventories;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
     @RequestMapping("/getListStaff/{dealerId}")
-    public
-    @ResponseBody
-    List<Staff> getListStaff(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO getListStaff(@PathVariable("dealerId") int dealerId) {
         List<Staff> staffs = dealerService.getListStaff(dealerId);
-
-        return staffs;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", staffs);
     }
 
     @RequestMapping("getListUnit/{dealerId}")
-    public
-    @ResponseBody
-    List<UnitDealer> getListUnitDealers(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO getListUnitDealers(@PathVariable("dealerId") int dealerId) {
         List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
 
-        return unitDealers;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", unitDealers);
     }
 
     @RequestMapping("getListBill/{dealerId}")
-    public
-    @ResponseBody
-    List<Bill> getListBill(@PathVariable("dealerId") int dealerId) {
+    public @ResponseBody ResponseDTO getListBill(@PathVariable("dealerId") int dealerId) {
         List<Bill> bills = dealerService.getListBill(dealerId);
 
-        return bills;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", bills);
     }
 
     @RequestMapping("billDetail/{billId}")
-    public
-    @ResponseBody
-    Bill billDetail(@PathVariable("billId") int billId) {
+    public @ResponseBody ResponseDTO billDetail(@PathVariable("billId") int billId) {
         Bill bill;
 
         bill = billService.getById(billId);
-        return bill;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", bill);
     }
 
     @RequestMapping("/listBillDetail/{billId}")
-    public
-    @ResponseBody
-    List<BillDetail> query(@PathVariable("billId") int billId) {
+    public @ResponseBody ResponseDTO query(@PathVariable("billId") int billId) {
         List<BillDetail> billDetails = billService.getListBillDetail(billId);
 
-        return billDetails;
-
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", billDetails);
     }
-
 
 }

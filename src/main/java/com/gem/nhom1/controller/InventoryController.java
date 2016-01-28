@@ -1,19 +1,17 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Inventory;
-import com.gem.nhom1.model.InventoryUnit;
+import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.InventoryService;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
+import java.util.Set;
 
 /**
  * Created by nghicv on 21/01/2016.
@@ -26,48 +24,59 @@ public class InventoryController {
     @Autowired
     private InventoryService inventoryService;
 
+    @Autowired
+    private Validator validator;
+
     @RequestMapping("/insert")
-    public @ResponseBody String insert(ModelMap modelMap){
-        Inventory inventory = new Inventory("Ha noi", "Ha noi");
-        int id = inventoryService.insert(inventory);
-        return "Success";
+    public @ResponseBody ResponseDTO insert(@RequestBody Inventory inventory){
+        Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
+        }
+        try{
+           inventoryService.insert(inventory);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, e.getMessage(), null);
+        }
+        return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/all")
-    public @ResponseBody List<Inventory> getList(@RequestParam(value = "page") int page){
+    public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
-        int size = inventories.size();
 
-        return inventories;
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
-    @RequestMapping("/delete/{id}")
-    public @ResponseBody String delete(ModelMap modelMap, @PathVariable int id){
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public @ResponseBody ResponseDTO delete(@RequestBody Integer id){
+
         try {
             inventoryService.delete(id);
         } catch (Exception e) {
-            e.printStackTrace();
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, e.getMessage(), null);
         }
-
-        return "Success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/update/{id}")
-    public @ResponseBody String update(ModelMap modelMap, @PathVariable int id){
-        Inventory inventory = inventoryService.getById(id);
-        inventory.setAddress("Ha noi");
+    public @ResponseBody ResponseDTO update(Inventory inventory){
+        Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
+        }
         inventoryService.update(inventory);
-        return "Success";
+
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/{id}")
-    public @ResponseBody String getitem(ModelMap modelMap, @PathVariable int id){
+    public @ResponseBody ResponseDTO getitem(@PathVariable int id){
         Inventory inventory = inventoryService.getById(id);
-        Dealer dealer = inventory.getDealer();
 
-        List<InventoryUnit> inventoryUnit = new ArrayList<InventoryUnit>(inventory.getInventoryUnits());
-
-        return "Success";
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventory);
     }
 
 }
