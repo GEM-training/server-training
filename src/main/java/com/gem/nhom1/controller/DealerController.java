@@ -6,10 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,10 +33,10 @@ public class DealerController {
     @Autowired
     private BillService billService;
 
-    @RequestMapping("/insert")
-    public @ResponseBody String  home(ModelMap mm){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public @ResponseBody String  insert(@RequestBody Dealer dealer){
 
-        Dealer dealer = new Dealer("Test Dealer" , "HN");
+        //Dealer dealer = new Dealer("Test Dealer" , "HN");
 
         return dealerService.insert(dealer)+"";
 

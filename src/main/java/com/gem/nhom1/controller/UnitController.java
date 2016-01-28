@@ -1,5 +1,6 @@
 package com.gem.nhom1.controller;
 
+import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.model.Unit;
 import com.gem.nhom1.model.UnitDealer;
@@ -49,12 +50,12 @@ public class UnitController {
     }
 
     @RequestMapping("/query/all")
-    public ResponseEntity<List<Unit>> queryAll(@RequestParam (value = "page") int page){
-
+    public @ResponseBody
+    ResponseDTO queryAll(@RequestParam (value = "page", defaultValue = "1") int page){
 
         List<Unit> unitList = unitService.getList(page);
 
-        return new ResponseEntity<List<Unit>>(unitList , HttpStatus.OK);
+        return new ResponseDTO("Success","",unitList);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
