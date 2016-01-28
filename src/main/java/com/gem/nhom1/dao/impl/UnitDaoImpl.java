@@ -1,8 +1,10 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.Unit;
 import org.hibernate.Hibernate;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -18,8 +20,12 @@ public class UnitDaoImpl extends AbstractDao<Integer,Unit> implements UnitDao {
         return getByKey(id);
     }
 
-    public List<Unit> getList() {
-        return getSession().createQuery("from " + Unit.class.getName()).list();
+    public List<Unit> getList(int page) {
+        Query query = getSession().createQuery("from " + Unit.class.getName());
+        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+        query.setMaxResults(HibernateConfiguration.pageSize);
+
+        return query.list();
     }
 
     public int insert(Unit unit) {

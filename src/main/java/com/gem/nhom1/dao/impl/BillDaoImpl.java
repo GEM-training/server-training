@@ -1,8 +1,10 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.BillDao;
 import com.gem.nhom1.model.Bill;
 import org.hibernate.Hibernate;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -16,8 +18,13 @@ public class BillDaoImpl extends AbstractDao<Integer , Bill> implements BillDao 
         return getByKey(id);
     }
 
-    public List<Bill> getList() {
-        return getSession().createQuery("from Bill").list();
+    public List<Bill> getList(int page) {
+
+        Query query =  getSession().createQuery("from Bill");
+        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+        query.setMaxResults(HibernateConfiguration.pageSize);
+
+        return query.list();
     }
 
     public int insert(Bill bill) {

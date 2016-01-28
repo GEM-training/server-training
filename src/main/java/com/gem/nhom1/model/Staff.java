@@ -7,8 +7,6 @@ import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by vanhop on 1/18/16.
@@ -45,6 +43,14 @@ public class Staff {
 
     public Staff() {
     }
+
+    public Staff(String name, String phone, String address) {
+        this.name = name;
+        this.phone = phone;
+        this.address = address;
+    }
+
+
 
 
     public Staff(String name, String phone, String address, Dealer dealer) {

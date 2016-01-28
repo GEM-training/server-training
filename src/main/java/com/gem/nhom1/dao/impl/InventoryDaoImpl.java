@@ -1,8 +1,10 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.InventoryDao;
 import com.gem.nhom1.model.Inventory;
 import com.gem.nhom1.model.Promotion;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -17,8 +19,12 @@ public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements
         return insertObject(inventory);
     }
 
-    public List<Inventory> getList() {
-        return getSession().createQuery("from Inventory").list();
+    public List<Inventory> getList(int page) {
+        Query query =  getSession().createQuery("from Inventory");
+        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+        query.setMaxResults(HibernateConfiguration.pageSize);
+
+        return query.list();
     }
 
     public Inventory getById(int id) {

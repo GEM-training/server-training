@@ -44,10 +44,10 @@ public class UnitController {
         return "Success";
     }
 
-    @RequestMapping("/query/all")
-    public @ResponseBody String queryAll(){
+    @RequestMapping("/query/all/{page}")
+    public @ResponseBody String queryAll(@PathVariable (value = "page") int page){
 
-        List<Unit> unitList = unitService.getList();
+        List<Unit> unitList = unitService.getList(page);
 
         return "Success";
     }

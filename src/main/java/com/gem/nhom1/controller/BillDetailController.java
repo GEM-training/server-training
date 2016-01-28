@@ -50,10 +50,10 @@ public class BillDetailController {
        return "ok";
    }
 
-    @RequestMapping("/list")
-    public @ResponseBody String list(){
+    @RequestMapping("/list/{page}")
+    public @ResponseBody String list(@PathVariable(value = "page") int page){
 
-        return "Size: " + billDetailService.getList().size();
+        return "Size: " + billDetailService.getList(page).size();
     }
 
     @RequestMapping("/update/{unitId}/{billId}/{quantity}")

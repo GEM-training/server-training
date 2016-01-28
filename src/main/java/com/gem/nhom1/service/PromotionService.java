@@ -10,7 +10,7 @@ import java.util.List;
 public interface PromotionService {
 
     public int insert(Promotion promotion);
-    public List<Promotion> getList();
+    public List<Promotion> getList(int page);
     public Promotion getById(int id);
     public boolean delete(int id);
     public void update(Promotion promotion);

@@ -2,6 +2,7 @@ package com.gem.nhom1.config;
 
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -24,6 +25,8 @@ public class HibernateConfiguration {
 
     @Autowired
     private Environment environment;
+    
+    public static int pageSize ;
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() {
@@ -31,6 +34,7 @@ public class HibernateConfiguration {
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(new String[] { "com.gem.nhom1.model" });
         sessionFactory.setHibernateProperties(hibernateProperties());
+        pageSize = Integer.parseInt( environment.getRequiredProperty("hibernate.page_size"));
         return sessionFactory;
      }
 	

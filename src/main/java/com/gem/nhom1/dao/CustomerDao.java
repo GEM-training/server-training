@@ -12,7 +12,7 @@ import java.util.List;
 public interface CustomerDao {
 
     public Customer getById(int id);
-    public List<Customer> getList();
+    public List<Customer> getList(int page);
     public int insert(Customer customer);
     public boolean delete(int customerId);
     public void update(Customer customer);

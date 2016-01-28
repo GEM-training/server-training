@@ -32,9 +32,9 @@ public class InventoryController {
         return "Success";
     }
 
-    @RequestMapping("/all")
-    public @ResponseBody String getList(ModelMap modelMap){
-        List<Inventory> inventories = inventoryService.getList();
+    @RequestMapping("/all/{page}")
+    public @ResponseBody String getList(@PathVariable(value = "page") int page){
+        List<Inventory> inventories = inventoryService.getList(page);
         int size = inventories.size();
 
         return "Success";

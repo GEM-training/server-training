@@ -11,7 +11,7 @@ import java.util.List;
 public interface UnitDao {
 
     public Unit getById(int id);
-    public List<Unit> getList();
+    public List<Unit> getList(int page);
     public int insert(Unit unit);
     public boolean delete(int id);
     public void update(Unit unit);

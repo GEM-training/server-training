@@ -11,7 +11,7 @@ import java.util.List;
 public interface BillDetailService {
 
     public BillDetail getById(BillDetailId id);
-    public List<BillDetail> getList();
+    public List<BillDetail> getList(int page);
     public BillDetailId insert(BillDetail billDetail);
     public boolean delete(BillDetailId id);
     public void update(BillDetail billDetail);

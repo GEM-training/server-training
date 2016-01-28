@@ -23,8 +23,8 @@ public class InventoryServiceImpl implements InventoryService {
         return dao.insert(inventory);
     }
 
-    public List<Inventory> getList() {
-        return dao.getList();
+    public List<Inventory> getList(int page) {
+        return dao.getList(page);
     }
 
     public Inventory getById(int id) {

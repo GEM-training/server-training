@@ -28,8 +28,8 @@ public class UnitServiceImpl implements UnitService {
         return unit;
     }
 
-    public List<Unit> getList() {
-        List<Unit> unitList = unitDao.getList();
+    public List<Unit> getList(int page) {
+        List<Unit> unitList = unitDao.getList(page);
         for(Unit unit : unitList) {
             Hibernate.initialize(unit.getUnitDealers());
             Hibernate.initialize(unit.getUnits());

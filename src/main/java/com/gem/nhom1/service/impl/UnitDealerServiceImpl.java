@@ -23,9 +23,9 @@ public class UnitDealerServiceImpl implements UnitDealerService{
         return unitDealerDao.getById(id);
     }
 
-    public List<UnitDealer> getList() {
+    public List<UnitDealer> getList(int page) {
 
-        return unitDealerDao.getList();
+        return unitDealerDao.getList(page);
     }
 
     public UnitDealerId insert(UnitDealer unitDealer) {

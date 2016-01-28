@@ -1,11 +1,13 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.DealerDao;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Inventory;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.model.Unit;
 import org.hibernate.Hibernate;
+import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -20,8 +22,12 @@ public class DealerDaoImpl extends AbstractDao<Integer , Dealer> implements Deal
         return getByKey(id);
     }
 
-    public List<Dealer> getList() {
-        return getSession().createQuery("from Dealer").list();
+    public List<Dealer> getList(int page) {
+        Query query =  getSession().createQuery("from Dealer");
+        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+        query.setMaxResults(HibernateConfiguration.pageSize);
+
+        return query.list();
     }
 
     public int insert(Dealer dealer) {

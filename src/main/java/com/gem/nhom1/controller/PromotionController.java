@@ -10,9 +10,7 @@ import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
 import java.util.List;
@@ -35,22 +33,17 @@ PromotionController {
     @Autowired
     private UnitService unitService;
 
-    @RequestMapping("/insert")
-    public @ResponseBody
-    String insert(ModelMap modelMap){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public @ResponseBody void insert(@RequestBody Promotion promotion){
+
         Dealer dealer = dealerService.getById(1);
-        Unit unit = unitService.getById(1);
-        Date start = new Date("2016-12-20");
-        Date end = new Date("2016-11-20");
-        Promotion promotion = new Promotion(0.5, start, end, unit, dealer);
-        int id = promotionService.insert(promotion);
-        return "Success";
+        promotion.setDealer(dealer);
+        promotionService.insert(promotion);
     }
 
-    @RequestMapping("/all")
-    public @ResponseBody List<Promotion> getList(ModelMap modelMap){
-        List<Promotion> promotions = promotionService.getList();
-
+    @RequestMapping("/all/dealer/{id}")
+    public @ResponseBody List<Promotion> getList(@PathVariable("id") Integer id){
+        List<Promotion> promotions = dealerService.getListPromotions(id);
         return promotions;
     }
 

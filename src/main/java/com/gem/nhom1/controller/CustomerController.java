@@ -67,9 +67,9 @@ public class CustomerController {
         return "Success";
     }
 
-    @RequestMapping("/list")
-    public @ResponseBody List<Customer> detail(){
-        List<Customer> customers= customerService.getList();
+    @RequestMapping("/list/{page}")
+    public @ResponseBody List<Customer> list(@PathVariable(value = "page") int page){
+        List<Customer> customers= customerService.getList(page);
 
         return customers;
     }

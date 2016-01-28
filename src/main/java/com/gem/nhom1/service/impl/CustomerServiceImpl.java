@@ -26,8 +26,8 @@ public class CustomerServiceImpl implements CustomerService {
         return customerDao.getById(id);
     }
 
-    public List<Customer> getList() {
-        return customerDao.getList();
+    public List<Customer> getList(int page) {
+        return customerDao.getList( page);
     }
 
     public int insert(Customer customer) {

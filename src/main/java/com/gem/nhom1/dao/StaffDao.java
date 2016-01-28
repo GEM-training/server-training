@@ -10,7 +10,7 @@ import java.util.List;
 public interface StaffDao {
 
     public Staff getById(int id);
-    public List<Staff> getList();
+    public List<Staff> getList(int page);
     public int insert(Staff staff);
     public boolean delete(int id);
     public void update(Staff staff);

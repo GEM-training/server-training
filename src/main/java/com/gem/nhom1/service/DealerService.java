@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface DealerService {
     public  Dealer getById(int id);
-    public List<Dealer> getList();
+    public List<Dealer> getList(int page);
     public int insert(Dealer dealer);
     public boolean delete(int dealerId);
     public void update(Dealer dealer);
@@ -21,5 +21,7 @@ public interface DealerService {
     public List<Bill> getListBill(int dealerId);
 
     public double getPrice(int dealerId , int unitId);
+
+    public List<Promotion> getListPromotions(int dealerId);
 
 }

@@ -26,8 +26,8 @@ public class StaffServiceImpl implements StaffService {
         return staff;
     }
 
-    public List<Staff> getList() {
-        return staffDao.getList();
+    public List<Staff> getList(int page) {
+        return staffDao.getList(page);
     }
 
     public int insert(Staff staff) {

@@ -37,8 +37,8 @@ public class DealerServiceImpl implements DealerService {
         return dealer;
     }
 
-    public List<Dealer> getList() {
-        return dealerDao.getList();
+    public List<Dealer> getList(int page) {
+        return dealerDao.getList(page);
     }
 
     public int insert(Dealer dealer) {
@@ -114,5 +114,11 @@ public class DealerServiceImpl implements DealerService {
         UnitDealerId unitDealerId = new UnitDealerId(unitId , dealerId);
         UnitDealer unitDealer = unitDealerDao.getById(unitDealerId);
         return unitDealer.getPrice();
+    }
+
+    public List<Promotion> getListPromotions(int dealerId) {
+        Dealer dealer = getById(dealerId);
+        Hibernate.initialize(dealer.getPromotions());
+        return new ArrayList<Promotion>(dealer.getPromotions());
     }
 }

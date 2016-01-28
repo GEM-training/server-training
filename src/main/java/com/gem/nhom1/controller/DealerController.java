@@ -51,9 +51,9 @@ public class DealerController {
         return "OK";
     }
 
-    @RequestMapping("/list")
-    public @ResponseBody List<Dealer> list(){
-        List<Dealer> list = dealerService.getList();
+    @RequestMapping("/list/{page}")
+    public @ResponseBody List<Dealer> list(@PathVariable(value = "page") int page){
+        List<Dealer> list = dealerService.getList(page);
 
         return list;
     }

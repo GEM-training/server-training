@@ -24,8 +24,8 @@ public class BillDetailServiceImpl implements BillDetailService {
         return billDetailDao.getById(id);
     }
 
-    public List<BillDetail> getList() {
-        return billDetailDao.getList();
+    public List<BillDetail> getList(int page) {
+        return billDetailDao.getList(page);
     }
 
     public BillDetailId insert(BillDetail billDetail) {

@@ -57,12 +57,12 @@ public class BillController {
         return "ok";
     }
 
-    @RequestMapping("/list")
+    @RequestMapping("/list/{page}")
     public
     @ResponseBody
-    String list() {
+    String list(@PathVariable(value = "page") int page) {
 
-        List<Bill> bills = billService.getList();
+        List<Bill> bills = billService.getList(page);
         String kq = "";
 
         for (int i = 0; i < bills.size(); i++) {
