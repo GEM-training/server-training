@@ -10,11 +10,11 @@ import java.util.List;
  */
 public interface StaffService {
 
-    public ResponseDTO getById(int id);
-    public ResponseDTO getList(int page);
-    public ResponseDTO insert(Staff staff);
-    public ResponseDTO delete(int id) throws Exception;
-    public ResponseDTO update(Staff staff);
+    public Staff getById(int id);
+    public List<Staff> getList(int page);
+    public int insert(Staff staff);
+    public void delete(int id) throws Exception;
+    public void update(Staff staff);
 
 
 }

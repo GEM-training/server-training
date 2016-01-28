@@ -41,15 +41,7 @@ public class BillDetailController {
 
     }
 
-    @RequestMapping(value = "/list")
-    public @ResponseBody ResponseDTO
-    list(@RequestParam (value = "page",defaultValue = "1") int page){
-
-        return  billDetailService.getList(page);
-    }
-
-
-
+    
 
     @RequestMapping(value = "/update" ,method = RequestMethod.PUT)
     public @ResponseBody

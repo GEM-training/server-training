@@ -7,6 +7,7 @@ import com.gem.nhom1.model.BillDetailId;
 import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.BillDetailService;
 import com.gem.nhom1.util.Constant;
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.stereotype.Service;
@@ -35,13 +36,6 @@ public class BillDetailServiceImpl implements BillDetailService {
         } catch (Exception e){
             return  new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
         }
-
-    }
-
-    public ResponseDTO getList(int page) {
-
-        List<BillDetail> list = billDetailDao.getList(page);
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , list);
 
     }
 
