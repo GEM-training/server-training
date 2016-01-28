@@ -48,13 +48,13 @@ public class UnitController {
         return new ResponseEntity<Unit>(unit,HttpStatus.OK);
     }
 
-    @RequestMapping("/query/all/{page}")
-    public ResponseEntity<List<Unit>> queryAll(@PathVariable (value = "page") int page){
+    @RequestMapping("/query/all")
+    public ResponseEntity<List<Unit>> queryAll(@RequestParam (value = "page") int page){
 
 
         List<Unit> unitList = unitService.getList(page);
 
-        return new ResponseEntity<List<Unit>>(HttpStatus.OK);
+        return new ResponseEntity<List<Unit>>(unitList , HttpStatus.OK);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)

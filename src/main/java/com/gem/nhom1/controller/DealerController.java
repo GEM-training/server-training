@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -51,8 +52,8 @@ public class DealerController {
         return "OK";
     }
 
-    @RequestMapping("/list/{page}")
-    public @ResponseBody List<Dealer> list(@PathVariable(value = "page") int page){
+    @RequestMapping("/list")
+    public @ResponseBody List<Dealer> list(@RequestParam(value = "page") int page){
         List<Dealer> list = dealerService.getList(page);
 
         return list;
@@ -61,7 +62,12 @@ public class DealerController {
     @RequestMapping("/delete/{dealerId}")
     public @ResponseBody String delete(@PathVariable("dealerId") int dealerId){
 
-        return "Delete: "+ dealerService.delete(dealerId);
+        try {
+            dealerService.delete(dealerId);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
 

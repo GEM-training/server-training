@@ -23,6 +23,7 @@ import java.util.Properties;
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
+
     @Autowired
     private Environment environment;
 

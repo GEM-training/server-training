@@ -1,12 +1,11 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Customer;
+import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.rest.core.util.Methods;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +13,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.ConstraintViolation;
-import java.lang.reflect.Method;
+import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
-import javax.validation.Validation;
-import javax.validation.Validator;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -44,7 +41,9 @@ public class StaffController {
         Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("message" , constraintViolations.iterator().next().getMessage());
+            return new ResponseEntity<Void>(httpHeaders, HttpStatus.EXPECTATION_FAILED);
         }
         staffService.insert(staff);
 
@@ -55,6 +54,7 @@ public class StaffController {
     @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
     public ResponseEntity<Staff> query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
+        int i = HibernateConfiguration.pageSize;
         return new ResponseEntity<Staff>(staff, HttpStatus.OK);
     }
 

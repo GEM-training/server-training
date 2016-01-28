@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.ArrayList;
@@ -32,17 +33,21 @@ public class InventoryController {
         return "Success";
     }
 
-    @RequestMapping("/all/{page}")
-    public @ResponseBody String getList(@PathVariable(value = "page") int page){
+    @RequestMapping("/all")
+    public @ResponseBody List<Inventory> getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
         int size = inventories.size();
 
-        return "Success";
+        return inventories;
     }
 
     @RequestMapping("/delete/{id}")
     public @ResponseBody String delete(ModelMap modelMap, @PathVariable int id){
-        boolean deleted = inventoryService.delete(id);
+        try {
+            inventoryService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "Success";
     }

@@ -83,8 +83,8 @@ PromotionController {
         return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-    @RequestMapping("/query/{id}")
-    public @ResponseBody String getItem(@PathVariable int id){
+    @RequestMapping("/query")
+    public @ResponseBody String getItem(@RequestParam(value = "page") int id){
         Promotion promotion = promotionService.getById(id);
 
         return "success";

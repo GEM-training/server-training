@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.validation.Validator;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.validation.ConstraintViolation;
@@ -62,13 +63,17 @@ public class CustomerController {
     @RequestMapping("/delete/{id}")
     public @ResponseBody String delete(@PathVariable("id") Integer id){
 
-        customerService.delete(id);
+        try {
+            customerService.delete(id);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return "Success";
     }
 
-    @RequestMapping("/list/{page}")
-    public @ResponseBody List<Customer> list(@PathVariable(value = "page") int page){
+    @RequestMapping("/list")
+    public @ResponseBody List<Customer> list(@RequestParam(value = "page") int page){
         List<Customer> customers= customerService.getList(page);
 
         return customers;
