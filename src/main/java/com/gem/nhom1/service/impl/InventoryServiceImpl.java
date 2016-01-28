@@ -19,7 +19,7 @@ public class InventoryServiceImpl implements InventoryService {
 
     @Autowired
     private InventoryDao dao;
-    public int insert(Inventory inventory) {
+    public int insert(Inventory inventory){
         return dao.insert(inventory);
     }
 
@@ -34,11 +34,11 @@ public class InventoryServiceImpl implements InventoryService {
         return inventory;
     }
 
-    public boolean delete(int id) {
-        return dao.delete(id);
+    public void delete(int id) throws Exception {
+        dao.delete(id);
     }
 
-    public void update(Inventory inventory) {
+    public void update(Inventory inventory){
         dao.update(inventory);
     }
 }

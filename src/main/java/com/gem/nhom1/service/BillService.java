@@ -15,7 +15,7 @@ public interface BillService {
     public Bill getById(int id);
     public List<Bill> getList(int page);
     public int insert(Bill bill);
-    public boolean delete(int billId);
+    public void delete(int billId) throws Exception;
     public void update(Bill bill);
 
     public List<BillDetail> getListBillDetail(int billId);

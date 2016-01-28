@@ -41,15 +41,15 @@ public class DealerServiceImpl implements DealerService {
         return dealerDao.getList(page);
     }
 
-    public int insert(Dealer dealer) {
+    public int insert(Dealer dealer){
         return dealerDao.insert(dealer);
     }
 
-    public boolean delete(int dealerId) {
-        return dealerDao.delete(dealerId);
+    public void delete(int dealerId) throws Exception {
+        dealerDao.delete(dealerId);
     }
 
-    public void update(Dealer dealer) {
+    public void update(Dealer dealer){
         dealerDao.update(dealer);
     }
 

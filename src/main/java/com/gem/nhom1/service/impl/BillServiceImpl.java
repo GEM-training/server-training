@@ -29,15 +29,15 @@ public class BillServiceImpl implements BillService {
         return billDao.getList(page);
     }
 
-    public int insert(Bill bill) {
+    public int insert(Bill bill){
         return billDao.insert(bill);
     }
 
-    public boolean delete(int billId) {
-        return billDao.delete(billId);
+    public void delete(int billId) throws Exception {
+        billDao.delete(billId);
     }
 
-    public void update(Bill bill) {
+    public void update(Bill bill){
         billDao.update(bill);
     }
 

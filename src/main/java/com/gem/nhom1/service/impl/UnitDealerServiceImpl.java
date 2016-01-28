@@ -16,9 +16,10 @@ import java.util.List;
  */
 @Service
 @Transactional
-public class UnitDealerServiceImpl implements UnitDealerService{
+public class UnitDealerServiceImpl implements UnitDealerService {
     @Autowired
     private UnitDealerDao unitDealerDao;
+
     public UnitDealer getById(UnitDealerId id) {
         return unitDealerDao.getById(id);
     }
@@ -28,16 +29,16 @@ public class UnitDealerServiceImpl implements UnitDealerService{
         return unitDealerDao.getList(page);
     }
 
-    public UnitDealerId insert(UnitDealer unitDealer) {
+    public UnitDealerId insert(UnitDealer unitDealer){
         return unitDealerDao.insert(unitDealer);
     }
 
-    public boolean delete(UnitDealerId id) {
+    public void delete(UnitDealerId id) throws Exception {
 
-        return unitDealerDao.delete(id);
+        unitDealerDao.delete(id);
     }
 
-    public void update(UnitDealer unitDealer) {
+    public void update(UnitDealer unitDealer){
         unitDealerDao.update(unitDealer);
     }
 }

@@ -12,7 +12,7 @@ public interface PromotionDao {
     public int insert(Promotion promotion);
     public List<Promotion> getList(int page);
     public Promotion getById(int id);
-    public boolean delete(int id);
+    public void delete(int id) throws Exception;
     public void update(Promotion promotion);
 }
 

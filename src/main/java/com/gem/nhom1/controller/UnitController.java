@@ -1,14 +1,17 @@
 package com.gem.nhom1.controller;
 
+import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.model.Unit;
 import com.gem.nhom1.model.UnitDealer;
 import com.gem.nhom1.service.UnitService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import java.util.List;
 import java.util.Set;
 
@@ -21,49 +24,60 @@ public class UnitController {
 
     @Autowired
     private UnitService unitService;
+    @Autowired
+    private Validator validator;
 
-    @RequestMapping("/insert")
-    public @ResponseBody String insert(){
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public ResponseEntity<?> insert(@RequestBody Unit unit){
 
-        Unit unit = new Unit("Xe Dap", 0);
+        Set<ConstraintViolation<Unit>> constraintViolations = validator.validate(unit);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
+
         unitService.insert(unit);
 
-        //Unit unit1 = unitService.getById(1);
-        Unit newUnit = new Unit("Oc Vit", 1, unit);
-
-        unitService.insert(newUnit);
-        return "Success";
+        return new ResponseEntity<Unit>(unit, HttpStatus.OK);
     }
 
-    @RequestMapping(value = "/query/{id}")
-    public @ResponseBody String query(@PathVariable("id") Integer id){
+    @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
+    public ResponseEntity<Unit> query(@PathVariable("id") Integer id){
 
         Unit unit = unitService.getById(id);
-        Set<UnitDealer> dealerSet = unit.getUnitDealers();
-        Set<Unit> unitSet = unit.getUnits();
-        return "Success";
+        return new ResponseEntity<Unit>(unit,HttpStatus.OK);
     }
 
     @RequestMapping("/query/all/{page}")
-    public @ResponseBody String queryAll(@PathVariable (value = "page") int page){
+    public ResponseEntity<List<Unit>> queryAll(@PathVariable (value = "page") int page){
+
 
         List<Unit> unitList = unitService.getList(page);
 
-        return "Success";
+        return new ResponseEntity<List<Unit>>(HttpStatus.OK);
     }
 
-    @RequestMapping("/update/{id}")
-    public @ResponseBody String update(@PathVariable("id") Integer id){
-        Unit unit = unitService.getById(id);
-        unit.setType(unit.getType() + " 2");
+    @RequestMapping(value = "/update", method = RequestMethod.PUT)
+    public ResponseEntity<?> update(@RequestBody Unit unit){
+
+        Set<ConstraintViolation<Unit>> constraintViolations = validator.validate(unit);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
+
         unitService.update(unit);
-        return "Success";
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
-    @RequestMapping("/delete/{id}")
-    public @ResponseBody String delete(@PathVariable("id") Integer id){
-        unitService.delete(id);
-        return "Success";
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id){
+        try {
+            unitService.delete(id);
+        } catch (Exception e) {
+            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+        }
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 
 

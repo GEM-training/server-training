@@ -14,7 +14,7 @@ public interface DealerDao {
     public  Dealer getById(int id);
     public List<Dealer> getList(int page);
     public int insert(Dealer dealer);
-    public boolean delete(int dealerId);
+    public void delete(int dealerId) throws Exception;
     public void update(Dealer dealer);
 
 }

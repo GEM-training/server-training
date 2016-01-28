@@ -20,7 +20,7 @@ public class InventoryUnitServiceImpl implements InventoryUnitService{
     @Autowired
     private InventoryUnitDao dao;
 
-    public InventoryUnitId insert(InventoryUnit inventoryUnit) {
+    public InventoryUnitId insert(InventoryUnit inventoryUnit){
         return dao.insert(inventoryUnit);
     }
 
@@ -32,11 +32,11 @@ public class InventoryUnitServiceImpl implements InventoryUnitService{
         return dao.getById(inventoryUnitId);
     }
 
-    public boolean delete(InventoryUnitId inventoryUnitId) {
-        return dao.delete(inventoryUnitId);
+    public void delete(InventoryUnitId inventoryUnitId) throws Exception {
+        dao.delete(inventoryUnitId);
     }
 
-    public void update(InventoryUnit inventoryUnit) {
+    public void update(InventoryUnit inventoryUnit){
         dao.update(inventoryUnit);
     }
 }

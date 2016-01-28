@@ -13,9 +13,9 @@ import java.util.List;
  */
 
 @Repository
-public class PromotionDaoImpl extends AbstractDao<Integer, Promotion> implements PromotionDao{
+public class PromotionDaoImpl extends AbstractDao<Integer, Promotion> implements PromotionDao {
 
-    public int insert(Promotion promotion) {
+    public int insert(Promotion promotion){
         return insertObject(promotion);
     }
 
@@ -31,17 +31,11 @@ public class PromotionDaoImpl extends AbstractDao<Integer, Promotion> implements
         return getByKey(id);
     }
 
-    public boolean delete(int id) {
-
-        try {
-            deleteObject(getById(id));
-            return true;
-        }catch (Exception e){
-            return false;
-        }
+    public void delete(int id) {
+        deleteObject(getById(id));
     }
 
-    public void update(Promotion promotion) {
+    public void update(Promotion promotion){
         updateObject(promotion);
     }
 }

@@ -30,12 +30,12 @@ public class StaffServiceImpl implements StaffService {
         return staffDao.getList(page);
     }
 
-    public int insert(Staff staff) {
+    public int insert(Staff staff){
         return staffDao.insert(staff);
     }
 
-    public boolean delete(int id) {
-        return staffDao.delete(id);
+    public void delete(int id) throws Exception {
+        staffDao.delete(id);
     }
 
     public void update(Staff staff) {

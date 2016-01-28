@@ -25,7 +25,7 @@ public class HibernateConfiguration {
 
     @Autowired
     private Environment environment;
-    
+
     public static int pageSize ;
 
     @Bean

@@ -1,16 +1,24 @@
 package com.gem.nhom1.controller;
 
+import com.gem.nhom1.model.Customer;
 import com.gem.nhom1.model.Dealer;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.rest.core.util.Methods;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.ConstraintViolation;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.Set;
+import javax.validation.Validation;
+import javax.validation.Validator;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -24,33 +32,60 @@ public class StaffController {
 
     @Autowired
     private DealerService dealerService;
+    @Autowired
+    private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody void insert(@RequestBody Staff staff){
+    public ResponseEntity<?> insert(@RequestBody Staff staff) {
+        //chi co dealer moi co the them staff, dealer dc luu trong session --spring security
         Dealer dealer = dealerService.getById(1);
         staff.setDealer(dealer);
+
+        Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
         staffService.insert(staff);
+
+        return new ResponseEntity<Staff>(staff, HttpStatus.OK);
+
     }
 
     @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
-    public @ResponseBody Staff query(@PathVariable("id") Integer id){
+    public ResponseEntity<Staff> query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
-        return staff;
+        return new ResponseEntity<Staff>(staff, HttpStatus.OK);
     }
 
-    @RequestMapping("/query/all/{page}")
-    public @ResponseBody List<Staff> queryAll(@PathVariable(value = "page") int page){
+    @RequestMapping("/query/all")
+    public ResponseEntity<List<Staff>> queryAll(@RequestParam(value = "page")  int page) {
         List<Staff> staffList = staffService.getList(page);
-        return staffList;
+        return new ResponseEntity<List<Staff>>(staffList, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody void update(@RequestBody Staff staff){
+    public ResponseEntity<?> update(@RequestBody Staff staff) {
+
+        Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
+
+        if (constraintViolations.size() > 0) {
+            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+        }
         staffService.update(staff);
+
+        return new ResponseEntity<Object>(HttpStatus.OK);
     }
 
-    @RequestMapping("/delete/{id}")
-    public @ResponseBody Boolean delete(@PathVariable("id") Integer id){
-        return staffService.delete(id);
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
+    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
+
+        try {
+            staffService.delete(id);
+        } catch (Exception e){
+            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+        }
+
+        return new ResponseEntity<Void>(HttpStatus.OK);
     }
 }

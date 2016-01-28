@@ -13,7 +13,7 @@ public interface UnitDealerDao {
     public UnitDealer getById(UnitDealerId id);
     public List<UnitDealer> getList(int page);
     public UnitDealerId insert(UnitDealer unitDealer);
-    public boolean delete(UnitDealerId id);
+    public void delete(UnitDealerId id) throws Exception;
     public void update(UnitDealer unitDealer);
 
 }

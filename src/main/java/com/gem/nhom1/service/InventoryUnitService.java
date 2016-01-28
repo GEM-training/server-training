@@ -11,8 +11,9 @@ import java.util.List;
 public interface InventoryUnitService {
     public InventoryUnitId insert(InventoryUnit inventoryUnit);
     public List<InventoryUnit> getList(int page);
+
     public InventoryUnit getById(InventoryUnitId inventoryUnitId);
-    public boolean delete(InventoryUnitId inventoryUnitId);
+    public void delete(InventoryUnitId inventoryUnitId) throws Exception;
     public void update(InventoryUnit inventoryUnit);
 
 }

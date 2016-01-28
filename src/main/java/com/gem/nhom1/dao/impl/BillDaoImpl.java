@@ -13,7 +13,7 @@ import java.util.List;
  * Created by phuongtd on 20/01/2016.
  */
 @Repository
-public class BillDaoImpl extends AbstractDao<Integer , Bill> implements BillDao {
+public class BillDaoImpl extends AbstractDao<Integer, Bill> implements BillDao {
     public Bill getById(int id) {
         return getByKey(id);
     }
@@ -27,20 +27,15 @@ public class BillDaoImpl extends AbstractDao<Integer , Bill> implements BillDao 
         return query.list();
     }
 
-    public int insert(Bill bill) {
+    public int insert(Bill bill){
         return insertObject(bill);
     }
 
-    public boolean delete(int billId) {
-        try {
-            deleteObject(getByKey(billId));
-        } catch (Exception e){
-            return false;
-        }
-        return true;
+    public void delete(int billId) throws Exception {
+        deleteObject(getByKey(billId));
     }
 
-    public void update(Bill bill) {
+    public void update(Bill bill){
         updateObject(bill);
     }
 }

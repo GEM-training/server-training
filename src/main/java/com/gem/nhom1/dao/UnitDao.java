@@ -13,6 +13,6 @@ public interface UnitDao {
     public Unit getById(int id);
     public List<Unit> getList(int page);
     public int insert(Unit unit);
-    public boolean delete(int id);
+    public void delete(int id) throws Exception;
     public void update(Unit unit);
 }
