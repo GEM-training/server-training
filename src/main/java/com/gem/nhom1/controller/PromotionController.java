@@ -1,12 +1,10 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Promotion;
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.model.*;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.PromotionService;
 import com.gem.nhom1.service.UnitService;
+import com.gem.nhom1.util.Constant;
 import org.joda.time.LocalDate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,46 +39,55 @@ PromotionController {
     private UnitService unitService;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public ResponseEntity<?> insert(@RequestBody Promotion promotion){
+    public @ResponseBody
+    ResponseDTO insert(@RequestBody Promotion promotion){
 
         Dealer dealer = dealerService.getById(1);
         promotion.setDealer(dealer);
         Set<ConstraintViolation<Promotion>> constraintViolations = validator.validate(promotion);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
         }
-        promotionService.insert(promotion);
-        return new ResponseEntity<Promotion>(promotion,HttpStatus.OK);
+
+        try {
+            promotionService.insert(promotion);
+        } catch(Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping("/all/dealer/{id}")
-    public ResponseEntity<List<Promotion>> getList(@PathVariable("id") Integer id){
+    public @ResponseBody ResponseDTO getList(@PathVariable("id") Integer id){
         List<Promotion> promotions = dealerService.getListPromotions(id);
-        return new ResponseEntity<List<Promotion>>(promotions,HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",promotions);
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> delete(@PathVariable int id){
+    public @ResponseBody ResponseDTO delete(@PathVariable int id){
         try {
             promotionService.delete(id);
         } catch (Exception e) {
-            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody Promotion promotion){
+    public @ResponseBody ResponseDTO update(@RequestBody Promotion promotion){
 
         Set<ConstraintViolation<Promotion>> constraintViolations = validator.validate(promotion);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
         }
-
-        promotionService.update(promotion);
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        try {
+            promotionService.update(promotion);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping("/query")

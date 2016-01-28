@@ -6,6 +6,7 @@ import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.model.Staff;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.StaffService;
+import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -27,7 +28,6 @@ public class StaffController {
 
     @Autowired
     private StaffService staffService;
-
     @Autowired
     private DealerService dealerService;
     @Autowired
@@ -42,49 +42,57 @@ public class StaffController {
         Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseDTO("Error",constraintViolations.iterator().next().getMessage(),staff);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
         }
 
-        staffService.insert(staff);
-
-        return new ResponseDTO("Success","",staff);
+        try {
+            staffService.insert(staff);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
+        }
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
 
     }
 
     @RequestMapping(value = "/query/{id}", method = RequestMethod.GET)
     public @ResponseBody ResponseDTO query(@PathVariable("id") Integer id) {
         Staff staff = staffService.getById(id);
-        return new ResponseDTO("Success","",staff);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staff);
     }
 
     @RequestMapping("/query/all")
-    public ResponseEntity<List<Staff>> queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
+    public @ResponseBody ResponseDTO queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
         List<Staff> staffList = staffService.getList(page);
-        return new ResponseEntity<List<Staff>>(staffList, HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staffList);
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public ResponseEntity<?> update(@RequestBody Staff staff) {
+    public @ResponseBody ResponseDTO update(@RequestBody Staff staff) {
 
         Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
 
         if (constraintViolations.size() > 0) {
-            return new ResponseEntity<String>(constraintViolations.iterator().next().getMessage(), HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
         }
-        staffService.update(staff);
 
-        return new ResponseEntity<Object>(HttpStatus.OK);
+        try {
+            staffService.update(staff);
+        }catch (Exception e){
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
+        }
+
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public ResponseEntity<?> delete(@PathVariable("id") Integer id) {
+    public @ResponseBody ResponseDTO delete(@PathVariable("id") Integer id) {
 
         try {
             staffService.delete(id);
         } catch (Exception e){
-            return new ResponseEntity<Exception>(e,HttpStatus.EXPECTATION_FAILED);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
         }
 
-        return new ResponseEntity<Void>(HttpStatus.OK);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 }
