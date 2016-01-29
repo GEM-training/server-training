@@ -21,7 +21,7 @@ public class StaffServiceImpl implements StaffService {
 
     public Staff getById(int id) {
         Staff staff = staffDao.getById(id);
-        return staff;
+        return  staff;
     }
 
     public List<Staff> getList(int page) {
@@ -29,7 +29,7 @@ public class StaffServiceImpl implements StaffService {
     }
 
     public int insert(Staff staff){
-        return staffDao.insert(staff);
+       return staffDao.insert(staff);
     }
 
     public void delete(int id) throws Exception {

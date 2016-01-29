@@ -5,6 +5,7 @@ import com.gem.nhom1.model.entities.Inventory;
 import com.gem.nhom1.model.dto.ResponseDTO;
 import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.util.Constant;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
@@ -39,7 +40,6 @@ public class InventoryController {
     @RequestMapping("/list")
     public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
-
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 

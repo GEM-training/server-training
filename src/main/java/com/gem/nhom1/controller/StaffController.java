@@ -35,6 +35,7 @@ public class StaffController {
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
 
+
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -58,6 +59,7 @@ public class StaffController {
         staffService.update(staff);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
+
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)

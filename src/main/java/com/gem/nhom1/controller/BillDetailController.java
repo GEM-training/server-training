@@ -33,6 +33,7 @@ public class BillDetailController {
     @Autowired
     private BillDetailService billDetailService;
     @RequestMapping(value = "/insert" , method = RequestMethod.POST)
+
     public @ResponseBody
     ResponseDTO insert(@RequestBody @Valid BillDetail billDetail, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
@@ -44,24 +45,23 @@ public class BillDetailController {
 
     }
 
-    @RequestMapping(value = "/list")
+   /* @RequestMapping(value = "/list")
     public @ResponseBody ResponseDTO list(@RequestParam (value = "page",defaultValue = "1") int page){
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , billDetailService.getList(page)) ;
-    }
+    }*/
 
     @RequestMapping(value = "/update" ,method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody @Valid BillDetail billDetail, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException  {
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid BillDetail billDetail, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
         if (bindingResult.hasErrors())
             throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
         billDetailService.update(billDetail);
 
-        return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
-
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("delete/{unitId}/{billId}")
-    public @ResponseBody ResponseDTO update(@PathVariable("unitId") int unitId, @PathVariable("billId") int billId) {
+    public @ResponseBody ResponseDTO delete(@PathVariable("unitId") int unitId, @PathVariable("billId") int billId) {
 
         Unit unit = unitService.getById(unitId);
         Bill bill = billService.getById(billId);
@@ -70,10 +70,9 @@ public class BillDetailController {
         try {
             billDetailService.delete(billDetailId);
         } catch (Exception e) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR , e.getMessage() , null);
+            e.printStackTrace();
         }
-
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
 

@@ -8,8 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-
 /**
  * Created by vanhop on 1/20/16.
  */
@@ -24,11 +22,7 @@ public class BillDetailServiceImpl implements BillDetailService {
         return billDetailDao.getById(id);
     }
 
-    public List<BillDetail> getList(int page) {
-        return billDetailDao.getList(page);
-    }
-
-    public BillDetailId insert(BillDetail billDetail){
+    public BillDetailId insert(BillDetail billDetail) {
         return billDetailDao.insert(billDetail);
     }
 
@@ -36,7 +30,8 @@ public class BillDetailServiceImpl implements BillDetailService {
         billDetailDao.delete(id);
     }
 
-    public void update(BillDetail billDetail){
+    public void update(BillDetail billDetail) {
+
         billDetailDao.update(billDetail);
     }
 }
