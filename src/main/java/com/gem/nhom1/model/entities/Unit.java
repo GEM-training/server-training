@@ -1,11 +1,15 @@
 package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.hibernate.search.annotations.Analyze;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.Store;
+import org.hibernate.search.annotations.Index;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
-
 
 import javax.persistence.*;
 import javax.persistence.Entity;
@@ -18,6 +22,7 @@ import java.util.Set;
  * Created by vanhop on 1/18/16.
  */
 @Entity
+@Indexed
 @Table(name = "UNITS")
 public class Unit {
 
@@ -29,10 +34,12 @@ public class Unit {
     @NotNull(message = "Type không được để rỗng")
     @Length(min = 1,max = 50,message = "Type có độ dài từ 1 đến 50")
     @Column(name = "TYPE")
+    @Field
     private String type;
 
     @NotNull(message = "Is_part không được để rỗng")
     @Column(name = "IS_PART")
+    @Field
     private Integer isPart;
 
     @ManyToOne

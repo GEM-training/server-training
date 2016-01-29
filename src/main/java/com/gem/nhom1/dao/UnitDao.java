@@ -1,6 +1,7 @@
 package com.gem.nhom1.dao;
 
 import com.gem.nhom1.model.entities.Unit;
+import org.hibernate.Session;
 
 import java.util.List;
 
@@ -14,4 +15,6 @@ public interface UnitDao {
     public int insert(Unit unit);
     public void delete(int id) throws Exception;
     public void update(Unit unit);
+
+    public Session getSession_();
 }

@@ -3,9 +3,17 @@ package com.gem.nhom1.dao.impl;
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.entities.Unit;
+import org.apache.taglibs.standard.extra.spath.ParseException;
 import org.hibernate.Query;
+import org.hibernate.Session;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
+
+import javax.persistence.EntityManager;
 import java.util.List;
 
 /**
@@ -14,6 +22,8 @@ import java.util.List;
 
 @Repository
 public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
+
+
 
     public Unit getById(int id) {
         return getByKey(id);
@@ -38,5 +48,26 @@ public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
     public void update(Unit unit){
         updateObject(unit);
     }
+
+    public Session getSession_(){
+        return  getSession();
+    }
+
+   /* @Transactional
+    public List<Unit> search(String key) {
+        Session session = getSession();
+        FullTextSession fullTextSession = Search.getFullTextSession(session);
+
+        QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Unit.class).get();
+        org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("type").matching(key).createQuery();
+
+        org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Unit.class);
+
+        List<Unit> contactList = fullTextQuery.list();
+
+        //fullTextSession.close();
+
+        return contactList;
+    }*/
 }
 

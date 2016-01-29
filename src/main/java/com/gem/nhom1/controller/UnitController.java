@@ -72,5 +72,11 @@ public class UnitController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
+    @RequestMapping("/search/{key}")
+    public @ResponseBody ResponseDTO search(@PathVariable("key") String key){
+
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , ""  , unitService.search(key));
+    }
+
 
 }

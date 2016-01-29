@@ -4,6 +4,10 @@ import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.entities.Unit;
 import com.gem.nhom1.service.UnitService;
 import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.search.FullTextSession;
+import org.hibernate.search.Search;
+import org.hibernate.search.query.dsl.QueryBuilder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,5 +51,23 @@ public class UnitServiceImpl implements UnitService {
 
     public void update(Unit unit) {
         unitDao.update(unit);
+    }
+
+
+
+    public List<Unit> search(String key) {
+        Session session = unitDao.getSession_();
+        FullTextSession fullTextSession = Search.getFullTextSession(session);
+
+        QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Unit.class).get();
+        org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("type").matching(key).createQuery();
+
+        org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Unit.class);
+
+        List<Unit> contactList = fullTextQuery.list();
+
+        //fullTextSession.close();
+
+        return contactList;
     }
 }

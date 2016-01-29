@@ -40,7 +40,7 @@ public class Bill {
     @Column(name = "create_date")
     private Date ceateDate;
 
-    @Column(name = "update_date")
+    @Column(name = "update_date" )
     private Date updateDate;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "pk.bill", cascade = CascadeType.ALL)

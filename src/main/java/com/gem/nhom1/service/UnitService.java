@@ -13,4 +13,6 @@ public interface UnitService {
     public int insert(Unit unit);
     public void delete(int id) throws Exception;
     public void update(Unit unit);
+
+    public List<Unit> search(String key);
 }

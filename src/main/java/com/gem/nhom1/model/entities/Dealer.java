@@ -2,6 +2,7 @@ package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.hibernate.search.annotations.*;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
