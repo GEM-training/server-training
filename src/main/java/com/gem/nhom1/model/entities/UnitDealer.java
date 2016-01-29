@@ -1,7 +1,6 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 // Generated Jan 20, 2016 8:31:28 PM by Hibernate Tools 4.3.1
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.AttributeOverride;
@@ -9,7 +8,6 @@ import javax.persistence.AttributeOverrides;
 import javax.persistence.Column;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;

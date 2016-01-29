@@ -1,9 +1,9 @@
 package com.gem.nhom1.test;
 
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.BillDetail;
-import com.gem.nhom1.model.BillDetailId;
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.model.entities.Bill;
+import com.gem.nhom1.model.entities.BillDetail;
+import com.gem.nhom1.model.entities.BillDetailId;
+import com.gem.nhom1.model.entities.Unit;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

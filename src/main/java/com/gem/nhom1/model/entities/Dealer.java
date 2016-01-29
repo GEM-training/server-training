@@ -1,12 +1,8 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonBackReference;
 
-import org.codehaus.jackson.annotate.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -25,16 +21,12 @@ public class Dealer {
     @Column(name = "dealer_id")
     private int dealerId;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
-    @Length(min = 3, max = 50, message = "Độ dài tên từ 3 đến 50 kí tự")
+    @NotNull(message = "Tên không được để rỗng")
+    @Length(min = 3, max = 50, message = "Tên có độ dài tên từ 3 đến 50 kí tự")
     @Column(name = "name")
     private String name;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
+    @NotNull(message = "Địa chỉ không được để rỗng")
     @Length(min = 2, max = 50, message = "Địa chỉ có độ dài từ 2 đến 50")
     @Column(name = "address")
     private String address;

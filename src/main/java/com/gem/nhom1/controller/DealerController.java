@@ -1,16 +1,19 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.dto.ResponseDTO;
+import com.gem.nhom1.model.entities.*;
 import com.gem.nhom1.service.*;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by phuong on 1/19/2016.
@@ -20,42 +23,26 @@ import java.util.Set;
 public class DealerController {
 
     @Autowired
-    private BillDetailService billDetailService;
-
-    @Autowired
-    private UnitDealerService unitDealerService;
-
-    @Autowired
-    private UnitService unitService;
-
-    @Autowired
     private DealerService dealerService;
-
     @Autowired
     private BillService billService;
-    @Autowired
-    private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody  ResponseDTO insert(@RequestBody Dealer dealer) {
-        Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
+    public @ResponseBody
+    ResponseDTO insert(@RequestBody @Valid Dealer dealer, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
         dealerService.insert(dealer);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
-
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody Dealer dealer) {
-        Set<ConstraintViolation<Dealer>> constraintViolations = validator.validate(dealer);
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid Dealer dealer,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException  {
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
         dealerService.update(dealer);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);

@@ -1,7 +1,7 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.InventoryDao;
-import com.gem.nhom1.model.Inventory;
+import com.gem.nhom1.model.entities.Inventory;
 import com.gem.nhom1.service.InventoryService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;

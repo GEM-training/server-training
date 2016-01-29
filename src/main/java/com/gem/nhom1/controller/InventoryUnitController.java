@@ -1,17 +1,21 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.dto.ResponseDTO;
+import com.gem.nhom1.model.entities.*;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.service.InventoryUnitService;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -24,22 +28,17 @@ public class InventoryUnitController {
 
     @Autowired
     private InventoryUnitService inventoryUnitService;
-
     @Autowired
     private UnitService unitService;
-
     @Autowired
     private InventoryService inventoryService;
-
     @Autowired
     private DealerService dealerService;
 
-    @Autowired
-    private Validator validator;
-
 
     @RequestMapping("/inventory/{inventory_id}/dealer/{dealer_id}")
-    public @ResponseBody ResponseDTO getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
+    public @ResponseBody
+    ResponseDTO getList(@PathVariable("dealer_id") Integer dealerId, @PathVariable("inventory_id") Integer inventoryId){
 
         Dealer dealer = dealerService.getById(dealerId);
 
@@ -53,25 +52,11 @@ public class InventoryUnitController {
     }
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody ResponseDTO insert(@RequestBody InventoryUnit inventoryUnit){
+    public @ResponseBody ResponseDTO insert(@RequestBody @Valid InventoryUnit inventoryUnit, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-       /* Unit unit = unitService.getById(unit_id);
-        Inventory inventory = inventoryService.getById(inventory_id);
-
-        InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
-        InventoryUnit inventoryUnit = new InventoryUnit(inventoryUnitId, 200);*/
-
-        Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
-
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
-
-        try {
-            inventoryUnitService.insert(inventoryUnit);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
-        }
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
+        inventoryUnitService.insert(inventoryUnit);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
@@ -92,24 +77,13 @@ public class InventoryUnitController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody InventoryUnit inventoryUnit){
-        /*Unit unit = unitService.getById(unit_id);
-        Inventory inventory = inventoryService.getById(inventory_id);
-        InventoryUnitId inventoryUnitId = new InventoryUnitId(inventory, unit);
-        InventoryUnit inventoryUnit = inventoryUnitService.getById(inventoryUnitId);
-        inventoryUnit.setQuantityInStock(89);*/
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid InventoryUnit inventoryUnit,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Set<ConstraintViolation<InventoryUnit>> constraintViolations = validator.validate(inventoryUnit);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
+        inventoryUnitService.update(inventoryUnit);
 
-        try {
-            inventoryUnitService.update(inventoryUnit);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 }

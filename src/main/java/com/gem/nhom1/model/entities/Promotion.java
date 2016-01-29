@@ -1,9 +1,5 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
-import org.hibernate.annotations.Type;
-import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 import java.util.Date;
 
 import javax.persistence.*;
@@ -24,16 +20,16 @@ public class Promotion {
     @Column(name = "promotion_id")
     private int id;
 
-    @Min(value = 0, message = "Không được nhập số âm")
-    @Digits(integer = 10,fraction = 2, message = "Số quá lớn")
+    @Min(value = 0, message = "Giảm gía không được nhập số âm")
+    @Digits(integer = 10,fraction = 2, message = "Số giảm quá quá lớn")
     @Column(name = "saleoff")
     private double saleOff;
 
-    @NotNull(message = "Trường không được để rỗng")
+    @NotNull(message = "Thời gian không được để rỗng")
     @Column(name = "starttime")
     private Date startTime;
 
-    @NotNull(message = "Trường không được để rỗng")
+    @NotNull(message = "Thời gian không được để rỗng")
     @Column(name = "endtime")
     private Date endTime;
 

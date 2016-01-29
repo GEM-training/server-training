@@ -2,8 +2,8 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.BillDetailDao;
-import com.gem.nhom1.model.BillDetail;
-import com.gem.nhom1.model.BillDetailId;
+import com.gem.nhom1.model.entities.BillDetail;
+import com.gem.nhom1.model.entities.BillDetailId;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

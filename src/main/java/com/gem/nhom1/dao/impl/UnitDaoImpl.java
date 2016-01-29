@@ -2,8 +2,7 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.UnitDao;
-import com.gem.nhom1.model.Unit;
-import org.hibernate.Hibernate;
+import com.gem.nhom1.model.entities.Unit;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 

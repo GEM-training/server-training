@@ -2,13 +2,10 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.InventoryUnitDao;
-import com.gem.nhom1.model.InventoryUnit;
-import com.gem.nhom1.model.InventoryUnitId;
-import org.hibernate.Criteria;
+import com.gem.nhom1.model.entities.InventoryUnit;
+import com.gem.nhom1.model.entities.InventoryUnitId;
 
 import org.hibernate.Query;
-import org.hibernate.SQLQuery;
-import org.hibernate.criterion.Restrictions;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

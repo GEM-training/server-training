@@ -1,8 +1,7 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.BillDetail;
-import com.gem.nhom1.model.BillDetailId;
-import com.gem.nhom1.model.Dealer;
+import com.gem.nhom1.model.entities.BillDetail;
+import com.gem.nhom1.model.entities.BillDetailId;
 
 import java.util.List;
 

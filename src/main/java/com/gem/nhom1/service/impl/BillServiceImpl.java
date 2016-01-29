@@ -1,8 +1,8 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.BillDao;
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.BillDetail;
+import com.gem.nhom1.model.entities.Bill;
+import com.gem.nhom1.model.entities.BillDetail;
 import com.gem.nhom1.service.BillService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;

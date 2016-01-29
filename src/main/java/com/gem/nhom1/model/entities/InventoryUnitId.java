@@ -1,6 +1,5 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.codehaus.jackson.annotate.JsonBackReference;
 
 import javax.persistence.Embeddable;

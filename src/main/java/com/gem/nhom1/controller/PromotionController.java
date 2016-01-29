@@ -1,20 +1,20 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Promotion;
-import com.gem.nhom1.model.ResponseDTO;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.entities.Promotion;
+import com.gem.nhom1.model.dto.ResponseDTO;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.PromotionService;
-import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by nghicv on 21/01/2016.
@@ -30,28 +30,15 @@ PromotionController {
     private PromotionService promotionService;
     @Autowired
     private DealerService dealerService;
-    @Autowired
-    private Validator validator;
-    @Autowired
-    private UnitService unitService;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public @ResponseBody
-    ResponseDTO insert(@RequestBody Promotion promotion){
+    ResponseDTO insert(@RequestBody @Valid Promotion promotion, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Dealer dealer = dealerService.getById(1);
-        promotion.setDealer(dealer);
-        Set<ConstraintViolation<Promotion>> constraintViolations = validator.validate(promotion);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
+        promotionService.insert(promotion);
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
-
-        try {
-            promotionService.insert(promotion);
-        } catch(Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
@@ -72,18 +59,12 @@ PromotionController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody Promotion promotion){
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid Promotion promotion,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Set<ConstraintViolation<Promotion>> constraintViolations = validator.validate(promotion);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
+        promotionService.update(promotion);
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
-        try {
-            promotionService.update(promotion);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 

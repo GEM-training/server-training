@@ -1,6 +1,6 @@
 package com.gem.nhom1.test;
 
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.model.entities.*;
 import com.gem.nhom1.service.DealerService;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;

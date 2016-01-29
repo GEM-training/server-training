@@ -1,7 +1,6 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.Digits;
@@ -24,8 +23,8 @@ public class InventoryUnit {
     @JsonIgnore
     private InventoryUnitId inventoryUnitId;
 
-    @Min(value = 0, message = "Không được nhập giá trị âm")
-    @Digits(integer = 10,fraction = 0, message = "Số quá lớn")
+    @Min(value = 0, message = "Số lượng không được nhập giá trị âm")
+    @Digits(integer = 10,fraction = 0, message = "Số lượng quá lớn")
     @Column(name = "quantity_in_stock")
     private int quantityInStock;
 

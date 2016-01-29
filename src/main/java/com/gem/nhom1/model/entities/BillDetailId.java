@@ -1,6 +1,5 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
-import org.codehaus.jackson.annotate.JsonBackReference;
 import org.codehaus.jackson.annotate.JsonManagedReference;
 
 import javax.persistence.Embeddable;

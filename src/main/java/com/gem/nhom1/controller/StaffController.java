@@ -1,19 +1,19 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.ResponseDTO;
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.service.DealerService;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.dto.ResponseDTO;
+import com.gem.nhom1.model.entities.Staff;
 import com.gem.nhom1.service.StaffService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -24,28 +24,15 @@ public class StaffController {
 
     @Autowired
     private StaffService staffService;
-    @Autowired
-    private DealerService dealerService;
-    @Autowired
-    private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody ResponseDTO insert(@RequestBody Staff staff) {
-        //chi co dealer moi co the them staff, dealer dc luu trong session --spring security
-        Dealer dealer = dealerService.getById(1);
-        staff.setDealer(dealer);
+    public @ResponseBody ResponseDTO insert(@RequestBody @Valid Staff staff, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
+        staffService.insert(staff);
 
-        try {
-            staffService.insert(staff);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
 
     }
@@ -63,19 +50,12 @@ public class StaffController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody Staff staff) {
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid Staff staff,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException  {
 
-        Set<ConstraintViolation<Staff>> constraintViolations = validator.validate(staff);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
-
-        try {
-            staffService.update(staff);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
-        }
+        staffService.update(staff);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }

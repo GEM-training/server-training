@@ -1,8 +1,8 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.InventoryUnitDao;
-import com.gem.nhom1.model.InventoryUnit;
-import com.gem.nhom1.model.InventoryUnitId;
+import com.gem.nhom1.model.entities.InventoryUnit;
+import com.gem.nhom1.model.entities.InventoryUnitId;
 import com.gem.nhom1.service.InventoryUnitService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

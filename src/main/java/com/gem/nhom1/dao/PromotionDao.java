@@ -1,6 +1,6 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.entities.Promotion;
 
 import java.util.List;
 

@@ -1,8 +1,7 @@
 package com.gem.nhom1.service;
 
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.model.UnitDealer;
-import com.gem.nhom1.model.UnitDealerId;
+import com.gem.nhom1.model.entities.UnitDealer;
+import com.gem.nhom1.model.entities.UnitDealerId;
 
 import java.util.List;
 

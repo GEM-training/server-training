@@ -1,10 +1,8 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.StaffDao;
-import com.gem.nhom1.dao.impl.AbstractDao;
-import com.gem.nhom1.model.Staff;
+import com.gem.nhom1.model.entities.Staff;
 import com.gem.nhom1.service.StaffService;
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
