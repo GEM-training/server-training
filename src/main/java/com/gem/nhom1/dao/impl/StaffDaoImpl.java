@@ -2,7 +2,7 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.StaffDao;
-import com.gem.nhom1.model.Staff;
+import com.gem.nhom1.model.entities.Staff;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 

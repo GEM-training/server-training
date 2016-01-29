@@ -1,9 +1,6 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Inventory;
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.model.entities.Dealer;
 
 import java.util.List;
 

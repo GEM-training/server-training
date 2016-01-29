@@ -1,9 +1,7 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
 
 /**

@@ -1,7 +1,7 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.InventoryUnit;
-import com.gem.nhom1.model.InventoryUnitId;
+import com.gem.nhom1.model.entities.InventoryUnit;
+import com.gem.nhom1.model.entities.InventoryUnitId;
 
 import java.util.List;
 

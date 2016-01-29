@@ -1,11 +1,8 @@
 package com.gem.nhom1.service;
 
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.BillDetail;
-import com.gem.nhom1.model.Customer;
-import org.hibernate.Hibernate;
+import com.gem.nhom1.model.entities.Bill;
+import com.gem.nhom1.model.entities.BillDetail;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**

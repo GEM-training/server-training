@@ -1,15 +1,15 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 
 
 import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
@@ -26,14 +26,12 @@ public class Unit {
     @Column(name = "UNIT_ID")
     private Integer unitId;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
-    @Length(min = 1,max = 50,message = "Độ dài từ 1 đến 50")
+    @NotNull(message = "Type không được để rỗng")
+    @Length(min = 1,max = 50,message = "Type có độ dài từ 1 đến 50")
     @Column(name = "TYPE")
     private String type;
 
-    @NotNull(message = "Trường không được để rỗng")
+    @NotNull(message = "Is_part không được để rỗng")
     @Column(name = "IS_PART")
     private Integer isPart;
 

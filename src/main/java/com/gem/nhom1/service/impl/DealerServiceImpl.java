@@ -3,7 +3,7 @@ package com.gem.nhom1.service.impl;
 import com.gem.nhom1.dao.DealerDao;
 import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.dao.UnitDealerDao;
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.model.entities.*;
 import com.gem.nhom1.service.DealerService;
 import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +11,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 

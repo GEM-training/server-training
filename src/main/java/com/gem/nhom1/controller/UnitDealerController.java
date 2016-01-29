@@ -1,17 +1,23 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.*;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.dto.ResponseDTO;
+import com.gem.nhom1.model.entities.Dealer;
+import com.gem.nhom1.model.entities.Unit;
+import com.gem.nhom1.model.entities.UnitDealer;
+import com.gem.nhom1.model.entities.UnitDealerId;
 import com.gem.nhom1.service.DealerService;
 import com.gem.nhom1.service.UnitDealerService;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-import java.util.Set;
+import javax.validation.Valid;
+import java.sql.SQLException;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -26,29 +32,15 @@ public class UnitDealerController {
     private DealerService dealerService;
     @Autowired
     private UnitService unitService;
-    @Autowired
-    protected Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public @ResponseBody
-    ResponseDTO insert(@RequestBody UnitDealer unitDealer){
+    ResponseDTO insert(@RequestBody @Valid UnitDealer unitDealer, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-       /* Dealer dealer = dealerService.getById(1);
-        Unit unit = unitService.getById(33);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
+        unitDealerService.insert(unitDealer);
 
-        UnitDealer unitDealer = new UnitDealer(dealer,unit,2000);*/
-
-        Set<ConstraintViolation<UnitDealer>> constraintViolations = validator.validate(unitDealer);
-
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
-
-        try {
-            unitDealerService.insert(unitDealer);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
@@ -64,21 +56,13 @@ public class UnitDealerController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody UnitDealer unitDealer){
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid UnitDealer unitDealer,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-       // UnitDealer unitDealer = unitDealerService.getById(new UnitDealerId(unitId,dealerId));
-        //unitDealer.setPrice(4000);
-        Set<ConstraintViolation<UnitDealer>> constraintViolations = validator.validate(unitDealer);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
+        unitDealerService.update(unitDealer);
 
-        try {
-            unitDealerService.update(unitDealer);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(), null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 

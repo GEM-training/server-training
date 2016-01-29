@@ -1,4 +1,4 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -22,8 +22,8 @@ public class BillDetail {
     @JsonIgnore
     private BillDetailId pk = new BillDetailId();
 
-    @Min(value = 0, message = "Không được nhập gía trị âm")
-    @Digits(integer = 10, fraction = 0, message = "Giá trị truyền vào quá lớn")
+    @Min(value = 0, message = "Số lượng không được nhập gía trị âm")
+    @Digits(integer = 10, fraction = 0, message = "Số lượng truyền vào quá lớn")
     @Column(name = "quantity")
     private Integer quantity;
 

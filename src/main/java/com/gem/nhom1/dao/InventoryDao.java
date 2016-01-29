@@ -1,6 +1,6 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.Inventory;
+import com.gem.nhom1.model.entities.Inventory;
 
 import java.util.List;
 

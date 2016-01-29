@@ -1,17 +1,19 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.ResponseDTO;
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.dto.ResponseDTO;
+import com.gem.nhom1.model.entities.Unit;
 import com.gem.nhom1.service.UnitService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by phuongtd on 21/01/2016.
@@ -22,23 +24,14 @@ public class UnitController {
 
     @Autowired
     private UnitService unitService;
-    @Autowired
-    private Validator validator;
 
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
-    public @ResponseBody ResponseDTO insert(@RequestBody Unit unit){
+    public @ResponseBody ResponseDTO insert(@RequestBody @Valid Unit unit, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Set<ConstraintViolation<Unit>> constraintViolations = validator.validate(unit);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
-
-        try {
-            unitService.insert(unit);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,e.getMessage(),null);
-        }
+        unitService.insert(unit);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
@@ -59,19 +52,13 @@ public class UnitController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody Unit unit){
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid Unit unit,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        Set<ConstraintViolation<Unit>> constraintViolations = validator.validate(unit);
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
+        unitService.update(unit);
 
-        try {
-            unitService.update(unit);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 

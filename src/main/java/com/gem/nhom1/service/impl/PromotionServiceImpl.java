@@ -1,7 +1,7 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.PromotionDao;
-import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.entities.Promotion;
 import com.gem.nhom1.service.PromotionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

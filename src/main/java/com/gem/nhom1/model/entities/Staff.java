@@ -1,9 +1,6 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -20,18 +17,16 @@ public class Staff {
     @Column(name = "staff_id")
     private Integer staffId;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @Length(min = 3,max = 50, message = "Độ dài từ 3 đến 50")
+    @NotNull(message = "Tên không được để rỗng")
+    @Length(min = 3,max = 50, message = "Tên có độ dài từ 3 đến 50")
     @Column(name = "name")
     private String name;
 
-    @Length(max = 50, message = "Độ dài tối đa là 50")
+    @Length(max = 50, message = "Số điện thoại có độ dài tối đa là 50")
     @Column(name = "phone" ,length = 50)
     private String phone;
 
-    @Length(max = 100, message = "Độ dài tối đa là 100")
+    @Length(max = 100, message = "Địa chỉ có độ dài tối đa là 100")
     @Column(name = "address" , length = 100)
     private String address;
 

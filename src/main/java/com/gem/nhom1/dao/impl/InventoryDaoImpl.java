@@ -2,8 +2,7 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.InventoryDao;
-import com.gem.nhom1.model.Inventory;
-import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.entities.Inventory;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 

@@ -2,11 +2,7 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.DealerDao;
-import com.gem.nhom1.model.Dealer;
-import com.gem.nhom1.model.Inventory;
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.model.Unit;
-import org.hibernate.Hibernate;
+import com.gem.nhom1.model.entities.Dealer;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 

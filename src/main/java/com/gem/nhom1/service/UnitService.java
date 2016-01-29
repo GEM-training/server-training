@@ -1,6 +1,6 @@
 package com.gem.nhom1.service;
 
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.model.entities.Unit;
 
 import java.util.List;
 

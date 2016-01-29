@@ -1,4 +1,4 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.dto;
 
 /**
  * Created by vanhop on 1/28/16.

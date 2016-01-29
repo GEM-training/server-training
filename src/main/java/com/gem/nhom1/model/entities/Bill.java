@@ -1,13 +1,9 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import org.hibernate.annotations.Type;
 
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -35,9 +31,7 @@ public class Bill {
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
-    @NotNull(message = "Trường này không được rỗng")
-    @NotEmpty(message = "Trường này không được rỗng")
-    @NotBlank(message = "Trường này không được rỗng")
+    @NotNull(message = "Trạng thái không được rỗng")
     @Length(min = 1, max = 1, message = "Trạng thái không hợp lệ")
     @Column(name = "state" , length = 50)
     private String state;

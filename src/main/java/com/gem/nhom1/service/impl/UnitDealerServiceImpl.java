@@ -1,9 +1,8 @@
 package com.gem.nhom1.service.impl;
 
 import com.gem.nhom1.dao.UnitDealerDao;
-import com.gem.nhom1.model.Staff;
-import com.gem.nhom1.model.UnitDealer;
-import com.gem.nhom1.model.UnitDealerId;
+import com.gem.nhom1.model.entities.UnitDealer;
+import com.gem.nhom1.model.entities.UnitDealerId;
 import com.gem.nhom1.service.UnitDealerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

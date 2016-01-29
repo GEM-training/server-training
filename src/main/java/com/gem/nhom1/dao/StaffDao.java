@@ -1,6 +1,6 @@
 package com.gem.nhom1.dao;
 
-import com.gem.nhom1.model.Staff;
+import com.gem.nhom1.model.entities.Staff;
 
 import java.util.List;
 

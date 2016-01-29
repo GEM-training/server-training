@@ -1,17 +1,20 @@
 package com.gem.nhom1.controller;
 
-import com.gem.nhom1.model.Inventory;
-import com.gem.nhom1.model.ResponseDTO;
+import com.gem.nhom1.exception.exception.ValidationException;
+import com.gem.nhom1.model.entities.Inventory;
+import com.gem.nhom1.model.dto.ResponseDTO;
 import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.util.Constant;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
+import javax.validation.Valid;
+import java.sql.SQLException;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by nghicv on 21/01/2016.
@@ -24,28 +27,19 @@ public class InventoryController {
     @Autowired
     private InventoryService inventoryService;
 
-    @Autowired
-    private Validator validator;
-
     @RequestMapping("/insert")
-    public @ResponseBody ResponseDTO insert(@RequestBody Inventory inventory){
-        Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
+    public @ResponseBody ResponseDTO insert(@RequestBody @Valid Inventory inventory, BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(),null);
-        }
-        try{
-           inventoryService.insert(inventory);
-        }catch (Exception e){
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, e.getMessage(), null);
-        }
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
+        inventoryService.insert(inventory);
+
         return  new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
     @RequestMapping("/list")
     public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
-
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
@@ -61,12 +55,10 @@ public class InventoryController {
     }
 
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
-    public @ResponseBody ResponseDTO update(@RequestBody Inventory inventory){
-        Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
+    public @ResponseBody ResponseDTO update(@RequestBody @Valid Inventory inventory,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException {
 
-        if (constraintViolations.size() > 0) {
-            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR,constraintViolations.iterator().next().getMessage(), null);
-        }
+        if (bindingResult.hasErrors())
+            throw new ValidationException(bindingResult.getAllErrors().get(0).getDefaultMessage());
         inventoryService.update(inventory);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);

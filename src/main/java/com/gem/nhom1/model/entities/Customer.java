@@ -1,14 +1,9 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -27,23 +22,17 @@ public class Customer {
     @Column(name = "CUSTOMER_ID")
     private Integer id;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
-    @Length(min = 3, max = 100, message = "Độ dài tên từ 3 đến 100 kí tự")
+    @NotNull(message = "Tên không được để rỗng")
+    @Length(min = 3, max = 100, message = "Tên có độ dài tên từ 3 đến 100 kí tự")
     @Column(name = "NAME")
     private String name;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
-    @Length(min = 3, max = 50, message = "Độ dài từ phone từ 3 đến 50")
+    @NotNull(message = "Số điện thoại không được để rỗng")
+    @Length(min = 3, max = 50, message = "Số điện thoại có độ dài từ phone từ 3 đến 50")
     @Column(name = "PHONE")
     private String phone;
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
+    @NotNull(message = "Địa chỉ không được để rỗng")
     @Length(min = 1, max = 50, message = "Địa chỉ có độ dài từ 1 đến 50 kí tự")
     @Column(name = "ADDRESS" ,length = 50 , nullable = false)
     private String address;

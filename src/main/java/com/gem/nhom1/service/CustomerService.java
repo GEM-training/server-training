@@ -1,8 +1,7 @@
 package com.gem.nhom1.service;
 
-import com.gem.nhom1.model.Bill;
-import com.gem.nhom1.model.Customer;
-import com.gem.nhom1.model.Unit;
+import com.gem.nhom1.model.entities.Bill;
+import com.gem.nhom1.model.entities.Customer;
 
 import java.util.List;
 

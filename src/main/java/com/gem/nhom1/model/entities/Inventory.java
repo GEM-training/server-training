@@ -1,9 +1,7 @@
-package com.gem.nhom1.model;
+package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotBlank;
-import org.hibernate.validator.constraints.NotEmpty;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -57,9 +55,7 @@ public class Inventory {
         return inventoryId;
     }
 
-    @NotNull(message = "Trường không được để rỗng")
-    @NotBlank(message = "Trường không được để rỗng")
-    @NotEmpty(message = "Trường không được để rỗng")
+    @NotNull(message = "Tên khô không được để rỗng")
     @Length(min = 3, max = 100, message = "Tên kho có độ dài từ 3 đến 100 kí tự")
     @Column(name = "name" , length = 100 , nullable = false)
     public String getName() {

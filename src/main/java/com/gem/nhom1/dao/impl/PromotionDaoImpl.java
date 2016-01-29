@@ -2,7 +2,7 @@ package com.gem.nhom1.dao.impl;
 
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.PromotionDao;
-import com.gem.nhom1.model.Promotion;
+import com.gem.nhom1.model.entities.Promotion;
 import org.hibernate.Query;
 import org.springframework.stereotype.Repository;
 
