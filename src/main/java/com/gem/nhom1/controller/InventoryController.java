@@ -4,6 +4,7 @@ import com.gem.nhom1.model.Inventory;
 import com.gem.nhom1.model.ResponseDTO;
 import com.gem.nhom1.service.InventoryService;
 import com.gem.nhom1.util.Constant;
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -27,6 +28,8 @@ public class InventoryController {
     @Autowired
     private Validator validator;
 
+    private static final Logger logger = Logger.getLogger(InventoryController.class);
+
     @RequestMapping("/insert")
     public @ResponseBody ResponseDTO insert(@RequestBody Inventory inventory){
         Set<ConstraintViolation<Inventory>> constraintViolations = validator.validate(inventory);
@@ -45,7 +48,7 @@ public class InventoryController {
     @RequestMapping("/list")
     public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
         List<Inventory> inventories = inventoryService.getList(page);
-
+        logger.error("This is Error message");
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
