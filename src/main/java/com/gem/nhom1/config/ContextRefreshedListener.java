@@ -13,7 +13,6 @@ public class ContextRefreshedListener implements ApplicationListener<ContextRefr
     @Autowired
     private SessionFactory sessionFactory;
 
-    @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
         try {
             Search.getFullTextSession(sessionFactory.openSession())

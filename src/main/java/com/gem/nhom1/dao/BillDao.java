@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface BillDao {
     public Bill getById(int id);
-    public List<Bill> getList(int page);
+    public List<Bill> getList(int startIndex);
     public int insert(Bill bill);
     public void delete(int billId) throws Exception;
     public void update(Bill bill);

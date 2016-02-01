@@ -45,8 +45,8 @@ public class StaffController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO queryAll(@RequestParam(value = "page" , defaultValue = "1")  int page) {
-        List<Staff> staffList = staffService.getList(page);
+    public @ResponseBody ResponseDTO queryAll(@RequestParam(value = "start" , defaultValue = "1")  int start) {
+        List<Staff> staffList = staffService.getList(start);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",staffList);
     }
 

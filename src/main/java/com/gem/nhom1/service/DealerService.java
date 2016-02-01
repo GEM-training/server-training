@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface DealerService {
     public  Dealer getById(int id);
-    public List<Dealer> getList(int page);
+    public List<Dealer> getList(int startIndex);
     public int insert(Dealer dealer);
     public void delete(int dealerId) throws Exception;
     public void update(Dealer dealer);

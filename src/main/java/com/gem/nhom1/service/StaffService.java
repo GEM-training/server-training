@@ -11,7 +11,7 @@ import java.util.List;
 public interface StaffService {
 
     public Staff getById(int id);
-    public List<Staff> getList(int page);
+    public List<Staff> getList(int startIndex);
     public int insert(Staff staff);
     public void delete(int id) throws Exception;
     public void update(Staff staff);

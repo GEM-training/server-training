@@ -18,11 +18,10 @@ public class DealerDaoImpl extends AbstractDao<Integer, Dealer> implements Deale
         return getByKey(id);
     }
 
-    public List<Dealer> getList(int page) {
-        Query query =  getSession().createQuery("from Dealer");
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Dealer> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Dealer d where  d.dealerId > :startIndex order by d.dealerId asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

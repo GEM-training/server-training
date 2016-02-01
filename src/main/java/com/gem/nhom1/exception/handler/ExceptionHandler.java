@@ -38,17 +38,17 @@ public class ExceptionHandler {
 
     @org.springframework.web.bind.annotation.ExceptionHandler(ValidationException.class)
     public @ResponseBody ResponseDTO validException(HttpServletRequest req, ValidationException exception) {
-        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(),"");
+        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(), null);
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(Exception.class)
     public @ResponseBody ResponseDTO handleError(HttpServletRequest req, Exception exception) {
-        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(),null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage() ,null);
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(IOException.class)
     public @ResponseBody ResponseDTO handleIOException(HttpServletRequest req, Exception exception){
-        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(),null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage() ,null);
     }
 
 }

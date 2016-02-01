@@ -44,9 +44,9 @@ public class UnitController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO queryAll(@RequestParam (value = "page", defaultValue = "1") int page){
+    public @ResponseBody ResponseDTO queryAll(@RequestParam (value = "start", defaultValue = "1") int start){
 
-        List<Unit> unitList = unitService.getList(page);
+        List<Unit> unitList = unitService.getList(start);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",unitList);
     }

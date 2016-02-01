@@ -9,7 +9,7 @@ import java.util.List;
  */
 public interface InventoryService {
     public int insert(Inventory inventory);
-    public List<Inventory> getList(int page);
+    public List<Inventory> getList(int startIndex);
     public Inventory getById(int id);
     public void delete(int id) throws Exception;
     public void update(Inventory inventory);

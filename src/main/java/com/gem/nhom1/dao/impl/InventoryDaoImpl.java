@@ -18,11 +18,10 @@ public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements
         return insertObject(inventory);
     }
 
-    public List<Inventory> getList(int page) {
-        Query query =  getSession().createQuery("from Inventory");
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Inventory> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Inventory i where  i.inventoryId > :startIndex order by i.inventoryId asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

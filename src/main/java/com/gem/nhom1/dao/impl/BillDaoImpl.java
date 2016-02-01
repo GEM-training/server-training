@@ -17,12 +17,11 @@ public class BillDaoImpl extends AbstractDao<Integer, Bill> implements BillDao {
         return getByKey(id);
     }
 
-    public List<Bill> getList(int page) {
+    public List<Bill> getList(int startIndex) {
 
-        Query query =  getSession().createQuery("from Bill");
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+        Query query = getSession().createQuery("from  Bill b where  b.billId > :startIndex order by b.billId asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

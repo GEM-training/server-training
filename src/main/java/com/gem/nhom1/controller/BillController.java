@@ -49,9 +49,9 @@ public class BillController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO list(@RequestParam(value = "page" , defaultValue = "1") int page) {
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "start" , defaultValue = "1") int start) {
 
-        List<Bill> bills = billService.getList(page);
+        List<Bill> bills = billService.getList(start);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , bills);
     }
 

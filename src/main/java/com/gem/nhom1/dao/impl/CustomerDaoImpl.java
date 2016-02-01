@@ -18,11 +18,10 @@ public class CustomerDaoImpl extends AbstractDao<Integer, Customer> implements C
         return getByKey(id);
     }
 
-    public List<Customer> getList(int page) {
-        Query query =  getSession().createQuery("from Customer");
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Customer> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Customer c where  c.id > :startIndex order by c.id asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

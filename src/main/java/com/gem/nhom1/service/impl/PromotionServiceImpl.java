@@ -24,8 +24,8 @@ public class PromotionServiceImpl implements PromotionService{
         return dao.insert(promotion);
     }
 
-    public List<Promotion> getList(int page) {
-        return dao.getList(page);
+    public List<Promotion> getList(int startIndex) {
+        return dao.getList(startIndex);
     }
 
     public Promotion getById(int id){

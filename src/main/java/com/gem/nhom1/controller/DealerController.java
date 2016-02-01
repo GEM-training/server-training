@@ -49,8 +49,8 @@ public class DealerController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO list(@RequestParam(value = "page", defaultValue = "1") int page) {
-        List<Dealer> list = dealerService.getList(page);
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "start", defaultValue = "1") int start) {
+        List<Dealer> list = dealerService.getList(start);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", list);
     }
@@ -71,7 +71,7 @@ public class DealerController {
     @RequestMapping("/{dealerId}")
     public @ResponseBody ResponseDTO detail(@PathVariable("dealerId") int dealerId) {
         Dealer d = dealerService.getById(dealerId);
-        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", d);
     }
 
     @RequestMapping("/inventorys/{dealerId}")

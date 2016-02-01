@@ -32,8 +32,8 @@ public class UnitServiceImpl implements UnitService {
         return unit;
     }
 
-    public List<Unit> getList(int page) {
-        List<Unit> unitList = unitDao.getList(page);
+    public List<Unit> getList(int startIndex) {
+        List<Unit> unitList = unitDao.getList(startIndex);
         for(Unit unit : unitList) {
             Hibernate.initialize(unit.getUnitDealers());
             Hibernate.initialize(unit.getUnits());
@@ -66,7 +66,7 @@ public class UnitServiceImpl implements UnitService {
 
         List<Unit> contactList = fullTextQuery.list();
 
-        //fullTextSession.close();
+
 
         return contactList;
     }

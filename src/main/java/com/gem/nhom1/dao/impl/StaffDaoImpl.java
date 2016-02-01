@@ -17,11 +17,10 @@ public class StaffDaoImpl extends AbstractDao<Integer, Staff> implements StaffDa
         return getByKey(id);
     }
 
-    public List<Staff> getList(int page) {
-        Query query =  getSession().createQuery("from " + Staff.class.getName());
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Staff> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Staff s where  s.staffId > :startIndex order by s.staffId asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

@@ -25,8 +25,8 @@ public class BillServiceImpl implements BillService {
         return billDao.getById(id);
     }
 
-    public List<Bill> getList(int page) {
-        return billDao.getList(page);
+    public List<Bill> getList(int startIndex) {
+        return billDao.getList(startIndex);
     }
 
     public int insert(Bill bill){

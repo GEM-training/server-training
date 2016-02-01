@@ -10,7 +10,7 @@ import java.util.List;
  */
 public interface CustomerService {
     public Customer getById(int id);
-    public List<Customer> getList(int page);
+    public List<Customer> getList(int startIndex);
     public int insert(Customer customer);
     public void delete(int customerId) throws Exception;
     public void update(Customer customer);

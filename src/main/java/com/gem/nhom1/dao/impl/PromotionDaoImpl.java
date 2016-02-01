@@ -19,11 +19,10 @@ public class PromotionDaoImpl extends AbstractDao<Integer, Promotion> implements
         return insertObject(promotion);
     }
 
-    public List<Promotion> getList(int page) {
-        Query query =  getSession().createQuery("from Promotion");
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Promotion> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Promotion p where  p.id > :startIndex order by p.id asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
     }
 

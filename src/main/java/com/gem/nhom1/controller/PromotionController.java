@@ -42,9 +42,9 @@ PromotionController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",null);
     }
 
-    @RequestMapping("/list/{id}")
-    public @ResponseBody ResponseDTO getList(@PathVariable("id") Integer id){
-        List<Promotion> promotions = dealerService.getListPromotions(id);
+    @RequestMapping("/list")
+    public @ResponseBody ResponseDTO getList(@RequestParam(value = "start" , defaultValue = "1") Integer start){
+        List<Promotion> promotions = dealerService.getListPromotions(start);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",promotions);
     }
 

@@ -4,6 +4,7 @@ import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.entities.Unit;
 import org.apache.taglibs.standard.extra.spath.ParseException;
+import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.search.FullTextSession;
@@ -29,12 +30,12 @@ public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
         return getByKey(id);
     }
 
-    public List<Unit> getList(int page) {
-        Query query = getSession().createQuery("from " + Unit.class.getName());
-        query.setFirstResult((page - 1) * HibernateConfiguration.pageSize);
+    public List<Unit> getList(int startIndex) {
+        Query query = getSession().createQuery("from  Unit u where  u.unitId > :startIndex order by u.unitId asc" );
+        query.setParameter("startIndex" , startIndex);
         query.setMaxResults(HibernateConfiguration.pageSize);
-
         return query.list();
+
     }
 
     public int insert(Unit unit){

@@ -38,8 +38,8 @@ public class InventoryController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO getList(@RequestParam(value = "page") int page){
-        List<Inventory> inventories = inventoryService.getList(page);
+    public @ResponseBody ResponseDTO getList(@RequestParam(value = "start") int start){
+        List<Inventory> inventories = inventoryService.getList(start);
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", inventories);
     }
 
