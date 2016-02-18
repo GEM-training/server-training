@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="26829fe7-5d67-4112-8720-4475f439833f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenInfo.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenInfo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/TokenController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/TokenController.java" />
     </list>
     <ignored path="SpringNhom1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,10 +25,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="LoginLogoutController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="LoginLogoutController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35448578">
+            <state vertical-scroll-proportion="0.0">
               <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
               <folding />
             </state>
@@ -53,11 +49,21 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="91" selection-start-line="33" selection-start-column="91" selection-end-line="33" selection-end-column="91" />
+              <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
               <folding>
                 <element signature="e#1170#1171#0" expanded="true" />
                 <element signature="e#1213#1214#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="TokenController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/TokenController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6695843">
+              <caret line="24" column="92" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -140,6 +146,7 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/TokenController.java" />
       </list>
     </option>
   </component>
@@ -1077,12 +1084,12 @@
       <workItem from="1454049636987" duration="8134000" />
       <workItem from="1455762567507" duration="984000" />
       <workItem from="1455769512185" duration="3000" />
-      <workItem from="1455778738751" duration="4801000" />
+      <workItem from="1455778738751" duration="5331000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20730000" />
+    <option name="totallyTimeSpent" value="21260000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="52" width="1535" height="848" extended-state="6" />
@@ -1256,13 +1263,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/PromotionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="43" selection-start-line="12" selection-start-column="43" selection-end-line="12" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitDealerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1607,17 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="91" selection-start-line="33" selection-start-column="91" selection-end-line="33" selection-end-column="91" />
-          <folding>
-            <element signature="e#1170#1171#0" expanded="true" />
-            <element signature="e#1213#1214#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1641,8 +1630,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35448578">
+        <state vertical-scroll-proportion="0.0">
           <caret line="36" column="45" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <element signature="e#1170#1171#0" expanded="true" />
+            <element signature="e#1213#1214#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/TokenController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6695843">
+          <caret line="24" column="92" selection-start-line="24" selection-start-column="92" selection-end-line="24" selection-end-column="92" />
           <folding />
         </state>
       </provider>
