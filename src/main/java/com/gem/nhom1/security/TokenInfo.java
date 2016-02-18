@@ -21,9 +21,7 @@ public class TokenInfo {
         expirationTime = System.currentTimeMillis() + TIMEOUT;
     }
 
-    public String getToken() {
-        return access_token;
-    }
+
 
     @Override
     public String toString() {
@@ -43,9 +41,7 @@ public class TokenInfo {
         this.expirationTime = expirationTime;
     }
 
-    public void setToken(String token) {
-        this.access_token = token;
-    }
+
 
     public User getUser() {
         return user;
@@ -53,5 +49,13 @@ public class TokenInfo {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public String getAccess_token() {
+        return access_token;
+    }
+
+    public void setAccess_token(String access_token) {
+        this.access_token = access_token;
     }
 }
