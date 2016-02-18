@@ -13,15 +13,23 @@ public class TokenInfo {
     private final long TIMEOUT = 60 * 60 * 1000;
     private long expirationTime;
     private String access_token;
+    private String deviceId;
     private User user;
 
-    public TokenInfo(String token, User user) {
+    public TokenInfo(String token, String deviceId, User user) {
         this.access_token = token;
         this.user = user;
+        this.deviceId = deviceId;
         expirationTime = System.currentTimeMillis() + TIMEOUT;
     }
 
+    public String getDeviceId() {
+        return deviceId;
+    }
 
+    public void setDeviceId(String deviceId) {
+        this.deviceId = deviceId;
+    }
 
     @Override
     public String toString() {

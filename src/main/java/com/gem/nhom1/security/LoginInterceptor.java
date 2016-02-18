@@ -35,7 +35,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 
         String access_token = request.getHeader("access_token");
-        System.out.println(request.getRequestURI());
+        String deviceId = request.getHeader("deviceId");
         if (access_token != null && request.getRequestURI().contains("refresh_access_token"))
             return true;
         if (request.getRequestURI().startsWith("/login") || (access_token != null && request.getRequestURI().startsWith("/logout"))) {

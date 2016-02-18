@@ -28,12 +28,12 @@ public class LoginLogoutController {
     private TokenManager tokenManager = TokenManager.getInstaince();
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public @ResponseBody ResponseDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {
+    public @ResponseBody ResponseDTO login(@RequestParam("username") String username, @RequestParam("password") String password, @RequestParam("deviceId") String deviceId) {
         User user = userService.login(username, password);
         if (user == null)
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, "Username or Password is invalid", null);
         else {
-            TokenInfo tokenInfo = new TokenInfo(TokenUtil.generateAccessToken(user), user);
+            TokenInfo tokenInfo = new TokenInfo(TokenUtil.generateAccessToken(user,deviceId),deviceId, user);
             tokenManager.addToken(tokenInfo);
             return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",tokenInfo);
         }

@@ -13,9 +13,9 @@ import java.security.NoSuchAlgorithmException;
  */
 public class TokenUtil {
 
-    public static String generateAccessToken(User user){
+    public static String generateAccessToken(User user, String deviceId){
 
-        String str = user.getUsername() + user.getPassword() + System.currentTimeMillis();
+        String str = user.getUsername() + user.getPassword() + System.currentTimeMillis() + deviceId;
 
         MessageDigest crypt = null;
         try {
