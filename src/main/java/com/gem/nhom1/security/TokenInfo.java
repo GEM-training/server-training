@@ -1,5 +1,6 @@
 package com.gem.nhom1.security;
 
+import com.gem.nhom1.model.entities.User;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Date;
@@ -10,11 +11,11 @@ import java.util.Date;
 public class TokenInfo {
     private final long created = System.currentTimeMillis();
     private final String token;
-    private final UserDetails userDetails;
+    private final User user;
 
-    public TokenInfo(String token, UserDetails userDetails) {
+    public TokenInfo(String token, User user) {
         this.token = token;
-        this.userDetails = userDetails;
+        this.user = user;
     }
 
     public String getToken() {
@@ -25,7 +26,7 @@ public class TokenInfo {
     public String toString() {
         return "TokenInfo{" +
                 "token='" + token + '\'' +
-                ", userDetails" + userDetails +
+                ", userDetails" + user +
                 ", created=" + new Date(created) +
                 '}';
     }
