@@ -52,8 +52,6 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         registry.addInterceptor(new LoginInterceptor());
     }
 
-
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         super.addResourceHandlers(registry);
