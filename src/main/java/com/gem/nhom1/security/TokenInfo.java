@@ -11,14 +11,14 @@ import java.util.Date;
 public class TokenInfo{
 
         private final long TIMEOUT = 24 * 60 * 60 * 1000;
-        private long expiration;
+        private long expirationTime;
         private String token;
         private User user;
 
         public TokenInfo(String token, User user) {
             this.token = token;
             this.user = user;
-            expiration = System.currentTimeMillis() + TIMEOUT;
+            expirationTime = System.currentTimeMillis() + TIMEOUT;
         }
 
         public String getToken() {
@@ -30,20 +30,20 @@ public class TokenInfo{
             return "TokenInfo{" +
                     "token='" + token + '\'' +
                     ", userDetails" + user +
-                    ", created=" + new Date(expiration) +
+                    ", created=" + new Date(expirationTime) +
                     '}';
         }
 
 
-        public long getExpiration() {
-            return expiration;
-        }
+    public long getExpirationTime() {
+        return expirationTime;
+    }
 
-        public void setExpiration(long expiration) {
-            this.expiration = expiration;
-        }
+    public void setExpirationTime(long expirationTime) {
+        this.expirationTime = expirationTime;
+    }
 
-        public void setToken(String token) {
+    public void setToken(String token) {
             this.token = token;
         }
 
