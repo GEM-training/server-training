@@ -7,4 +7,5 @@ import com.gem.nhom1.model.entities.User;
  */
 public interface UserDao {
     public User userDetail(int id);
+    public User login(String username , String password);
 }

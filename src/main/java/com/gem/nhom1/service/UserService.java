@@ -1,4 +1,4 @@
-package com.gem.nhom1.service.impl;
+package com.gem.nhom1.service;
 
 import com.gem.nhom1.model.entities.User;
 
@@ -7,4 +7,5 @@ import com.gem.nhom1.model.entities.User;
  */
 public interface UserService {
         public User userDetail(int id);
+        public User login(String username ,  String passord);
 }

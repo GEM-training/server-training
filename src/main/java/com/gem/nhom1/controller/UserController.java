@@ -1,7 +1,7 @@
 package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.dto.ResponseDTO;
-import com.gem.nhom1.service.impl.UserService;
+import com.gem.nhom1.service.UserService;
 import com.gem.nhom1.util.Constant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,4 +20,10 @@ public class UserController {
     public ResponseDTO getdetail(@PathVariable( value = "id") int id){
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , userService.userDetail(id));
     }
+
+    @RequestMapping("/login/{username}/{password}")
+    public ResponseDTO login(@PathVariable( value = "username") String usename , @PathVariable(value = "password") String password){
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS , "" , userService.login(usename , password));
+    }
+
 }
