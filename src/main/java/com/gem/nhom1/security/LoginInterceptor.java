@@ -34,9 +34,8 @@ public class LoginInterceptor implements HandlerInterceptor {
 
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object arg2) throws Exception {
 
-
         String access_token = request.getHeader("access_token");
-
+        System.out.println(request.getRequestURI());
         if (access_token != null && request.getRequestURI().contains("refresh_access_token"))
             return true;
 
@@ -49,7 +48,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 response.setHeader("access_token", tokenManager.updateToken(tokenInfo));
             }
             return true;
-        } else if (request.getRequestURI().contains("login") || request.getRequestURI().contains("logout")) {
+        } else if (request.getRequestURI().startsWith("/login") || request.getRequestURI().startsWith("/logout")) {
             return true;
         }
         response.setStatus(HttpStatus.BAD_REQUEST.value());
