@@ -14,11 +14,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * Created by vanhop on 2/17/16.
  */
 @Controller
-public class LoginController {
+public class LoginLogoutController {
 
     @Autowired
     private UserService userService;
@@ -26,7 +29,6 @@ public class LoginController {
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public @ResponseBody ResponseDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {
-
         User user = userService.login(username, password);
         if (user == null)
             return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, "Username or Password is invalid", null);
@@ -35,7 +37,14 @@ public class LoginController {
             tokenManager.addToken(tokenInfo);
             return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",tokenInfo);
         }
+    }
 
+    @RequestMapping("/logout")
+    public void logout(HttpServletRequest request, HttpServletResponse response){
+        String access_token = request.getHeader("access_token");
+        if(access_token != null)
+            tokenManager.deleteToken(access_token);
+        response.setHeader("message", Constant.RESPONSE_STATUS_SUSSCESS);
     }
 
 }

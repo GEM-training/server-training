@@ -40,4 +40,8 @@ public class TokenManager{
     public TokenInfo get(String access_token) {
         return tokens.get(access_token);
     }
+
+    public void deleteToken(String accees_token){
+        tokens.remove(accees_token);
+    }
 }
