@@ -25,14 +25,14 @@ public class TokenManager{
     }
 
     public void addToken(TokenInfo tokenInfo) {
-        tokens.put(tokenInfo.getToken(), tokenInfo);
+        tokens.put(tokenInfo.getAccess_token(), tokenInfo);
     }
 
     public String updateToken(TokenInfo tokenInfo) {
-        tokens.remove(tokenInfo.getToken());
+        tokens.remove(tokenInfo.getAccess_token());
         String new_acc = null;
         new_acc = TokenUtil.generateAccessToken(tokenInfo.getUser());
-        tokenInfo.setToken(new_acc);
+        tokenInfo.setAccess_token(new_acc);
         tokens.put(new_acc, tokenInfo);
         return new_acc;
     }
