@@ -40,11 +40,11 @@ public class LoginLogoutController {
     }
 
     @RequestMapping("/logout")
-    public void logout(HttpServletRequest request, HttpServletResponse response){
+    public @ResponseBody ResponseDTO logout(HttpServletRequest request, HttpServletResponse response){
         String access_token = request.getHeader("access_token");
         if(access_token != null)
             tokenManager.deleteToken(access_token);
-        response.setHeader("message", Constant.RESPONSE_STATUS_SUSSCESS);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"","");
     }
 
 }
