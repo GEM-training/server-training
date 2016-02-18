@@ -13,13 +13,22 @@ import java.security.NoSuchAlgorithmException;
  */
 public class TokenUtil {
 
-    public static String generateAccessToken(User user) throws NoSuchAlgorithmException, UnsupportedEncodingException {
+    public static String generateAccessToken(User user){
 
         String str = user.getUsername() + user.getPassword() + System.currentTimeMillis();
 
-        MessageDigest crypt = MessageDigest.getInstance("SHA-1");
+        MessageDigest crypt = null;
+        try {
+            crypt = MessageDigest.getInstance("SHA-1");
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+        }
         crypt.reset();
-        crypt.update(str.getBytes("UTF-8"));
+        try {
+            crypt.update(str.getBytes("UTF-8"));
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
 
         return new BigInteger(1, crypt.digest()).toString(16);
     }

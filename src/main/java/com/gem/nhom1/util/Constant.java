@@ -10,5 +10,6 @@ public class Constant {
 
     public final static String RESPONSE_STATUS_SUSSCESS = "success";
     public final static String RESPONSE_STATUS_ERROR = "error";
+    public final static String LOGIN_FAIL = "login fail";
 
 }
