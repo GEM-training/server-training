@@ -31,7 +31,7 @@ public class TokenManager{
     public String updateToken(TokenInfo tokenInfo) {
         tokens.remove(tokenInfo.getAccess_token());
         String new_acc = null;
-        new_acc = TokenUtil.generateAccessToken(tokenInfo.getUser());
+        new_acc = TokenUtil.generateAccessToken(tokenInfo.getUser(),tokenInfo.getDeviceId());
         tokenInfo.setAccess_token(new_acc);
         tokens.put(new_acc, tokenInfo);
         return new_acc;
