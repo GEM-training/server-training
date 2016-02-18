@@ -18,7 +18,7 @@ public class TokenManager{
         tokens = new HashMap<String, TokenInfo>();
     }
 
-    public static TokenManager getInstain(){
+    public static TokenManager getInstaince(){
         if(tokenManager == null)
             tokenManager = new TokenManager();
         return tokenManager;

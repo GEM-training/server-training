@@ -10,25 +10,25 @@ import java.util.Date;
  */
 public class TokenInfo {
 
-    private final long TIMEOUT = 24 * 60 * 60 * 1000;
+    private final long TIMEOUT = 60 * 60 * 1000;
     private long expirationTime;
-    private String token;
+    private String access_token;
     private User user;
 
     public TokenInfo(String token, User user) {
-        this.token = token;
+        this.access_token = token;
         this.user = user;
         expirationTime = System.currentTimeMillis() + TIMEOUT;
     }
 
     public String getToken() {
-        return token;
+        return access_token;
     }
 
     @Override
     public String toString() {
         return "TokenInfo{" +
-                "token='" + token + '\'' +
+                "token='" + access_token + '\'' +
                 ", userDetails" + user +
                 ", created=" + new Date(expirationTime) +
                 '}';
@@ -44,7 +44,7 @@ public class TokenInfo {
     }
 
     public void setToken(String token) {
-        this.token = token;
+        this.access_token = token;
     }
 
     public User getUser() {

@@ -22,7 +22,7 @@ public class LoginController {
 
     @Autowired
     private UserService userService;
-    private TokenManager tokenManager = TokenManager.getInstain();
+    private TokenManager tokenManager = TokenManager.getInstaince();
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public @ResponseBody ResponseDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {

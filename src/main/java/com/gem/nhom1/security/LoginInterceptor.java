@@ -19,7 +19,7 @@ public class LoginInterceptor implements HandlerInterceptor {
     @Autowired
     private UserService userService;
 
-    private TokenManager tokenManager = TokenManager.getInstain();
+    private TokenManager tokenManager = TokenManager.getInstaince();
 
     public void afterCompletion(HttpServletRequest arg0, HttpServletResponse arg1, Object arg2, Exception arg3)
             throws Exception {
@@ -36,6 +36,10 @@ public class LoginInterceptor implements HandlerInterceptor {
 
 
         String access_token = request.getHeader("access_token");
+
+        if (access_token != null && request.getRequestURI().contains("refresh_access_token"))
+            return true;
+
         if (access_token != null) {
             TokenInfo tokenInfo = tokenManager.get(access_token);
             if (tokenInfo == null) {
@@ -45,7 +49,7 @@ public class LoginInterceptor implements HandlerInterceptor {
                 response.setHeader("access_token", tokenManager.updateToken(tokenInfo));
             }
             return true;
-        } else if(request.getRequestURI().contains("login") || request.getRequestURI().contains("logout")){
+        } else if (request.getRequestURI().contains("login") || request.getRequestURI().contains("logout")) {
             return true;
         }
         response.setStatus(HttpStatus.BAD_REQUEST.value());
