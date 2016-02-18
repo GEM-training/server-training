@@ -1,5 +1,6 @@
 package com.gem.nhom1.controller;
 
+import com.gem.nhom1.security.TokenInfo;
 import com.gem.nhom1.security.TokenManager;
 import com.gem.nhom1.util.TokenUtil;
 import org.springframework.stereotype.Controller;
@@ -20,7 +21,8 @@ public class TokenController {
     public void refreshAccessToken(HttpServletRequest request, HttpServletResponse response){
 
         String access_token = request.getHeader("access_token");
-        response.setHeader("access_token", TokenUtil.generateAccessToken(tokenManager.get(access_token).getUser()));
+        TokenInfo tokenInfo = tokenManager.get(access_token);
+        response.setHeader("access_token", TokenUtil.generateAccessToken(tokenInfo.getUser(),tokenInfo.getDeviceId());
 
     }
 
