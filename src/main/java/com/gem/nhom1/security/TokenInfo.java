@@ -8,26 +8,50 @@ import java.util.Date;
 /**
  * Created by phuongtd on 18/02/2016.
  */
-public class TokenInfo {
-    private final long created = System.currentTimeMillis();
-    private final String token;
-    private final User user;
+public class TokenInfo{
 
-    public TokenInfo(String token, User user) {
-        this.token = token;
-        this.user = user;
-    }
+        private final long TIMEOUT = 24 * 60 * 60 * 1000;
+        private long expiration;
+        private String token;
+        private User user;
 
-    public String getToken() {
-        return token;
-    }
+        public TokenInfo(String token, User user) {
+            this.token = token;
+            this.user = user;
+            expiration = System.currentTimeMillis() + TIMEOUT;
+        }
 
-    @Override
-    public String toString() {
-        return "TokenInfo{" +
-                "token='" + token + '\'' +
-                ", userDetails" + user +
-                ", created=" + new Date(created) +
-                '}';
-    }
+        public String getToken() {
+            return token;
+        }
+
+        @Override
+        public String toString() {
+            return "TokenInfo{" +
+                    "token='" + token + '\'' +
+                    ", userDetails" + user +
+                    ", created=" + new Date(expiration) +
+                    '}';
+        }
+
+
+        public long getExpiration() {
+            return expiration;
+        }
+
+        public void setExpiration(long expiration) {
+            this.expiration = expiration;
+        }
+
+        public void setToken(String token) {
+            this.token = token;
+        }
+
+        public User getUser() {
+            return user;
+        }
+
+        public void setUser(User user) {
+            this.user = user;
+        }
 }
