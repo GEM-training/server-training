@@ -2,6 +2,7 @@ package com.gem.nhom1.model.entities;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import org.hibernate.search.annotations.*;
 import org.hibernate.validator.constraints.Length;
 
@@ -51,6 +52,18 @@ public class Dealer {
     @OneToMany(cascade = CascadeType.ALL , mappedBy = "dealer" , fetch = FetchType.LAZY)
     @JsonIgnore
     private Set<Staff> staffs = new HashSet<Staff>(0);
+
+    @OneToOne(mappedBy = "dealer")
+    @JsonIgnore
+    private User user;
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
 
     public Dealer() {
     }

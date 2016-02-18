@@ -115,4 +115,10 @@ public class DealerController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", billDetails);
     }
 
+    @RequestMapping("/demo")
+    public @ResponseBody String demo(){
+        dealerService.demo();
+        return "";
+    }
+
 }

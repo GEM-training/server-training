@@ -14,4 +14,6 @@ public interface DealerDao {
     public void delete(int dealerId) throws Exception;
     public void update(Dealer dealer);
 
+    public void insertOrUpdate();
+
 }

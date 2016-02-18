@@ -24,4 +24,7 @@ public interface DealerService {
 
     public List<Promotion> getListPromotions(int dealerId);
 
+
+    public void demo();
+
 }

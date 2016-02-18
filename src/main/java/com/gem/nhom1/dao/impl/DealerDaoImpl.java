@@ -37,4 +37,17 @@ public class DealerDaoImpl extends AbstractDao<Integer, Dealer> implements Deale
         updateObject(dealer);
     }
 
+    public void insertOrUpdate(){
+       /* Dealer d = getById(6);
+
+        getSession().evict(d);*/
+
+        Dealer d = new Dealer("@@@@" , "ADDRESS");
+
+        d.setAddress("So 6 pho 666");
+
+        getSession().saveOrUpdate(d);
+
+    }
+
 }

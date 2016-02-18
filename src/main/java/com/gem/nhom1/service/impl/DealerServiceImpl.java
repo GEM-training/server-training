@@ -120,4 +120,8 @@ public class DealerServiceImpl implements DealerService {
         Hibernate.initialize(dealer.getPromotions());
         return new ArrayList<Promotion>(dealer.getPromotions());
     }
+
+    public void demo(){
+        dealerDao.insertOrUpdate();
+    }
 }

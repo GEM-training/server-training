@@ -41,6 +41,11 @@ public class Customer {
     @JsonIgnore
     private Set<Bill> bills = new HashSet<Bill>();
 
+    @OneToOne(mappedBy = "customer")
+    @JsonIgnore
+    private User user;
+
+
     public Customer() {
     }
 
@@ -95,5 +100,13 @@ public class Customer {
 
     public void setBills(Set<Bill> bills) {
         this.bills = bills;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }

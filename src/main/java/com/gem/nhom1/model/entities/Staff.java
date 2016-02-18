@@ -1,5 +1,6 @@
 package com.gem.nhom1.model.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
@@ -34,6 +35,10 @@ public class Staff {
     @JoinColumn(name = "dealer_id")
     private Dealer dealer;
 
+    @OneToOne(mappedBy = "staff")
+    @JsonIgnore
+    private User user;
+
 
     public Staff() {
     }
@@ -43,8 +48,6 @@ public class Staff {
         this.phone = phone;
         this.address = address;
     }
-
-
 
 
     public Staff(String name, String phone, String address, Dealer dealer) {
@@ -93,5 +96,13 @@ public class Staff {
 
     public void setDealer(Dealer dealer) {
         this.dealer = dealer;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
