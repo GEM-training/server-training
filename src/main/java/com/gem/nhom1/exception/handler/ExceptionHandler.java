@@ -3,6 +3,8 @@ package com.gem.nhom1.exception.handler;
 import com.gem.nhom1.exception.exception.ValidationException;
 import com.gem.nhom1.model.dto.ResponseDTO;
 import com.gem.nhom1.util.Constant;
+import org.apache.log4j.Logger;
+import org.hibernate.exception.GenericJDBCException;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
@@ -20,6 +22,8 @@ import java.sql.SQLException;
 @ControllerAdvice
 public class ExceptionHandler {
 
+    final static Logger logger = Logger.getLogger(ExceptionHandler.class);
+
     @ResponseStatus(value= HttpStatus.CONFLICT, reason="Data integrity violation")  // 409
     @org.springframework.web.bind.annotation.ExceptionHandler(DataIntegrityViolationException.class)
     public void conflict() {
@@ -27,12 +31,12 @@ public class ExceptionHandler {
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler({SQLException.class,DataAccessException.class})
-    public @ResponseBody ResponseDTO databaseError(Exception ex) {
+    public @ResponseBody ResponseDTO databaseError(HttpServletRequest req,Exception ex) {
         // Nothing to do.  Returns the logical view name of an error page, passed to
         // the view-resolver(s) in usual way.
         // Note that the exception is _not_ available to this view (it is not added to
         // the model) but see "Extending ExceptionHandlerExceptionResolver" below.
-
+        logger.error(req.getRequestURI(),ex);
         return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, ex.getMessage(),null);
     }
 
@@ -46,8 +50,16 @@ public class ExceptionHandler {
         return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage() ,null);
     }
 
+    @org.springframework.web.bind.annotation.ExceptionHandler(GenericJDBCException.class)
+    public @ResponseBody ResponseDTO handleErrorJDBC(HttpServletRequest req, Exception exception) {
+        logger.error(req.getRequestURI(),exception);
+        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage() ,null);
+    }
+
+
     @org.springframework.web.bind.annotation.ExceptionHandler(IOException.class)
     public @ResponseBody ResponseDTO handleIOException(HttpServletRequest req, Exception exception){
+        logger.error(req.getRequestURI(),exception);
         return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage() ,null);
     }
 

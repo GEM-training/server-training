@@ -1,10 +1,10 @@
 package com.gem.nhom1.config;
 
+import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
+import org.hibernate.exception.GenericJDBCException;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.core.env.Environment;
@@ -23,7 +23,6 @@ import java.util.Properties;
 @PropertySource(value = { "classpath:application.properties" })
 public class HibernateConfiguration {
 
-
     @Autowired
     private Environment environment;
 
@@ -31,7 +30,7 @@ public class HibernateConfiguration {
 
 
     @Bean
-    public LocalSessionFactoryBean sessionFactory() {
+    public LocalSessionFactoryBean sessionFactory() throws GenericJDBCException {
         LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
         sessionFactory.setDataSource(dataSource());
         sessionFactory.setPackagesToScan(new String[] { "com.gem.nhom1.model.entities" });
@@ -66,13 +65,6 @@ public class HibernateConfiguration {
        HibernateTransactionManager txManager = new HibernateTransactionManager();
        txManager.setSessionFactory(s);
        return txManager;
-    }
-
-    @Bean
-    public javax.validation.Validator validator(){
-        ValidatorFactory factory = Validation.buildDefaultValidatorFactory();
-        javax.validation.Validator validator = factory.getValidator();
-        return validator;
     }
 
 }
