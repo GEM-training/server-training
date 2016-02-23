@@ -22,7 +22,7 @@ public class TokenController {
 
         String access_token = request.getHeader("access_token");
         TokenInfo tokenInfo = tokenManager.get(access_token);
-        response.setHeader("access_token", TokenUtil.generateAccessToken(tokenInfo.getUser(),tokenInfo.getDeviceId());
+        response.setHeader("access_token", TokenUtil.generateAccessToken(tokenInfo.getUser(),tokenInfo.getDeviceId()));
 
     }
 
