@@ -36,7 +36,7 @@ public class LoginInterceptor implements HandlerInterceptor {
 
         String access_token = request.getHeader("access_token");
         String deviceId = request.getHeader("deviceId");
-        if (access_token != null && request.getRequestURI().contains("refresh_access_token"))
+        if (access_token != null)
             return true;
         if (request.getRequestURI().startsWith("/login") || (access_token != null && request.getRequestURI().startsWith("/logout"))) {
             return true;
@@ -46,9 +46,10 @@ public class LoginInterceptor implements HandlerInterceptor {
             if (tokenInfo == null) {
                 response.setStatus(HttpStatus.FORBIDDEN.value());
                 return false;
-            } else if (TokenUtil.isExpiration(tokenManager.get(access_token))) {
-                response.setHeader("access_token", tokenManager.updateToken(tokenInfo));
             }
+            /*else if (TokenUtil.isExpiration(tokenManager.get(access_token))) {
+                response.setHeader("access_token", tokenManager.updateToken(tokenInfo));
+            }*/
             return true;
         }
         response.setStatus(HttpStatus.BAD_REQUEST.value());
