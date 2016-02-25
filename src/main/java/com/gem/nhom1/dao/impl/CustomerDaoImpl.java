@@ -1,9 +1,11 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.Constant;
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.CustomerDao;
 import com.gem.nhom1.model.entities.Customer;
 import org.hibernate.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +16,9 @@ import java.util.List;
 @Repository
 public class CustomerDaoImpl extends AbstractDao<Integer, Customer> implements CustomerDao {
 
+    @Autowired
+    private Constant constant;
+
     public Customer getById(int id) {
         return getByKey(id);
     }
@@ -21,7 +26,7 @@ public class CustomerDaoImpl extends AbstractDao<Integer, Customer> implements C
     public List<Customer> getList(int startIndex) {
         Query query = getSession().createQuery("from  Customer c where  c.id > :startIndex order by c.id asc" );
         query.setParameter("startIndex" , startIndex);
-        query.setMaxResults(HibernateConfiguration.pageSize);
+        query.setMaxResults(constant.getMaxPageSize());
         return query.list();
     }
 

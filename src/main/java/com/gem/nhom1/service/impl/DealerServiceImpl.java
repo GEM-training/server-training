@@ -36,8 +36,8 @@ public class DealerServiceImpl implements DealerService {
         return dealer;
     }
 
-    public List<Dealer> getList(int startIndex) {
-        return dealerDao.getList(startIndex);
+    public List<Dealer> getList(int startIndex,int pageSize) {
+        return dealerDao.getList(startIndex,pageSize);
     }
 
     public int insert(Dealer dealer){

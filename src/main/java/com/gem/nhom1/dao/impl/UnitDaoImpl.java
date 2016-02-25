@@ -1,5 +1,6 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.Constant;
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.UnitDao;
 import com.gem.nhom1.model.entities.Unit;
@@ -10,6 +11,7 @@ import org.hibernate.Session;
 import org.hibernate.search.FullTextSession;
 import org.hibernate.search.Search;
 import org.hibernate.search.query.dsl.QueryBuilder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -24,7 +26,8 @@ import java.util.List;
 @Repository
 public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
 
-
+    @Autowired
+    private Constant constant;
 
     public Unit getById(int id) {
         return getByKey(id);
@@ -33,7 +36,7 @@ public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
     public List<Unit> getList(int startIndex) {
         Query query = getSession().createQuery("from  Unit u where  u.unitId > :startIndex order by u.unitId asc" );
         query.setParameter("startIndex" , startIndex);
-        query.setMaxResults(HibernateConfiguration.pageSize);
+        query.setMaxResults(constant.getMaxPageSize());
         return query.list();
 
     }

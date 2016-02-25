@@ -1,9 +1,11 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.Constant;
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.InventoryDao;
 import com.gem.nhom1.model.entities.Inventory;
 import org.hibernate.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -14,6 +16,10 @@ import java.util.List;
 
 @Repository
 public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements InventoryDao {
+
+    @Autowired
+    private Constant constant;
+
     public int insert(Inventory inventory){
         return insertObject(inventory);
     }
@@ -21,7 +27,7 @@ public class InventoryDaoImpl extends AbstractDao<Integer, Inventory> implements
     public List<Inventory> getList(int startIndex) {
         Query query = getSession().createQuery("from  Inventory i where  i.inventoryId > :startIndex order by i.inventoryId asc" );
         query.setParameter("startIndex" , startIndex);
-        query.setMaxResults(HibernateConfiguration.pageSize);
+        query.setMaxResults(constant.getMaxPageSize());
         return query.list();
     }
 

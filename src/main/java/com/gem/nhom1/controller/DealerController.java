@@ -49,8 +49,8 @@ public class DealerController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO list(@RequestParam(value = "start", defaultValue = "-1") int start) {
-        List<Dealer> list = dealerService.getList(start);
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "startIndex", defaultValue = "1") int startIndex, @RequestParam(value = "pageSize", defaultValue = "15") int pageSize) {
+        List<Dealer> list = dealerService.getList(startIndex,pageSize);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", list);
     }

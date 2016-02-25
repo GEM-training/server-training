@@ -37,6 +37,19 @@ public class LoginLogoutController {
         }
     }
 
+/*    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public @ResponseBody ResponseDTO login(@RequestParam("username") String username, @RequestParam("password") String password) {
+        UserInfo userInfo  = new UserInfo(username,password,"android");
+        User user = userService.login(userInfo.getUsername(), userInfo.getPassword());
+        if (user == null)
+            return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, "Username or Password is invalid", null);
+        else {
+            TokenInfo tokenInfo = new TokenInfo(TokenUtil.generateAccessToken(user,userInfo.getDeviceId()),userInfo.getDeviceId(), user);
+            tokenManager.addToken(tokenInfo);
+            return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS,"",tokenInfo);
+        }
+    }*/
+
     @RequestMapping("/logout")
     public @ResponseBody ResponseDTO logout(HttpServletRequest request, HttpServletResponse response){
         String access_token = request.getHeader("access_token");

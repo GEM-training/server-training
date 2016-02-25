@@ -1,9 +1,11 @@
 package com.gem.nhom1.dao.impl;
 
+import com.gem.nhom1.config.Constant;
 import com.gem.nhom1.config.HibernateConfiguration;
 import com.gem.nhom1.dao.StaffDao;
 import com.gem.nhom1.model.entities.Staff;
 import org.hibernate.Query;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -13,6 +15,10 @@ import java.util.List;
  */
 @Repository
 public class StaffDaoImpl extends AbstractDao<Integer, Staff> implements StaffDao {
+
+    @Autowired
+    private Constant constant;
+
     public Staff getById(int id) {
         return getByKey(id);
     }
@@ -20,7 +26,7 @@ public class StaffDaoImpl extends AbstractDao<Integer, Staff> implements StaffDa
     public List<Staff> getList(int startIndex) {
         Query query = getSession().createQuery("from  Staff s where  s.staffId > :startIndex order by s.staffId asc" );
         query.setParameter("startIndex" , startIndex);
-        query.setMaxResults(HibernateConfiguration.pageSize);
+        query.setMaxResults(constant.getMaxPageSize());
         return query.list();
     }
 

@@ -1,9 +1,9 @@
 package com.gem.nhom1.config;
 
-import org.apache.log4j.Logger;
 import org.hibernate.SessionFactory;
 import org.hibernate.exception.GenericJDBCException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -14,8 +14,6 @@ import org.springframework.orm.hibernate4.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
-import javax.validation.Validation;
-import javax.validation.ValidatorFactory;
 import java.util.Properties;
 
 @Configuration
@@ -26,8 +24,11 @@ public class HibernateConfiguration {
     @Autowired
     private Environment environment;
 
-    public static int pageSize ;
-
+    private int pageSize;
+    @Bean
+    public Constant getConstant(){
+        return new Constant(pageSize);
+    }
 
     @Bean
     public LocalSessionFactoryBean sessionFactory() throws GenericJDBCException {
@@ -55,8 +56,8 @@ public class HibernateConfiguration {
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.search.default.directory_provider" ,environment.getRequiredProperty("hibernate.filesystem"));
         properties.put("hibernate.search.default.indexBase" , environment.getRequiredProperty("bibernate.file_indexs"));
-        pageSize = Integer.parseInt( environment.getRequiredProperty("hibernate.page_size"));
-        return properties;        
+        pageSize = Integer.parseInt(environment.getRequiredProperty("hibernate.maxPageSize"));
+        return properties;
     }
     
 	@Bean
