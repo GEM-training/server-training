@@ -13,8 +13,8 @@ public interface DealerService {
     int insert(Dealer dealer);
     void delete(int dealerId) throws Exception;
     void update(Dealer dealer);
+    public List<UnitDealer> getListUnitDealer(int dealerId , int startIndex , int pageSize);
 
-    List<UnitDealer> getListUnitDealer(int dealerId);
     List<Inventory> getListInventory(int dealerId);
     List<Staff> getListStaff(int deaerId);
 

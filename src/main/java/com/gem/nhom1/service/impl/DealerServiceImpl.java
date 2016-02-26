@@ -24,10 +24,10 @@ public class DealerServiceImpl implements DealerService {
     private DealerDao dealerDao;
 
     @Autowired
-    private UnitDealerDao unitDealerDao;
+    private UnitDao unitDao;
 
     @Autowired
-    private UnitDao unitDao;
+    private UnitDealerDao unitDealerDao;
 
 
     public Dealer getById(int id) {
@@ -50,21 +50,8 @@ public class DealerServiceImpl implements DealerService {
         dealerDao.update(dealer);
     }
 
-
-
-
-    public List<UnitDealer> getListUnitDealer(int dealerId) {
-        Dealer d = dealerDao.getById(dealerId);
-        Hibernate.initialize(d.getUnitDealers());
-
-        Set<UnitDealer> unitDealers = d.getUnitDealers();
-
-        List<UnitDealer> result = new ArrayList<UnitDealer>(unitDealers);
-
-        for(UnitDealer unitDealer : result)
-            Hibernate.initialize(unitDealer.getUnit());
-
-        return result;
+    public List<UnitDealer> getListUnitDealer(int dealerId , int startIndex , int pageSize) {
+        return unitDealerDao.getListUnitOfDealerByDealerId(dealerId , startIndex ,pageSize);
     }
 
     public List<Inventory> getListInventory(int dealerId) {

@@ -9,6 +9,7 @@ import org.hibernate.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -45,5 +46,21 @@ public class UniDealerDaoImpl extends AbstractDao<UnitDealerId, UnitDealer> impl
 
     public void update(UnitDealer unitDealer){
         updateObject(unitDealer);
+    }
+
+    public List<UnitDealer> getListUnitOfDealerByDealerId(int dealerId, int startIndex, int pageSize) {
+        List<UnitDealer> unitDealerList = new ArrayList<UnitDealer>();
+
+        Query query = getSession().createQuery("from UnitDealer ud where ud.dealer.dealerId = :dealerId and ud.unit.id > :startIndex order by ud.unit.id");
+
+        query.setParameter("dealerId" , dealerId);
+        query.setParameter("startIndex" , startIndex);
+
+        query.setMaxResults(pageSize);
+
+        unitDealerList = query.list();
+
+
+        return unitDealerList;
     }
 }

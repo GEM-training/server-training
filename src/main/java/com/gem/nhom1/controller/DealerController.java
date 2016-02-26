@@ -51,7 +51,7 @@ public class DealerController {
     }
 
     @RequestMapping("/list")
-    public @ResponseBody ResponseDTO list(@RequestParam(value = "startIndex", defaultValue = "1") int startIndex, @RequestParam(value = "pageSize", defaultValue = "15") int pageSize) {
+    public @ResponseBody ResponseDTO list(@RequestParam(value = "startIndex", defaultValue = "-1") int startIndex, @RequestParam(value = "pageSize", defaultValue = "15") int pageSize) {
         List<Dealer> list = dealerService.getList(startIndex,pageSize);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", list);
@@ -89,8 +89,8 @@ public class DealerController {
     }
 
     @RequestMapping("/units/{dealerId}")
-    public @ResponseBody ResponseDTO getListUnitDealers(@PathVariable("dealerId") int dealerId) {
-        List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId);
+    public @ResponseBody ResponseDTO getListUnitDealers(@PathVariable("dealerId") int dealerId , @RequestParam(value = "startIndex" , defaultValue = "0") int startIndex , @RequestParam(value = "pageSize" , defaultValue = "15") int pageSize) {
+        List<UnitDealer> unitDealers = dealerService.getListUnitDealer(dealerId , startIndex , pageSize);
 
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", unitDealers);
     }

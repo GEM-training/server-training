@@ -3,41 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="b6721fca-7952-480b-8d29-ad398c7a3376" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/InventoryController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/InventoryController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/StaffDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/StaffDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDao.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UnitDealerId.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UnitDealerId.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillDetailService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillDetailService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/CustomerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryUnitService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryUnitService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/PromotionService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/PromotionService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/StaffService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/StaffService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitDealerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitDealerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UserService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UserService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/BillServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/BillServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
     </list>
     <ignored path="SpringNhom1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,7 +30,28 @@
     <favorites_list name="SpringNhom1" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="DealerService.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38388625">
+              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UnitDealerDao.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -115,7 +107,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/InventoryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UnitDealerId.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" />
@@ -126,10 +117,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/PromotionService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryUnitService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" />
       </list>
     </option>
   </component>
@@ -954,16 +946,16 @@
       <workItem from="1455845857643" duration="10799000" />
       <workItem from="1456191048808" duration="28000" />
       <workItem from="1456364430545" duration="9008000" />
-      <workItem from="1456468766878" duration="4049000" />
+      <workItem from="1456468766878" duration="4242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23884000" />
+    <option name="totallyTimeSpent" value="24077000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -985,7 +977,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26997986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26997986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39893618" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36835107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -1214,14 +1206,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21785174">
-          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.13615733">
@@ -1242,14 +1226,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.17061612">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
           <folding />
         </state>
       </provider>
@@ -1354,14 +1330,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.061611373">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/CustomerService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5971564">
@@ -1394,14 +1362,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45971563">
-          <caret line="90" column="36" selection-start-line="90" selection-start-column="36" selection-end-line="90" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.1042654">
@@ -1422,6 +1382,38 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3744076">
           <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38388625">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
           <folding />
         </state>
       </provider>
