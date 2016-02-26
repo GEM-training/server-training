@@ -20,8 +20,7 @@ public class StaffServiceImpl implements StaffService {
     private StaffDao staffDao;
 
     public Staff getById(int id) {
-        Staff staff = staffDao.getById(id);
-        return  staff;
+        return staffDao.getById(id);
     }
 
     public List<Staff> getList(int startIndex) {

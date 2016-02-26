@@ -46,10 +46,7 @@ public class UnitDealerId implements Serializable
         if (o == null || getClass() != o.getClass()) return false;
 
         UnitDealerId that = (UnitDealerId) o;
-
-        if (unitId != that.unitId) return false;
-        return dealerId == that.dealerId;
-
+        return unitId == that.unitId && dealerId == that.dealerId;
     }
 
     @Override

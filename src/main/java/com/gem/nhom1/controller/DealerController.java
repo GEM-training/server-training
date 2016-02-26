@@ -38,6 +38,8 @@ public class DealerController {
         return new ResponseDTO(Constant.RESPONSE_STATUS_SUSSCESS, "", null);
     }
 
+
+
     @RequestMapping(value = "/update", method = RequestMethod.PUT)
     public @ResponseBody ResponseDTO update(@RequestBody @Valid Dealer dealer,BindingResult bindingResult) throws SQLException,ValidationException,DataAccessException  {
 

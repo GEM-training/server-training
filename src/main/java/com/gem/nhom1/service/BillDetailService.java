@@ -8,9 +8,9 @@ import com.gem.nhom1.model.entities.BillDetailId;
  * Created by vanhop on 1/20/16.
  */
 public interface BillDetailService {
-    public BillDetail getById(BillDetailId id);
-    public BillDetailId insert(BillDetail billDetail);
-    public void delete(BillDetailId id) throws Exception;
-    public void update(BillDetail billDetail);
+    BillDetail getById(BillDetailId id);
+    BillDetailId insert(BillDetail billDetail);
+    void delete(BillDetailId id) throws Exception;
+    void update(BillDetail billDetail);
 
 }

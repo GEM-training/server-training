@@ -44,7 +44,7 @@ public class InventoryController {
     }
 
     @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)
-    public @ResponseBody ResponseDTO delete(@RequestBody Integer id){
+    public @ResponseBody ResponseDTO delete(@PathVariable("id") Integer id){
 
         try {
             inventoryService.delete(id);

@@ -9,11 +9,11 @@ import java.util.List;
  * Created by vanhop on 1/18/16.
  */
 public interface CustomerService {
-    public Customer getById(int id);
-    public List<Customer> getList(int startIndex);
-    public int insert(Customer customer);
-    public void delete(int customerId) throws Exception;
-    public void update(Customer customer);
+    Customer getById(int id);
+    List<Customer> getList(int startIndex);
+    int insert(Customer customer);
+    void delete(int customerId) throws Exception;
+    void update(Customer customer);
 
-    public List<Bill> getListBill(int customerId);
+    List<Bill> getListBill(int customerId);
 }

@@ -10,10 +10,10 @@ import java.util.List;
  */
 public interface UnitDealerService {
 
-    public UnitDealer getById(UnitDealerId id);
-    public List<UnitDealer> getList(int page);
-    public UnitDealerId insert(UnitDealer unitDealer);
-    public void delete(UnitDealerId id) throws Exception;
-    public void update(UnitDealer unitDealer);
+    UnitDealer getById(UnitDealerId id);
+    List<UnitDealer> getList(int page);
+    UnitDealerId insert(UnitDealer unitDealer);
+    void delete(UnitDealerId id) throws Exception;
+    void update(UnitDealer unitDealer);
 
 }

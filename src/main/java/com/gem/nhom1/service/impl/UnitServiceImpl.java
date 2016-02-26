@@ -56,18 +56,11 @@ public class UnitServiceImpl implements UnitService {
 
 
     public List<Unit> search(String key) {
-        Session session = unitDao.getSession_();
+        Session session = unitDao.getSession();
         FullTextSession fullTextSession = Search.getFullTextSession(session);
-
         QueryBuilder queryBuilder = fullTextSession.getSearchFactory().buildQueryBuilder().forEntity(Unit.class).get();
         org.apache.lucene.search.Query luceneQuery = queryBuilder.keyword().onFields("type").matching(key).createQuery();
-
         org.hibernate.Query fullTextQuery = fullTextSession.createFullTextQuery(luceneQuery, Unit.class);
-
-        List<Unit> contactList = fullTextQuery.list();
-
-
-
-        return contactList;
+        return fullTextQuery.list();
     }
 }

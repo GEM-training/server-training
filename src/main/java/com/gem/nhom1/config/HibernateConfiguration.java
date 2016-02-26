@@ -55,7 +55,7 @@ public class HibernateConfiguration {
         properties.put("hibernate.show_sql", environment.getRequiredProperty("hibernate.show_sql"));
         properties.put("hibernate.format_sql", environment.getRequiredProperty("hibernate.format_sql"));
         properties.put("hibernate.search.default.directory_provider" ,environment.getRequiredProperty("hibernate.filesystem"));
-        properties.put("hibernate.search.default.indexBase" , environment.getRequiredProperty("bibernate.file_indexs"));
+        properties.put("hibernate.search.default.indexBase" , environment.getRequiredProperty("hibernate.file_indexs"));
         pageSize = Integer.parseInt(environment.getRequiredProperty("hibernate.maxPageSize"));
         return properties;
     }

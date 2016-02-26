@@ -8,12 +8,12 @@ import java.util.List;
 /**
  * Created by vanhop on 1/20/16.
  */
-public interface BillDetailDao {
+interface BillDetailDao {
 
-    public BillDetail getById(BillDetailId id);
-    public List<BillDetail> getList(int page);
-    public BillDetailId insert(BillDetail billDetail);
-    public void delete(BillDetailId id) throws Exception;
-    public void update(BillDetail billDetail);
+    BillDetail getById(BillDetailId id);
+    List<BillDetail> getList(int page);
+    BillDetailId insert(BillDetail billDetail);
+    void delete(BillDetailId id) throws Exception;
+    void update(BillDetail billDetail);
 
 }

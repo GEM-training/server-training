@@ -1,8 +1,7 @@
 package com.gem.nhom1.controller;
 
 import com.gem.nhom1.model.dto.ResponseDTO;
-import com.gem.nhom1.model.entities.User;
-import com.gem.nhom1.model.entities.UserInfo;
+import com.gem.nhom1.model.entities.*;
 import com.gem.nhom1.security.TokenInfo;
 import com.gem.nhom1.security.TokenManager;
 import com.gem.nhom1.service.UserService;

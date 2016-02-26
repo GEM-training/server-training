@@ -9,12 +9,12 @@ import java.util.List;
  * Created by phuongtd on 20/01/2016.
  */
 public interface BillService {
-    public Bill getById(int id);
-    public List<Bill> getList(int startIndex);
-    public int insert(Bill bill);
-    public void delete(int billId) throws Exception;
-    public void update(Bill bill);
+    Bill getById(int id);
+    List<Bill> getList(int startIndex);
+    int insert(Bill bill);
+    void delete(int billId) throws Exception;
+    void update(Bill bill);
 
-    public List<BillDetail> getListBillDetail(int billId);
+    List<BillDetail> getListBillDetail(int billId);
 
 }
