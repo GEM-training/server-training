@@ -14,7 +14,8 @@ public interface DealerService {
     public void delete(int dealerId) throws Exception;
     public void update(Dealer dealer);
 
-    public List<UnitDealer> getListUnitDealer(int dealerId);
+    public List<UnitDealer> getListUnitDealer(int dealerId , int startIndex , int pageSize);
+
     public List<Inventory> getListInventory(int dealerId);
     public List<Staff> getListStaff(int deaerId);
 

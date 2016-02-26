@@ -15,4 +15,6 @@ public interface UnitDealerDao {
     public void delete(UnitDealerId id) throws Exception;
     public void update(UnitDealer unitDealer);
 
+    public List<UnitDealer> getListUnitOfDealerByDealerId (int dealerId , int startIndex , int pageSize);
+
 }
