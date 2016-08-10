@@ -1,0 +1,1074 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="springnhom1" default="all">
+  
+  
+  <property file="build.properties"/>
+  <!-- Uncomment the following property if no tests compilation is needed -->
+  <!-- 
+  <property name="skip.tests" value="true"/>
+   -->
+  
+  <!-- Compiler options -->
+  
+  <property name="compiler.debug" value="on"/>
+  <property name="compiler.generate.no.warnings" value="off"/>
+  <property name="compiler.args" value=""/>
+  <property name="compiler.max.memory" value="700m"/>
+  <patternset id="ignored.files">
+    <exclude name="**/*.hprof/**"/>
+    <exclude name="**/*.pyc/**"/>
+    <exclude name="**/*.pyo/**"/>
+    <exclude name="**/*.rbc/**"/>
+    <exclude name="**/*~/**"/>
+    <exclude name="**/.DS_Store/**"/>
+    <exclude name="**/.git/**"/>
+    <exclude name="**/.hg/**"/>
+    <exclude name="**/.svn/**"/>
+    <exclude name="**/CVS/**"/>
+    <exclude name="**/RCS/**"/>
+    <exclude name="**/SCCS/**"/>
+    <exclude name="**/__pycache__/**"/>
+    <exclude name="**/_svn/**"/>
+    <exclude name="**/rcs/**"/>
+    <exclude name="**/vssver.scc/**"/>
+    <exclude name="**/vssver2.scc/**"/>
+  </patternset>
+  <patternset id="library.patterns">
+    <include name="*.war"/>
+    <include name="*.swc"/>
+    <include name="*.apk"/>
+    <include name="*.zip"/>
+    <include name="*.egg"/>
+    <include name="*.ane"/>
+    <include name="*.jar"/>
+    <include name="*.ear"/>
+  </patternset>
+  <patternset id="compiler.resources">
+    <exclude name="**/?*.java"/>
+    <exclude name="**/?*.form"/>
+    <exclude name="**/?*.class"/>
+    <exclude name="**/?*.groovy"/>
+    <exclude name="**/?*.scala"/>
+    <exclude name="**/?*.flex"/>
+    <exclude name="**/?*.kt"/>
+    <exclude name="**/?*.clj"/>
+    <exclude name="**/?*.aj"/>
+  </patternset>
+  
+  <property name="project.jdk.home" value=""/>
+  <property name="project.jdk.bin" value=""/>
+  <property name="project.jdk.classpath" value=""/>
+  
+  
+  <!-- Project Libraries -->
+  
+  <path id="library.maven:_antlr:antlr:2.7.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_aopalliance:aopalliance:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/aopalliance/aopalliance/1.0/aopalliance-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-core/2.4.1/jackson-core-2.4.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-databind/2.4.1.1/jackson-databind-2.4.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.fasterxml:classmate:1.0.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.github.fge:btf:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/github/fge/btf/1.2/btf-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.github.fge:jackson-coreutils:1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/github/fge/jackson-coreutils/1.6/jackson-coreutils-1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.github.fge:json-patch:1.7.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/github/fge/json-patch/1.7/json-patch-1.7.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.github.fge:msg-simple:1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/github/fge/msg-simple/1.1/msg-simple-1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.google.code.findbugs:jsr305:2.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.google.guava:guava:16.0.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/google/guava/guava/16.0.1/guava-16.0.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.h2database:h2:1.4.187.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/h2database/h2/1.4.187/h2-1.4.187.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.jayway.jsonpath:json-path-assert:0.8.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/jayway/jsonpath/json-path-assert/0.8.1/json-path-assert-0.8.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.jayway.jsonpath:json-path:0.8.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/jayway/jsonpath/json-path/0.8.1/json-path-0.8.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_com.thoughtworks.paranamer:paranamer:2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-codec:commons-codec:1.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-codec/commons-codec/1.6/commons-codec-1.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-io:commons-io:2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-io/commons-io/2.1/commons-io-2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-lang:commons-lang:2.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_commons-logging:commons-logging:1.1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_dom4j:dom4j:1.6.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.el:javax.el-api:2.2.4.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.servlet.jsp:javax.servlet.jsp-api:2.3.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/jsp/javax.servlet.jsp-api/2.3.1/javax.servlet.jsp-api-2.3.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.servlet:jstl:1.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/servlet/jstl/1.2/jstl-1.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_javax.validation:validation-api:1.1.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_joda-time:joda-time:2.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/joda-time/joda-time/2.3/joda-time-2.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_junit:junit:4.12.classpath">
+    <pathelement location="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar"/>
+  </path>
+  
+  <path id="library.maven:_log4j:log4j:1.2.17.classpath">
+    <pathelement location="${path.variable.maven_repository}/log4j/log4j/1.2.17/log4j-1.2.17.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.arnx:jsonic:1.3.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/arnx/jsonic/1.3.0/jsonic-1.3.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_net.minidev:json-smart:1.1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/net/minidev/json-smart/1.1.1/json-smart-1.1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.avro:avro:1.7.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/avro/avro/1.7.6/avro-1.7.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.commons:commons-compress:1.4.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-analyzers:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-analyzers/3.6.2/lucene-analyzers-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-core:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-facet:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-facet/3.6.2/lucene-facet-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-grouping:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-grouping/3.6.2/lucene-grouping-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-highlighter:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-highlighter/3.6.2/lucene-highlighter-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-kuromoji:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-kuromoji/3.6.2/lucene-kuromoji-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-memory:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-memory/3.6.2/lucene-memory-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-misc:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-misc/3.6.2/lucene-misc-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-phonetic:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-phonetic/3.6.2/lucene-phonetic-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-smartcn:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-smartcn/3.6.2/lucene-smartcn-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-spatial:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-spatial/3.6.2/lucene-spatial-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-spellchecker:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-spellchecker/3.6.2/lucene-spellchecker-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.lucene:lucene-stempel:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/lucene/lucene-stempel/3.6.2/lucene-stempel-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.solr:solr-analysis-extras:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/solr/solr-analysis-extras/3.6.2/solr-analysis-extras-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.solr:solr-core:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/solr/solr-core/3.6.2/solr-core-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.apache.solr:solr-solrj:3.6.2.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/apache/solr/solr-solrj/3.6.2/solr-solrj-3.6.2.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.atteo:evo-inflector:1.2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/atteo/evo-inflector/1.2.1/evo-inflector-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.jackson:jackson-core-asl:1.9.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/jackson/jackson-core-asl/1.9.10/jackson-core-asl-1.9.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.codehaus.jackson:jackson-mapper-asl:1.9.10.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/codehaus/jackson/jackson-mapper-asl/1.9.10/jackson-mapper-asl-1.9.10.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hamcrest:hamcrest-all:1.3.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-core/1.1/hamcrest-core-1.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hamcrest:hamcrest-library:1.2.1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hamcrest/hamcrest-library/1.2.1/hamcrest-library-1.2.1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-core:4.3.6.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-core/4.3.6.Final/hibernate-core-4.3.6.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-search-analyzers:4.5.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-search-analyzers/4.5.1.Final/hibernate-search-analyzers-4.5.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-search-engine:4.5.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-search-engine/4.5.1.Final/hibernate-search-engine-4.5.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-search-orm:4.5.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-search-orm/4.5.1.Final/hibernate-search-orm-4.5.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-search:4.5.1.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-search/4.5.1.Final/hibernate-search-4.5.1.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jadira.usertype:usertype.core:3.0.0.cr1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jadira/usertype/usertype.core/3.0.0.CR1/usertype.core-3.0.0.CR1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jadira.usertype:usertype.spi:3.0.0.cr1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jadira/usertype/usertype.spi/3.0.0.CR1/usertype.spi-3.0.0.CR1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.javassist:javassist:3.18.1-ga.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.jboss:jandex:1.1.0.final.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.joda:joda-money:0.6.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/joda/joda-money/0.6/joda-money-0.6.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.mockito:mockito-core:1.9.5.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/mockito/mockito-core/1.9.5/mockito-core-1.9.5.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.objenesis:objenesis:1.0.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/objenesis/objenesis/1.0/objenesis-1.0.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.postgresql:postgresql:9.4-1206-jdbc41.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/postgresql/postgresql/9.4-1206-jdbc41/postgresql-9.4-1206-jdbc41.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:jcl-over-slf4j:1.7.13.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/jcl-over-slf4j/1.7.13/jcl-over-slf4j-1.7.13.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.slf4j:slf4j-api:1.7.13.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.data:spring-data-commons:1.11.2.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/data/spring-data-commons/1.11.2.RELEASE/spring-data-commons-1.11.2.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.data:spring-data-rest-core:2.4.2.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/data/spring-data-rest-core/2.4.2.RELEASE/spring-data-rest-core-2.4.2.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.data:spring-data-rest-webmvc:2.4.2.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/data/spring-data-rest-webmvc/2.4.2.RELEASE/spring-data-rest-webmvc-2.4.2.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.hateoas:spring-hateoas:0.19.0.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/hateoas/spring-hateoas/0.19.0.RELEASE/spring-hateoas-0.19.0.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.plugin:spring-plugin-core:1.2.0.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.security:spring-security-core:4.0.2.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/security/spring-security-core/4.0.2.RELEASE/spring-security-core-4.0.2.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework.security:spring-security-web:4.0.2.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/security/spring-security-web/4.0.2.RELEASE/spring-security-web-4.0.2.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-aop:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-aop/4.0.6.RELEASE/spring-aop-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-beans:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-beans/4.0.6.RELEASE/spring-beans-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-context:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-context/4.0.6.RELEASE/spring-context-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-core:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-core/4.0.6.RELEASE/spring-core-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-expression:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-expression/4.0.6.RELEASE/spring-expression-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-jdbc:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-jdbc/4.0.6.RELEASE/spring-jdbc-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-orm:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-orm/4.0.6.RELEASE/spring-orm-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-test:3.2.3.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-tx:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-tx/4.0.6.RELEASE/spring-tx-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-web:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_org.springframework:spring-webmvc:4.0.6.release.classpath">
+    <pathelement location="${path.variable.maven_repository}/org/springframework/spring-webmvc/4.0.6.RELEASE/spring-webmvc-4.0.6.RELEASE.jar"/>
+  </path>
+  
+  <path id="library.maven:_xml-apis:xml-apis:1.0.b2.classpath">
+    <pathelement location="${path.variable.maven_repository}/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar"/>
+  </path>
+  <!-- Register Custom Compiler Taskdefs -->
+  <property name="javac2.home" value="${idea.home}/lib"/>
+  <path id="javac2.classpath">
+    <pathelement location="${javac2.home}/javac2.jar"/>
+    <pathelement location="${javac2.home}/jdom.jar"/>
+    <pathelement location="${javac2.home}/asm-all.jar"/>
+    <pathelement location="${javac2.home}/jgoodies-forms.jar"/>
+  </path>
+  <target name="register.custom.compilers">
+    <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="javac2.classpath"/>
+    <taskdef name="instrumentIdeaExtensions" classname="com.intellij.ant.InstrumentIdeaExtensions" classpathref="javac2.classpath"/>
+  </target>
+  
+  <!-- Modules -->
+  
+  
+  <!-- Module SpringNhom1 -->
+  
+  <dirname property="module.springnhom1.basedir" file="${ant.file}"/>
+  
+  
+  <property name="module.jdk.home.springnhom1" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.springnhom1" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.springnhom1" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.springnhom1" value="-encoding UTF-8 -source 1.5 -target 1.5 ${compiler.args}"/>
+  
+  <property name="springnhom1.output.dir" value="${module.springnhom1.basedir}/target/classes"/>
+  <property name="springnhom1.testoutput.dir" value="${module.springnhom1.basedir}/target/test-classes"/>
+  
+  <path id="springnhom1.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="springnhom1.module.production.classpath">
+    <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-orm:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-web:4.0.2.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-core:4.0.2.release.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.6.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-orm:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-engine:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.avro:avro:1.7.6.classpath"/>
+    <path refid="library.maven:_com.thoughtworks.paranamer:paranamer:2.3.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-facet:3.6.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-analyzers:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-analyzers:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-analysis-extras:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-solrj:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-highlighter:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-kuromoji:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-memory:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-misc:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-phonetic:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spatial:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spellchecker:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-grouping:3.6.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-smartcn:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-stempel:3.6.2.classpath"/>
+    <path refid="library.maven:_com.h2database:h2:1.4.187.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.4-1206-jdbc41.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.3.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.core:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_org.joda:joda-money:0.6.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.spi:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:javax.servlet.jsp-api:2.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_net.arnx:jsonic:1.3.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-core-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-webmvc:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-core:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.hateoas:spring-hateoas:0.19.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-commons:1.11.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.plugin:spring-plugin-core:1.2.0.release.classpath"/>
+    <path refid="library.maven:_org.atteo:evo-inflector:1.2.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:json-patch:1.7.classpath"/>
+    <path refid="library.maven:_com.github.fge:jackson-coreutils:1.6.classpath"/>
+    <path refid="library.maven:_com.github.fge:msg-simple:1.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:btf:1.2.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:16.0.1.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:2.0.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.13.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:3.2.3.release.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+    <path refid="library.maven:_javax.el:javax.el-api:2.2.4.classpath"/>
+  </path>
+  
+  <path id="springnhom1.runtime.production.module.classpath">
+    <pathelement location="${springnhom1.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-orm:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-web:4.0.2.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-core:4.0.2.release.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.6.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-orm:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-engine:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.avro:avro:1.7.6.classpath"/>
+    <path refid="library.maven:_com.thoughtworks.paranamer:paranamer:2.3.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-facet:3.6.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-analyzers:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-analyzers:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-analysis-extras:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-solrj:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-highlighter:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-kuromoji:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-memory:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-misc:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-phonetic:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spatial:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spellchecker:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-grouping:3.6.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-smartcn:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-stempel:3.6.2.classpath"/>
+    <path refid="library.maven:_com.h2database:h2:1.4.187.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.4-1206-jdbc41.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.3.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.core:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_org.joda:joda-money:0.6.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.spi:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:javax.servlet.jsp-api:2.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_net.arnx:jsonic:1.3.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-core-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-webmvc:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-core:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.hateoas:spring-hateoas:0.19.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-commons:1.11.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.plugin:spring-plugin-core:1.2.0.release.classpath"/>
+    <path refid="library.maven:_org.atteo:evo-inflector:1.2.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:json-patch:1.7.classpath"/>
+    <path refid="library.maven:_com.github.fge:jackson-coreutils:1.6.classpath"/>
+    <path refid="library.maven:_com.github.fge:msg-simple:1.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:btf:1.2.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:16.0.1.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:2.0.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.13.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.13.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:3.2.3.release.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+    <path refid="library.maven:_javax.el:javax.el-api:2.2.4.classpath"/>
+  </path>
+  
+  <path id="springnhom1.module.classpath">
+    <pathelement location="${springnhom1.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-orm:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-web:4.0.2.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-core:4.0.2.release.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.6.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-orm:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-engine:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.avro:avro:1.7.6.classpath"/>
+    <path refid="library.maven:_com.thoughtworks.paranamer:paranamer:2.3.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-facet:3.6.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-analyzers:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-analyzers:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-analysis-extras:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-solrj:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-highlighter:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-kuromoji:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-memory:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-misc:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-phonetic:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spatial:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spellchecker:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-grouping:3.6.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-smartcn:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-stempel:3.6.2.classpath"/>
+    <path refid="library.maven:_com.h2database:h2:1.4.187.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.4-1206-jdbc41.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.3.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.core:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_org.joda:joda-money:0.6.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.spi:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:javax.servlet.jsp-api:2.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_net.arnx:jsonic:1.3.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-core-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-webmvc:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-core:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.hateoas:spring-hateoas:0.19.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-commons:1.11.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.plugin:spring-plugin-core:1.2.0.release.classpath"/>
+    <path refid="library.maven:_org.atteo:evo-inflector:1.2.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:json-patch:1.7.classpath"/>
+    <path refid="library.maven:_com.github.fge:jackson-coreutils:1.6.classpath"/>
+    <path refid="library.maven:_com.github.fge:msg-simple:1.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:btf:1.2.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:16.0.1.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:2.0.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.13.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.13.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-all:1.3.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:1.9.5.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:3.2.3.release.classpath"/>
+    <path refid="library.maven:_com.jayway.jsonpath:json-path-assert:0.8.1.classpath"/>
+    <path refid="library.maven:_com.jayway.jsonpath:json-path:0.8.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+    <path refid="library.maven:_net.minidev:json-smart:1.1.1.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-library:1.2.1.classpath"/>
+    <path refid="library.maven:_javax.el:javax.el-api:2.2.4.classpath"/>
+  </path>
+  
+  <path id="springnhom1.runtime.module.classpath">
+    <pathelement location="${springnhom1.testoutput.dir}"/>
+    <pathelement location="${springnhom1.output.dir}"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
+    <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-web:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-webmvc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-orm:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.0.6.release.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-web:4.0.2.release.classpath"/>
+    <path refid="library.maven:_aopalliance:aopalliance:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework.security:spring-security-core:4.0.2.release.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-core:4.3.6.final.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging:3.1.3.ga.classpath"/>
+    <path refid="library.maven:_org.jboss.logging:jboss-logging-annotations:1.2.0.beta1.classpath"/>
+    <path refid="library.maven:_org.jboss.spec.javax.transaction:jboss-transaction-api_1.2_spec:1.0.0.final.classpath"/>
+    <path refid="library.maven:_dom4j:dom4j:1.6.1.classpath"/>
+    <path refid="library.maven:_xml-apis:xml-apis:1.0.b2.classpath"/>
+    <path refid="library.maven:_org.hibernate.common:hibernate-commons-annotations:4.0.5.final.classpath"/>
+    <path refid="library.maven:_org.hibernate.javax.persistence:hibernate-jpa-2.1-api:1.0.0.final.classpath"/>
+    <path refid="library.maven:_org.javassist:javassist:3.18.1-ga.classpath"/>
+    <path refid="library.maven:_antlr:antlr:2.7.7.classpath"/>
+    <path refid="library.maven:_org.jboss:jandex:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-orm:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-engine:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.avro:avro:1.7.6.classpath"/>
+    <path refid="library.maven:_com.thoughtworks.paranamer:paranamer:2.3.classpath"/>
+    <path refid="library.maven:_org.apache.commons:commons-compress:1.4.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-facet:3.6.2.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-search-analyzers:4.5.1.final.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-analyzers:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-analysis-extras:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-core:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.solr:solr-solrj:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-highlighter:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-kuromoji:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-memory:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-misc:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-phonetic:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spatial:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-spellchecker:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-grouping:3.6.2.classpath"/>
+    <path refid="library.maven:_commons-codec:commons-codec:1.6.classpath"/>
+    <path refid="library.maven:_commons-io:commons-io:2.1.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-smartcn:3.6.2.classpath"/>
+    <path refid="library.maven:_org.apache.lucene:lucene-stempel:3.6.2.classpath"/>
+    <path refid="library.maven:_com.h2database:h2:1.4.187.classpath"/>
+    <path refid="library.maven:_javax.validation:validation-api:1.1.0.final.classpath"/>
+    <path refid="library.maven:_org.hibernate:hibernate-validator:5.1.3.final.classpath"/>
+    <path refid="library.maven:_com.fasterxml:classmate:1.0.0.classpath"/>
+    <path refid="library.maven:_org.postgresql:postgresql:9.4-1206-jdbc41.classpath"/>
+    <path refid="library.maven:_joda-time:joda-time:2.3.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.core:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_org.joda:joda-money:0.6.classpath"/>
+    <path refid="library.maven:_org.jadira.usertype:usertype.spi:3.0.0.cr1.classpath"/>
+    <path refid="library.maven:_javax.servlet:javax.servlet-api:3.1.0.classpath"/>
+    <path refid="library.maven:_javax.servlet.jsp:javax.servlet.jsp-api:2.3.1.classpath"/>
+    <path refid="library.maven:_javax.servlet:jstl:1.2.classpath"/>
+    <path refid="library.maven:_net.arnx:jsonic:1.3.0.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-mapper-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_org.codehaus.jackson:jackson-core-asl:1.9.10.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-core:2.4.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-databind:2.4.1.1.classpath"/>
+    <path refid="library.maven:_com.fasterxml.jackson.core:jackson-annotations:2.4.0.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-webmvc:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-rest-core:2.4.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.hateoas:spring-hateoas:0.19.0.release.classpath"/>
+    <path refid="library.maven:_org.springframework.data:spring-data-commons:1.11.2.release.classpath"/>
+    <path refid="library.maven:_org.springframework.plugin:spring-plugin-core:1.2.0.release.classpath"/>
+    <path refid="library.maven:_org.atteo:evo-inflector:1.2.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:json-patch:1.7.classpath"/>
+    <path refid="library.maven:_com.github.fge:jackson-coreutils:1.6.classpath"/>
+    <path refid="library.maven:_com.github.fge:msg-simple:1.1.classpath"/>
+    <path refid="library.maven:_com.github.fge:btf:1.2.classpath"/>
+    <path refid="library.maven:_com.google.guava:guava:16.0.1.classpath"/>
+    <path refid="library.maven:_com.google.code.findbugs:jsr305:2.0.1.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.13.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.13.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-all:1.3.classpath"/>
+    <path refid="library.maven:_log4j:log4j:1.2.17.classpath"/>
+    <path refid="library.maven:_org.mockito:mockito-core:1.9.5.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.1.classpath"/>
+    <path refid="library.maven:_org.objenesis:objenesis:1.0.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-test:3.2.3.release.classpath"/>
+    <path refid="library.maven:_com.jayway.jsonpath:json-path-assert:0.8.1.classpath"/>
+    <path refid="library.maven:_com.jayway.jsonpath:json-path:0.8.1.classpath"/>
+    <path refid="library.maven:_commons-lang:commons-lang:2.6.classpath"/>
+    <path refid="library.maven:_net.minidev:json-smart:1.1.1.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-library:1.2.1.classpath"/>
+    <path refid="library.maven:_javax.el:javax.el-api:2.2.4.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.springnhom1">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.springnhom1">
+    <patternset refid="excluded.from.module.springnhom1"/>
+  </patternset>
+  
+  <path id="springnhom1.module.sourcepath">
+    <dirset dir="${module.springnhom1.basedir}">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="springnhom1.module.test.sourcepath">
+    <dirset dir="${module.springnhom1.basedir}">
+      <include name="src/test/java"/>
+      <include name="src/test/resources"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.springnhom1" depends="compile.module.springnhom1.production,compile.module.springnhom1.tests" description="Compile module SpringNhom1"/>
+  
+  <target name="compile.module.springnhom1.production" depends="register.custom.compilers" description="Compile module SpringNhom1; production classes">
+    <mkdir dir="${springnhom1.output.dir}"/>
+    <javac2 destdir="${springnhom1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.springnhom1}/javac">
+      <compilerarg line="${compiler.args.springnhom1}"/>
+      <bootclasspath refid="springnhom1.module.bootclasspath"/>
+      <classpath refid="springnhom1.module.production.classpath"/>
+      <src refid="springnhom1.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.springnhom1"/>
+    </javac2>
+    
+    <copy todir="${springnhom1.output.dir}">
+      <fileset dir="${module.springnhom1.basedir}/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.springnhom1.basedir}/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.springnhom1.tests" depends="register.custom.compilers,compile.module.springnhom1.production" description="compile module SpringNhom1; test classes" unless="skip.tests">
+    <mkdir dir="${springnhom1.testoutput.dir}"/>
+    <javac2 destdir="${springnhom1.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.springnhom1}/javac">
+      <compilerarg line="${compiler.args.springnhom1}"/>
+      <bootclasspath refid="springnhom1.module.bootclasspath"/>
+      <classpath refid="springnhom1.module.classpath"/>
+      <src refid="springnhom1.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.springnhom1"/>
+    </javac2>
+    
+    <copy todir="${springnhom1.testoutput.dir}">
+      <fileset dir="${module.springnhom1.basedir}/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.springnhom1.basedir}/src/test/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.springnhom1" description="cleanup module">
+    <delete dir="${springnhom1.output.dir}"/>
+    <delete dir="${springnhom1.testoutput.dir}"/>
+  </target>
+  
+  <target name="init" description="Build initialization">
+    <!-- Perform any build initialization in this target -->
+  </target>
+  
+  <target name="clean" depends="clean.module.springnhom1, clean.artifact.springnhom1:war_exploded" description="cleanup all"/>
+  
+  <target name="build.modules" depends="init, clean, compile.module.springnhom1" description="build all modules"/>
+  
+  <target name="init.artifacts">
+    <property name="artifacts.temp.dir" value="${basedir}/__artifacts_temp"/>
+    <property name="artifact.output.springnhom1:war" value="${basedir}/target"/>
+    <property name="artifact.output.springnhom1:war_exploded" value="${basedir}/target/SpringNhom1"/>
+    <mkdir dir="${artifacts.temp.dir}"/>
+    <property name="temp.jar.path.SpringNhom1.war" value="${artifacts.temp.dir}/SpringNhom1.war"/>
+  </target>
+  
+  <target name="clean.artifact.springnhom1:war_exploded" description="clean SpringNhom1:war exploded artifact output">
+    <delete dir="${artifact.output.springnhom1:war_exploded}"/>
+  </target>
+  
+  <target name="artifact.springnhom1:war" depends="init.artifacts, artifact.springnhom1:war_exploded" description="Build &#39;SpringNhom1:war&#39; artifact">
+    <property name="artifact.temp.output.springnhom1:war" value="${artifacts.temp.dir}/SpringNhom1_war"/>
+    <mkdir dir="${artifact.temp.output.springnhom1:war}"/>
+    <zip destfile="${temp.jar.path.SpringNhom1.war}">
+      <zipfileset dir="${artifact.output.springnhom1:war_exploded}"/>
+    </zip>
+    <copy file="${temp.jar.path.SpringNhom1.war}" tofile="${artifact.temp.output.springnhom1:war}/SpringNhom1.war"/>
+  </target>
+  
+  <target name="artifact.springnhom1:war_exploded" depends="init.artifacts, compile.module.springnhom1" description="Build &#39;SpringNhom1:war exploded&#39; artifact">
+    <mkdir dir="${artifact.output.springnhom1:war_exploded}"/>
+    <mkdir dir="${artifact.output.springnhom1:war_exploded}/WEB-INF"/>
+    <mkdir dir="${artifact.output.springnhom1:war_exploded}/WEB-INF/classes"/>
+    <copy todir="${artifact.output.springnhom1:war_exploded}/WEB-INF/classes">
+      <fileset dir="${springnhom1.output.dir}"/>
+    </copy>
+    <mkdir dir="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-core/4.0.6.RELEASE/spring-core-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-core-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/commons-logging/commons-logging/1.1.3/commons-logging-1.1.3.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-logging-1.1.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-web-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-aop/4.0.6.RELEASE/spring-aop-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-aop-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-beans/4.0.6.RELEASE/spring-beans-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-beans-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-context/4.0.6.RELEASE/spring-context-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-context-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-webmvc/4.0.6.RELEASE/spring-webmvc-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-webmvc-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-expression/4.0.6.RELEASE/spring-expression-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-expression-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-tx/4.0.6.RELEASE/spring-tx-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-tx-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-orm/4.0.6.RELEASE/spring-orm-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-orm-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-jdbc/4.0.6.RELEASE/spring-jdbc-4.0.6.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-jdbc-4.0.6.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/security/spring-security-web/4.0.2.RELEASE/spring-security-web-4.0.2.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-security-web-4.0.2.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/aopalliance/aopalliance/1.0/aopalliance-1.0.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/aopalliance-1.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/security/spring-security-core/4.0.2.RELEASE/spring-security-core-4.0.2.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-security-core-4.0.2.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-core/4.3.6.Final/hibernate-core-4.3.6.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-core-4.3.6.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/logging/jboss-logging/3.1.3.GA/jboss-logging-3.1.3.GA.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jboss-logging-3.1.3.GA.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/spec/javax/transaction/jboss-transaction-api_1.2_spec/1.0.0.Final/jboss-transaction-api_1.2_spec-1.0.0.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jboss-transaction-api_1.2_spec-1.0.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/dom4j-1.6.1.jar"/>
+    <copy file="${path.variable.maven_repository}/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/xml-apis-1.0.b2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-commons-annotations-4.0.5.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/javassist/javassist/3.18.1-GA/javassist-3.18.1-GA.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javassist-3.18.1-GA.jar"/>
+    <copy file="${path.variable.maven_repository}/antlr/antlr/2.7.7/antlr-2.7.7.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/antlr-2.7.7.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jboss/jandex/1.1.0.Final/jandex-1.1.0.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jandex-1.1.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-search/4.5.1.Final/hibernate-search-4.5.1.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-search-4.5.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-search-orm/4.5.1.Final/hibernate-search-orm-4.5.1.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-search-orm-4.5.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-search-engine/4.5.1.Final/hibernate-search-engine-4.5.1.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-search-engine-4.5.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-core/3.6.2/lucene-core-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-core-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/avro/avro/1.7.6/avro-1.7.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/avro-1.7.6.jar"/>
+    <copy file="${path.variable.maven_repository}/com/thoughtworks/paranamer/paranamer/2.3/paranamer-2.3.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/paranamer-2.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/commons/commons-compress/1.4.1/commons-compress-1.4.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-compress-1.4.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-facet/3.6.2/lucene-facet-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-facet-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-search-analyzers/4.5.1.Final/hibernate-search-analyzers-4.5.1.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-search-analyzers-4.5.1.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-analyzers/3.6.2/lucene-analyzers-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-analyzers-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/solr/solr-analysis-extras/3.6.2/solr-analysis-extras-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/solr-analysis-extras-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/solr/solr-core/3.6.2/solr-core-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/solr-core-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/solr/solr-solrj/3.6.2/solr-solrj-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/solr-solrj-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-highlighter/3.6.2/lucene-highlighter-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-highlighter-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-kuromoji/3.6.2/lucene-kuromoji-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-kuromoji-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-memory/3.6.2/lucene-memory-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-memory-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-misc/3.6.2/lucene-misc-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-misc-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-phonetic/3.6.2/lucene-phonetic-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-phonetic-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-spatial/3.6.2/lucene-spatial-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-spatial-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-spellchecker/3.6.2/lucene-spellchecker-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-spellchecker-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-grouping/3.6.2/lucene-grouping-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-grouping-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/commons-codec/commons-codec/1.6/commons-codec-1.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-codec-1.6.jar"/>
+    <copy file="${path.variable.maven_repository}/commons-io/commons-io/2.1/commons-io-2.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-io-2.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-smartcn/3.6.2/lucene-smartcn-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-smartcn-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/org/apache/lucene/lucene-stempel/3.6.2/lucene-stempel-3.6.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/lucene-stempel-3.6.2.jar"/>
+    <copy file="${path.variable.maven_repository}/com/h2database/h2/1.4.187/h2-1.4.187.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/h2-1.4.187.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/org/hibernate/hibernate-validator/5.1.3.Final/hibernate-validator-5.1.3.Final.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/hibernate-validator-5.1.3.Final.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/classmate/1.0.0/classmate-1.0.0.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/classmate-1.0.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/postgresql/postgresql/9.4-1206-jdbc41/postgresql-9.4-1206-jdbc41.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/postgresql-9.4-1206-jdbc41.jar"/>
+    <copy file="${path.variable.maven_repository}/joda-time/joda-time/2.3/joda-time-2.3.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/joda-time-2.3.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jadira/usertype/usertype.core/3.0.0.CR1/usertype.core-3.0.0.CR1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/usertype.core-3.0.0.CR1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/joda/joda-money/0.6/joda-money-0.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/joda-money-0.6.jar"/>
+    <copy file="${path.variable.maven_repository}/org/jadira/usertype/usertype.spi/3.0.0.CR1/usertype.spi-3.0.0.CR1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/usertype.spi-3.0.0.CR1.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/servlet/javax.servlet-api/3.1.0/javax.servlet-api-3.1.0.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javax.servlet-api-3.1.0.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/servlet/jsp/javax.servlet.jsp-api/2.3.1/javax.servlet.jsp-api-2.3.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javax.servlet.jsp-api-2.3.1.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/servlet/jstl/1.2/jstl-1.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jstl-1.2.jar"/>
+    <copy file="${path.variable.maven_repository}/net/arnx/jsonic/1.3.0/jsonic-1.3.0.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jsonic-1.3.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/codehaus/jackson/jackson-mapper-asl/1.9.10/jackson-mapper-asl-1.9.10.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-mapper-asl-1.9.10.jar"/>
+    <copy file="${path.variable.maven_repository}/org/codehaus/jackson/jackson-core-asl/1.9.10/jackson-core-asl-1.9.10.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-core-asl-1.9.10.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-core/2.4.1/jackson-core-2.4.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-core-2.4.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-databind/2.4.1.1/jackson-databind-2.4.1.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-databind-2.4.1.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/fasterxml/jackson/core/jackson-annotations/2.4.0/jackson-annotations-2.4.0.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-annotations-2.4.0.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/data/spring-data-rest-webmvc/2.4.2.RELEASE/spring-data-rest-webmvc-2.4.2.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-data-rest-webmvc-2.4.2.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/data/spring-data-rest-core/2.4.2.RELEASE/spring-data-rest-core-2.4.2.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-data-rest-core-2.4.2.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/hateoas/spring-hateoas/0.19.0.RELEASE/spring-hateoas-0.19.0.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-hateoas-0.19.0.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/data/spring-data-commons/1.11.2.RELEASE/spring-data-commons-1.11.2.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-data-commons-1.11.2.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/plugin/spring-plugin-core/1.2.0.RELEASE/spring-plugin-core-1.2.0.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-plugin-core-1.2.0.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/org/atteo/evo-inflector/1.2.1/evo-inflector-1.2.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/evo-inflector-1.2.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/github/fge/json-patch/1.7/json-patch-1.7.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/json-patch-1.7.jar"/>
+    <copy file="${path.variable.maven_repository}/com/github/fge/jackson-coreutils/1.6/jackson-coreutils-1.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jackson-coreutils-1.6.jar"/>
+    <copy file="${path.variable.maven_repository}/com/github/fge/msg-simple/1.1/msg-simple-1.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/msg-simple-1.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/github/fge/btf/1.2/btf-1.2.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/btf-1.2.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/guava/guava/16.0.1/guava-16.0.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/guava-16.0.1.jar"/>
+    <copy file="${path.variable.maven_repository}/com/google/code/findbugs/jsr305/2.0.1/jsr305-2.0.1.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jsr305-2.0.1.jar"/>
+    <copy file="${path.variable.maven_repository}/org/slf4j/slf4j-api/1.7.13/slf4j-api-1.7.13.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/slf4j-api-1.7.13.jar"/>
+    <copy file="${path.variable.maven_repository}/org/slf4j/jcl-over-slf4j/1.7.13/jcl-over-slf4j-1.7.13.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/jcl-over-slf4j-1.7.13.jar"/>
+    <copy file="${path.variable.maven_repository}/junit/junit/4.12/junit-4.12.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/junit-4.12.jar"/>
+    <copy file="${path.variable.maven_repository}/log4j/log4j/1.2.17/log4j-1.2.17.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/log4j-1.2.17.jar"/>
+    <copy file="${path.variable.maven_repository}/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/spring-test-3.2.3.RELEASE.jar"/>
+    <copy file="${path.variable.maven_repository}/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-lang-2.6.jar"/>
+    <copy file="${path.variable.maven_repository}/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javax.el-api-2.2.4.jar"/>
+    <mkdir dir="${artifact.output.springnhom1:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/SpringNhom1/META-INF/MANIFEST.MF" tofile="${artifact.output.springnhom1:war_exploded}/META-INF/MANIFEST.MF"/>
+    <copy todir="${artifact.output.springnhom1:war_exploded}">
+      <fileset dir="${basedir}/src/main/webapp"/>
+    </copy>
+  </target>
+  
+  <target name="build.all.artifacts" depends="artifact.springnhom1:war, artifact.springnhom1:war_exploded" description="Build all artifacts">
+    <mkdir dir="${artifact.output.springnhom1:war}"/>
+    <copy todir="${artifact.output.springnhom1:war}">
+      <fileset dir="${artifact.temp.output.springnhom1:war}"/>
+    </copy>
+    
+    <!-- Delete temporary files -->
+    <delete dir="${artifacts.temp.dir}"/>
+  </target>
+  
+  <target name="all" depends="build.modules, build.all.artifacts" description="build all"/>
+</project>
