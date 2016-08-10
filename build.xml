@@ -55,9 +55,40 @@
     <exclude name="**/?*.aj"/>
   </patternset>
   
-  <property name="project.jdk.home" value=""/>
-  <property name="project.jdk.bin" value=""/>
-  <property name="project.jdk.classpath" value=""/>
+  <!-- JDK definitions -->
+  
+  <property name="jdk.bin.1.8" value="${jdk.home.1.8}/bin"/>
+  <path id="jdk.classpath.1.8">
+    <fileset dir="${jdk.home.1.8}">
+      <include name="jre/lib/charsets.jar"/>
+      <include name="jre/lib/deploy.jar"/>
+      <include name="jre/lib/ext/access-bridge-64.jar"/>
+      <include name="jre/lib/ext/cldrdata.jar"/>
+      <include name="jre/lib/ext/dnsns.jar"/>
+      <include name="jre/lib/ext/jaccess.jar"/>
+      <include name="jre/lib/ext/jfxrt.jar"/>
+      <include name="jre/lib/ext/localedata.jar"/>
+      <include name="jre/lib/ext/nashorn.jar"/>
+      <include name="jre/lib/ext/sunec.jar"/>
+      <include name="jre/lib/ext/sunjce_provider.jar"/>
+      <include name="jre/lib/ext/sunmscapi.jar"/>
+      <include name="jre/lib/ext/sunpkcs11.jar"/>
+      <include name="jre/lib/ext/zipfs.jar"/>
+      <include name="jre/lib/javaws.jar"/>
+      <include name="jre/lib/jce.jar"/>
+      <include name="jre/lib/jfr.jar"/>
+      <include name="jre/lib/jfxswt.jar"/>
+      <include name="jre/lib/jsse.jar"/>
+      <include name="jre/lib/management-agent.jar"/>
+      <include name="jre/lib/plugin.jar"/>
+      <include name="jre/lib/resources.jar"/>
+      <include name="jre/lib/rt.jar"/>
+    </fileset>
+  </path>
+  
+  <property name="project.jdk.home" value="${jdk.home.1.8}"/>
+  <property name="project.jdk.bin" value="${jdk.bin.1.8}"/>
+  <property name="project.jdk.classpath" value="jdk.classpath.1.8"/>
   
   
   <!-- Project Libraries -->
@@ -476,6 +507,7 @@
   </path>
   
   <path id="springnhom1.module.production.classpath">
+    <path refid="${module.jdk.classpath.springnhom1}"/>
     <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
     <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
     <path refid="library.maven:_org.springframework:spring-web:4.0.6.release.classpath"/>
@@ -656,6 +688,7 @@
   </path>
   
   <path id="springnhom1.module.classpath">
+    <path refid="${module.jdk.classpath.springnhom1}"/>
     <pathelement location="${springnhom1.output.dir}"/>
     <path refid="library.maven:_org.springframework:spring-core:4.0.6.release.classpath"/>
     <path refid="library.maven:_commons-logging:commons-logging:1.1.3.classpath"/>
@@ -882,7 +915,7 @@
   
   <target name="compile.module.springnhom1.production" depends="register.custom.compilers" description="Compile module SpringNhom1; production classes">
     <mkdir dir="${springnhom1.output.dir}"/>
-    <javac2 destdir="${springnhom1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+    <javac2 destdir="${springnhom1.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.springnhom1}/javac">
       <compilerarg line="${compiler.args.springnhom1}"/>
       <bootclasspath refid="springnhom1.module.bootclasspath"/>
       <classpath refid="springnhom1.module.production.classpath"/>
@@ -904,7 +937,7 @@
   
   <target name="compile.module.springnhom1.tests" depends="register.custom.compilers,compile.module.springnhom1.production" description="compile module SpringNhom1; test classes" unless="skip.tests">
     <mkdir dir="${springnhom1.testoutput.dir}"/>
-    <javac2 destdir="${springnhom1.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true">
+    <javac2 destdir="${springnhom1.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.springnhom1}/javac">
       <compilerarg line="${compiler.args.springnhom1}"/>
       <bootclasspath refid="springnhom1.module.bootclasspath"/>
       <classpath refid="springnhom1.module.classpath"/>
@@ -1054,6 +1087,7 @@
     <copy file="${path.variable.maven_repository}/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-lang-2.6.jar"/>
     <copy file="${path.variable.maven_repository}/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javax.el-api-2.2.4.jar"/>
     <mkdir dir="${artifact.output.springnhom1:war_exploded}/META-INF"/>
+    <copy file="${basedir}/target/SpringNhom1/META-INF/MANIFEST.MF" tofile="${artifact.output.springnhom1:war_exploded}/META-INF/MANIFEST.MF"/>
     <copy todir="${artifact.output.springnhom1:war_exploded}">
       <fileset dir="${basedir}/src/main/webapp"/>
     </copy>
