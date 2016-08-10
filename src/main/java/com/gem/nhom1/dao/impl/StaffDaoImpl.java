@@ -24,7 +24,7 @@ public class StaffDaoImpl extends AbstractDao<Integer, Staff> implements StaffDa
     }
 
     public List<Staff> getList(int startIndex) {
-        Query query = getSession().createQuery("from  Staff s where  s.staffId > :startIndex order by s.staffId asc" );
+        Query query = getSession().createQuery("from  Staff s where  s.staffId >= :startIndex order by s.staffId asc" );
         query.setParameter("startIndex" , startIndex);
         query.setMaxResults(constant.getMaxPageSize());
         return query.list();

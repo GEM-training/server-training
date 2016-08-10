@@ -20,8 +20,13 @@ import java.util.Set;
 @Service
 @Transactional
 public class DealerServiceImpl implements DealerService {
-    @Autowired
+
     private DealerDao dealerDao;
+
+    @Autowired
+    public DealerServiceImpl(DealerDao dealerDao){
+        this.dealerDao = dealerDao;
+    }
 
     @Autowired
     private UnitDao unitDao;

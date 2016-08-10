@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by nghicv on 21/01/2016.
  */
-interface InventoryDao {
+public interface InventoryDao {
     int insert(Inventory inventory);
     List<Inventory> getList(int startIndex);
     Inventory getById(int id);

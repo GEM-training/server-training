@@ -53,7 +53,7 @@ public class UnitDaoImpl extends AbstractDao<Integer, Unit> implements UnitDao {
         updateObject(unit);
     }
 
-    public Session getSession_(){
+    public Session getSession(){
         return  getSession();
     }
 

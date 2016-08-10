@@ -27,7 +27,7 @@ import java.util.Arrays;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan("com.gem.nhom1")
+@ComponentScan(basePackages  = {"com.gem.nhom1"})
 public class MvcConfig extends WebMvcConfigurerAdapter{
 
     @Bean
@@ -47,11 +47,11 @@ public class MvcConfig extends WebMvcConfigurerAdapter{
         return converter;
     }
 
-    @Override
+    /*@Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new LoginInterceptor());
     }
-
+*/
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         super.addResourceHandlers(registry);

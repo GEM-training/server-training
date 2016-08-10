@@ -8,7 +8,7 @@ import java.util.List;
 /**
  * Created by vanhop on 1/20/16.
  */
-interface BillDetailDao {
+public interface BillDetailDao {
 
     BillDetail getById(BillDetailId id);
     List<BillDetail> getList(int page);

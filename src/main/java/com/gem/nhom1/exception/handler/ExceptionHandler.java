@@ -1,5 +1,6 @@
 package com.gem.nhom1.exception.handler;
 
+import com.gem.nhom1.exception.exception.ResourceNotFoundException;
 import com.gem.nhom1.exception.exception.ValidationException;
 import com.gem.nhom1.model.dto.ResponseDTO;
 import com.gem.nhom1.util.Constant;
@@ -41,7 +42,14 @@ public class ExceptionHandler {
     }
 
     @org.springframework.web.bind.annotation.ExceptionHandler(ValidationException.class)
+    @ResponseStatus(HttpStatus.BAD_REQUEST)
     public @ResponseBody ResponseDTO validException(HttpServletRequest req, ValidationException exception) {
+        return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(), null);
+    }
+
+    @org.springframework.web.bind.annotation.ExceptionHandler(ResourceNotFoundException.class)
+    @ResponseStatus(HttpStatus.NOT_FOUND)
+    public @ResponseBody ResponseDTO notFoundException(HttpServletRequest req, ResourceNotFoundException exception) {
         return new ResponseDTO(Constant.RESPONSE_STATUS_ERROR, exception.getMessage(), null);
     }
 

@@ -24,7 +24,7 @@ public class DealerDaoImpl extends AbstractDao<Integer, Dealer> implements Deale
     }
 
     public List<Dealer> getList(int startIndex,int pageSize) {
-        Query query = getSession().createQuery("from  Dealer d where  d.dealerId > :startIndex order by d.dealerId asc" );
+        Query query = getSession().createQuery("from  Dealer d where  d.dealerId >= :startIndex order by d.dealerId asc" );
         query.setParameter("startIndex" , startIndex);
         pageSize = pageSize < constant.getMaxPageSize() ? pageSize : constant.getMaxPageSize() ;
         query.setMaxResults(pageSize);

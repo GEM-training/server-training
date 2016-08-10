@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by nghicv on 20/01/2016.
  */
-interface PromotionDao {
+public interface PromotionDao {
 
     int insert(Promotion promotion);
     List<Promotion> getList(int startIndex);

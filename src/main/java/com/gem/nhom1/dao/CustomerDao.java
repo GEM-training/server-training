@@ -7,7 +7,7 @@ import java.util.List;
 /**
  * Created by vanhop on 1/18/16.
  */
-interface CustomerDao {
+public interface CustomerDao {
 
     Customer getById(int id);
     List<Customer> getList(int startIndex);

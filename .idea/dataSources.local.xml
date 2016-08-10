@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="PostgreSQL - nhom1@localhost" uuid="8a32eccf-d2e0-47b5-8abf-eaca90096cff">
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <schema-pattern>nhom1.pg_catalog nhom1.public</schema-pattern>
+      <default-schemas>nhom1.public</default-schemas>
+    </data-source>
+  </component>
+</project>

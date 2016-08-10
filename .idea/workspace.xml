@@ -2,13 +2,49 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b6721fca-7952-480b-8d29-ad398c7a3376" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_h2database_h2_1_4_187.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_0_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_jayway_jsonpath_json_path_assert_0_8_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_el_javax_el_api_2_2_4.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_library_1_2_1.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mockito_mockito_core_1_9_5.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_objenesis_objenesis_1_0.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_3_2_3_RELEASE.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/exception/ResourceNotFoundException.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/gem/nhom1/controller/DealerControllerTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/gem/nhom1/service/DealerServiceTest.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/DealerBuilder.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/TestUtil.java" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/test/TestBill.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/test/TestBillDetail.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/test/TestDealer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/artifacts/SpringNhom1_war_exploded.xml" afterPath="$PROJECT_DIR$/.idea/artifacts/SpringNhom1_war_exploded.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SpringNhom1.iml" afterPath="$PROJECT_DIR$/SpringNhom1.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/PromotionController.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/PromotionController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/DealerDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/DealerDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UnitDaoImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UnitDaoImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/handler/ExceptionHandler.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/handler/ExceptionHandler.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_core_1_3.xml" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_hamcrest_hamcrest_all_1_3.xml" />
     </list>
     <ignored path="SpringNhom1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,33 +61,61 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nhom1@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$GroupNode" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nhom1@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="public" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+    <PATH>
+      <PATH_ELEMENT>
+        <option name="myItemId" />
+        <option name="myItemType" value="com.intellij.database.view.DatabaseStructure$Root" />
+      </PATH_ELEMENT>
+      <PATH_ELEMENT>
+        <option name="myItemId" value="PostgreSQL - nhom1@localhost" />
+        <option name="myItemType" value="com.intellij.database.view.DbNodeDescriptor" />
+      </PATH_ELEMENT>
+    </PATH>
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="SpringNhom1" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="DealerService.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.38388625">
-              <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UnitDealerDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -71,31 +135,12 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/StaffController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/Constaint.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/Constant.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/DealerDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/BillDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/BillDetailDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/CustomerDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/InventoryDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/InventoryUnitDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/PromotionDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UnitDaoImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillDetailService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/CustomerService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java" />
@@ -106,8 +151,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/InventoryController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UnitDealerId.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java" />
@@ -119,9 +162,30 @@
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDao.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UnitDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/PromotionController.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/87ec855c-8dd0-4fda-b3ea-c2fc72393d4d/console.sql" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/8a32eccf-d2e0-47b5-8abf-eaca90096cff/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/StaffController.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/controller/StaffControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/DealerBuilder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/TestUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/config/UnitTestContext.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/exception/ResourceNotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/DealerDaoImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/handler/ExceptionHandler.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/service/DealerServiceTest.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/test/java/com/gem/nhom1/controller/DealerControllerTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java" />
       </list>
     </option>
   </component>
@@ -133,8 +197,8 @@
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
     <option name="FILTER_WARNINGS" value="false" />
-    <option name="FILTER_INFO" value="true" />
-    <option name="FILTER_DEBUG" value="true" />
+    <option name="FILTER_INFO" value="false" />
+    <option name="FILTER_DEBUG" value="false" />
     <option name="CUSTOM_FILTER" />
   </component>
   <component name="MavenImportPreferences">
@@ -150,10 +214,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="65" />
-    <option name="y" value="24" />
-    <option name="width" value="1535" />
-    <option name="height" value="876" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1382" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -195,6 +259,114 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="util" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="service" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -290,36 +462,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="SpringNhom1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server-training-1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nhom1" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="service" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -384,7 +526,45 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="security" />
+              <option name="myItemId" value="exception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="handler" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="exception" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -418,24 +598,193 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="dao" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="impl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpringNhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server-training-1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nhom1" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope">
+        <subPane subId="Problems" />
+        <subPane subId="Production">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="server-training-1">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+        <subPane subId="Project Files">
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="server-training-1">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT USER_OBJECT="Root">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="server-training-1">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT USER_OBJECT="src/main">
+              <option name="myItemId" value="" />
+              <option name="myItemType" value="" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
+      </pane>
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/spring-mvc-test-examples-master/spring-mvc-test-examples-master" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Tomcat Server.Unnamed">
+  <component name="RunManager" selected="JUnit.DealerControllerTest">
+    <configuration default="false" name="DealerControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="com.gem.nhom1.controller.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="SpringNhom1" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.gem.nhom1.controller" />
+      <option name="MAIN_CLASS_NAME" value="com.gem.nhom1.controller.DealerControllerTest" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="file://$MODULE_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <envs />
+      <patterns />
+      <method />
+    </configuration>
     <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
       <deployment />
       <server-settings />
@@ -858,11 +1207,12 @@
       <method />
     </configuration>
     <configuration default="false" name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 7.0.52 (Ubuntu)" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8080/spring/" />
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
         <artifact name="SpringNhom1:war">
           <settings>
-            <option name="CONTEXT_PATH" value="/" />
+            <option name="CONTEXT_PATH" value="/spring" />
           </settings>
         </artifact>
       </deployment>
@@ -929,9 +1279,15 @@
         </option>
       </method>
     </configuration>
-    <list size="1">
-      <item index="0" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="JUnit.DealerControllerTest" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
     </list>
+    <recent_temporary>
+      <list size="1">
+        <item index="0" class="java.lang.String" itemvalue="JUnit.DealerControllerTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -947,44 +1303,88 @@
       <workItem from="1456191048808" duration="28000" />
       <workItem from="1456364430545" duration="9008000" />
       <workItem from="1456468766878" duration="4242000" />
+      <workItem from="1470305499840" duration="20663000" />
+      <workItem from="1470364180044" duration="17037000" />
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="DealerControllerTest - 2016.08.05 at 14h 31m 40s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 14h 32m 50s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 14h 33m 18s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 14h 53m 48s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 14h 57m 19s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 15h 00m 54s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 15h 03m 18s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 15h 03m 50s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 15h 08m 42s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DealerControllerTest - 2016.08.05 at 15h 09m 27s.xml">
+      <configuration name="DealerControllerTest" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24077000" />
+    <option name="totallyTimeSpent" value="61777000" />
+  </component>
+  <component name="TodoView" selected-index="3">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="65" y="24" width="1535" height="876" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="0" />
+    <editor active="false" />
     <layout>
-      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.4969743" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19444445" sideWeight="0.5975794" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25930852" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1764706" sideWeight="0.22692889" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32755905" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26997986" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39893618" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36835107" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1764706" sideWeight="0.7730711" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29500756" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21709532" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.18300654" sideWeight="0.72314674" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32845744" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39893618" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32913387" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1000,7 +1400,30 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="10" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/AbstractDao.java</url>
+          <line>47</line>
+          <properties />
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java</url>
+          <line>33</line>
+          <properties />
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java</url>
+          <line>46</line>
+          <properties />
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-dialog>
+        <breakpoints-dialog />
+      </breakpoints-dialog>
+      <option name="time" value="27" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -1009,291 +1432,270 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/InventoryUnitDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/PromotionServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56842107">
-          <caret line="30" column="53" selection-start-line="30" selection-start-column="53" selection-end-line="30" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/PromotionDaoImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitDealerServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71157897">
-          <caret line="29" column="53" selection-start-line="29" selection-start-column="53" selection-end-line="29" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UniDealerDaoImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75789475">
-          <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
+        <state vertical-scroll-proportion="0.31546393">
+          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="jar:///usr/lib/jvm/java-7-openjdk-amd64/jre/lib/rt.jar!/java/lang/NumberFormatException.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37878788">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+    <entry file="uml://DATABASE/8a32eccf-d2e0-47b5-8abf-eaca90096cff">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>DATABASE</ID>
+          <OriginalElement>8a32eccf-d2e0-47b5-8abf-eaca90096cff</OriginalElement>
+          <nodes>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_xact_all_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_shdepend</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_all_sequences</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_shadow</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_authid</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_trigger</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stats</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_description</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_user_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_attribute</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_foreign_data_wrapper</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_timezone_names</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_range</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_archiver</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_shseclabel</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_all_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_rewrite</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_index</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_namespace</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_foreign_server</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_foreign_table</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_tablespace</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_user</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_database</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_ts_config</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_amproc</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_opclass</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_available_extensions</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_roles</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_matviews</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_database_conflicts</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_sys_sequences</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_user_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_views</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_enum</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_user_mappings</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_amop</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_cursors</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_extension</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_class</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_settings</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_am</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_replication_slots</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_replication</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_ts_config_map</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_xact_user_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_bgwriter</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_user_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_locks</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_user_functions</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_xact_sys_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_collation</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_depend</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_rules</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_constraint</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_seclabels</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_operator</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_cast</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_group</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_sys_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_type</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_db_role_setting</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_language</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_user_mapping</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_prepared_statements</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_sys_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_proc</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_timezone_abbrevs</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_conversion</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_database</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_sys_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_prepared_xacts</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_default_acl</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_all_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_sys_tables</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_seclabel</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_ts_parser</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_largeobject</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_xact_user_functions</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_user_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_event_trigger</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_attrdef</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_ts_template</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_all_indexes</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_auth_members</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_largeobject_metadata</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_aggregate</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_pltemplate</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_ts_dict</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_opfamily</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_available_extension_versions</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_statistic</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_inherits</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_statio_user_sequences</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.TABLE:nhom1.pg_catalog.pg_shdescription</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_activity</node>
+            <node x="" y="">8a32eccf-d2e0-47b5-8abf-eaca90096cff.VIEW:nhom1.pg_catalog.pg_stat_all_tables</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="0.10609093508721762" x="1791.0" y="2339.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Columns</Category>
+            <Category>Key columns</Category>
+          </Categories>
+          <SCOPE>All</SCOPE>
         </state>
       </provider>
     </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.6.RELEASE/spring-core-4.0.6.RELEASE-sources.jar!/org/springframework/util/NumberUtils.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/87ec855c-8dd0-4fda-b3ea-c2fc72393d4d/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.33039647">
-          <caret line="170" column="0" selection-start-line="170" selection-start-column="0" selection-end-line="170" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UnitDaoImpl.java">
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/8a32eccf-d2e0-47b5-8abf-eaca90096cff/console.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.36082473">
-          <caret line="25" column="11" selection-start-line="25" selection-start-column="11" selection-end-line="25" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/User.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.59351623">
+          <caret line="29" column="31" selection-start-line="29" selection-start-column="31" selection-end-line="29" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UserInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2543641">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16209476">
+          <caret line="17" column="14" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/exception/ValidationException.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.0.6.RELEASE/spring-context-4.0.6.RELEASE.jar!/org/springframework/context/annotation/ConfigurationClassEnhancer.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3235955">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.35882354">
+          <caret line="109" column="22" selection-start-line="109" selection-start-column="22" selection-end-line="109" selection-end-column="22" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/handler/ExceptionHandler.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.0.6.RELEASE/spring-core-4.0.6.RELEASE.jar!/org/springframework/cglib/proxy/MethodProxy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9303371">
-          <caret line="37" column="59" selection-start-line="37" selection-start-column="59" selection-end-line="37" selection-end-column="59" />
+        <state vertical-scroll-proportion="0.35882354">
+          <caret line="117" column="18" selection-start-line="117" selection-start-column="18" selection-end-line="117" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UserServiceImpl.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.0.6.RELEASE/spring-beans-4.0.6.RELEASE.jar!/org/springframework/beans/factory/support/SimpleInstantiationStrategy.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5258427">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2368422">
-          <caret line="223" column="50" selection-start-line="223" selection-start-column="50" selection-end-line="223" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.35882354">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/LoginLogoutController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="27" selection-start-line="55" selection-start-column="27" selection-end-line="55" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5734072">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/User.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UserService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.24930748">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenInfo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/UserDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49861497">
-          <caret line="23" column="5" selection-start-line="23" selection-start-column="5" selection-end-line="23" selection-end-column="5" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33596838">
+          <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/CustomerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="62" column="9" selection-start-line="62" selection-start-column="9" selection-end-line="62" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/TokenManager.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/StaffController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19944598">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="50" column="5" selection-start-line="50" selection-start-column="5" selection-end-line="50" selection-end-column="5" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/Constant.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/PromotionDaoImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12465374">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
+        <state vertical-scroll-proportion="0.041463416">
+          <caret line="17" column="85" selection-start-line="17" selection-start-column="85" selection-end-line="17" selection-end-column="85" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38848922">
-          <caret line="15" column="24" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10892587">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.2902439">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/BillDetailDao.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10892587">
-          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+        <state vertical-scroll-proportion="0.2902439">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/CustomerDao.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19062027">
-          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19062027">
-          <caret line="9" column="21" selection-start-line="9" selection-start-column="21" selection-end-line="9" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21785174">
-          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/InventoryUnitDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3540091">
-          <caret line="16" column="35" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/PromotionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10892587">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/StaffDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21785174">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UserDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.13615733">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/log4j.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2985782">
-          <caret line="7" column="35" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/InventoryController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="28" selection-start-line="39" selection-start-column="28" selection-end-line="39" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6919431">
-          <caret line="57" column="54" selection-start-line="57" selection-start-column="54" selection-end-line="57" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/UnitDealerId.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.51184833">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/TokenUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5876777">
-          <caret line="24" column="39" selection-start-line="24" selection-start-column="39" selection-end-line="24" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UserService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21327014">
-          <caret line="5" column="37" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/security/LoginInterceptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2890995">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2985782">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/UnitDealerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2985782">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.58536583">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1301,122 +1703,374 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/StaffService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/PromotionService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryUnitService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2985782">
-          <caret line="10" column="7" selection-start-line="10" selection-start-column="7" selection-end-line="10" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/InventoryService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2985782">
-          <caret line="9" column="7" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/CustomerService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5971564">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5971564">
-          <caret line="17" column="4" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/BillDetailService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12796208">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/BillServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18957347">
-          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/StaffServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.1042654">
-          <caret line="19" column="16" selection-start-line="19" selection-start-column="16" selection-end-line="19" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.63981044">
-          <caret line="18" column="22" selection-start-line="18" selection-start-column="22" selection-end-line="18" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/UnitServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3744076">
-          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="34" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/UnitDealerDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
           <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d45da47a/8a32eccf-d2e0-47b5-8abf-eaca90096cff/nhom1.public.bills">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d45da47a/8a32eccf-d2e0-47b5-8abf-eaca90096cff/nhom1.public.bill_details">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d45da47a/8a32eccf-d2e0-47b5-8abf-eaca90096cff/nhom1.public.staff">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-test/3.2.3.RELEASE/spring-test-3.2.3.RELEASE.jar!/org/springframework/test/context/TestContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36330935">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/DealerBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52577317">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gem/nhom1/util/TestUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.52577317">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/HibernateConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23195876">
+          <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/config/MvcConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="29" column="47" selection-start-line="29" selection-start-column="47" selection-end-line="29" selection-end-column="47" />
+          <folding>
+            <element signature="e#2192#2193#0" expanded="false" />
+            <element signature="e#2243#2244#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/DealerDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="11" column="4" selection-start-line="11" selection-start-column="4" selection-end-line="11" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/exception/ResourceNotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32415253">
+          <caret line="9" column="5" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+          <folding>
+            <element signature="e#197#198#0" expanded="false" />
+            <element signature="e#227#228#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/util/Constant.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.72200775">
+          <caret line="11" column="31" selection-start-line="11" selection-start-column="31" selection-end-line="11" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE.jar!/org/springframework/http/HttpStatus.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3529412">
+          <caret line="33" column="4" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/exception/ValidationException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33849558">
+          <caret line="13" column="11" selection-start-line="13" selection-start-column="11" selection-end-line="13" selection-end-column="11" />
+          <folding>
+            <element signature="e#369#370#0" expanded="false" />
+            <element signature="e#399#400#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/model/entities/Dealer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-all/1.3/hamcrest-all-1.3.jar!/org/hamcrest/Matchers.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35">
+          <caret line="222" column="34" selection-start-line="222" selection-start-column="34" selection-end-line="222" selection-end-column="34" />
+          <folding>
+            <element signature="e#7893#7894#0" expanded="true" />
+            <element signature="e#7956#7957#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.0.6.RELEASE/spring-web-4.0.6.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5198238">
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/4.3.6.Final/hibernate-core-4.3.6.Final.jar!/org/hibernate/Session.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3573487">
+          <caret line="108" column="9" selection-start-line="108" selection-start-column="9" selection-end-line="108" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/DealerDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.20104438">
+          <caret line="30" column="28" selection-start-line="30" selection-start-column="28" selection-end-line="30" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/exception/handler/ExceptionHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7381703">
+          <caret line="44" column="36" selection-start-line="44" selection-start-column="36" selection-end-line="44" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/DealerService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38388625">
-          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.33123028">
+          <caret line="12" column="8" selection-start-line="12" selection-start-column="8" selection-end-line="12" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.0.6.RELEASE/spring-webmvc-4.0.6.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3806818">
+          <caret line="36" column="30" selection-start-line="36" selection-start-column="30" selection-end-line="36" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="dbDummy://dbtable:/d45da47a/8a32eccf-d2e0-47b5-8abf-eaca90096cff/nhom1.public.dealers">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/AbstractDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.511041">
+          <caret line="48" column="5" selection-start-line="48" selection-start-column="5" selection-end-line="48" selection-end-column="5" />
+          <folding>
+            <element signature="e#939#940#0" expanded="true" />
+            <element signature="e#983#984#0" expanded="true" />
+            <element signature="e#1222#1223#0" expanded="true" />
+            <element signature="e#1275#1276#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/dao/impl/StaffDaoImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.42902207">
+          <caret line="33" column="17" selection-start-line="33" selection-start-column="17" selection-end-line="33" selection-end-column="17" />
+          <folding>
+            <element signature="e#974#975#0" expanded="true" />
+            <element signature="e#1016#1017#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/service/impl/DealerServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+          <folding>
+            <element signature="e#1126#1127#0" expanded="true" />
+            <element signature="e#1173#1174#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.754717">
+          <caret line="214" column="17" selection-start-line="214" selection-start-column="17" selection-end-line="214" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/gem/nhom1/controller/DealerController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.35714287">
+          <caret line="55" column="18" selection-start-line="55" selection-start-column="18" selection-end-line="55" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gem/nhom1/controller/DealerControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="128" column="5" selection-start-line="128" selection-start-column="5" selection-end-line="128" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/gem/nhom1/service/DealerServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.071428575">
+          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <last-edited>SpringNhom1:war</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.5" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>SpringNhom1</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
