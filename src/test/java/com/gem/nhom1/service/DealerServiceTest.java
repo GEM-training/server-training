@@ -53,8 +53,7 @@ public class DealerServiceTest {
 
         when(dealerDao.getById(1)).thenReturn(dealer);
 
-
-        Dealer dealer1 = dealerService.getById(2);
+        Dealer dealer1 = dealerService.getById(3);
         Dealer dealer2 = dealerService.getById(1010);
 
         assertThat(dealer, is(dealer1));
