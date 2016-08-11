@@ -1087,7 +1087,7 @@
     <copy file="${path.variable.maven_repository}/commons-lang/commons-lang/2.6/commons-lang-2.6.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/commons-lang-2.6.jar"/>
     <copy file="${path.variable.maven_repository}/javax/el/javax.el-api/2.2.4/javax.el-api-2.2.4.jar" tofile="${artifact.output.springnhom1:war_exploded}/WEB-INF/lib/javax.el-api-2.2.4.jar"/>
     <mkdir dir="${artifact.output.springnhom1:war_exploded}/META-INF"/>
-    <copy file="${basedir}/target/SpringNhom1/META-INF/MANIFEST.MF" tofile="${artifact.output.springnhom1:war_exploded}/META-INF/MANIFEST.MF"/>
+
     <copy todir="${artifact.output.springnhom1:war_exploded}">
       <fileset dir="${basedir}/src/main/webapp"/>
     </copy>
